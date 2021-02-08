@@ -31,6 +31,12 @@
 
 ## Running
 
+< directions to install > 
+```bash
+git clone github.com/GDGVIT/keats-ios
+```
+
+< directions to execute >
 
 - Import the project in XCode
 - Change the bundle id and run the project
