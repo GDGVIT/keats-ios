@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Dosis-Regular.ttf">
+            <string>Dosis-Regular</string>
+        </array>
+        <array key="Dosis-SemiBold.ttf">
+            <string>Dosis-SemiBold</string>
+        </array>
+        <array key="GothicA1-Regular.ttf">
+            <string>GothicA1-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="keats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appSky" translatesAutoresizingMaskIntoConstraints="NO" id="AMy-GV-KrT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FZ-OV-v0O">
+                                <rect key="frame" x="15" y="346" width="384" height="204"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login / Signup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YY-hF-fPk">
+                                        <rect key="frame" x="120.5" y="16" width="143.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-1Z-ZgZ">
+                                        <rect key="frame" x="45" y="62" width="294" height="34"/>
+                                        <color key="backgroundColor" name="fieldColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCo-8U-oep">
+                                        <rect key="frame" x="133" y="130" width="118" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yk4-sg-EUa">
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="44"/>
+                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="17"/>
+                                                <state key="normal" title="Get OTP">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="lightViolet"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Yk4-sg-EUa" secondAttribute="bottom" id="5th-1n-V7S"/>
+                                            <constraint firstItem="Yk4-sg-EUa" firstAttribute="leading" secondItem="oCo-8U-oep" secondAttribute="leading" id="6Qh-ka-Z1w"/>
+                                            <constraint firstItem="Yk4-sg-EUa" firstAttribute="top" secondItem="oCo-8U-oep" secondAttribute="top" id="RXZ-zE-2Ch"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yk4-sg-EUa" secondAttribute="trailing" id="Y9X-bp-SiO"/>
+                                            <constraint firstAttribute="width" secondItem="oCo-8U-oep" secondAttribute="height" multiplier="59:22" id="ZWK-dI-vie"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="darkViolet"/>
+                                <constraints>
+                                    <constraint firstItem="5YY-hF-fPk" firstAttribute="centerX" secondItem="8FZ-OV-v0O" secondAttribute="centerX" id="3H6-BX-U4l"/>
+                                    <constraint firstAttribute="trailing" secondItem="oCo-8U-oep" secondAttribute="trailing" constant="133" id="3UI-T8-oqd"/>
+                                    <constraint firstItem="CJd-1Z-ZgZ" firstAttribute="top" secondItem="5YY-hF-fPk" secondAttribute="bottom" constant="20" id="8tv-w8-AsH"/>
+                                    <constraint firstAttribute="width" secondItem="8FZ-OV-v0O" secondAttribute="height" multiplier="32:17" id="Xxi-GQ-cSO"/>
+                                    <constraint firstAttribute="bottom" secondItem="oCo-8U-oep" secondAttribute="bottom" constant="30" id="auQ-Aa-d3f"/>
+                                    <constraint firstAttribute="trailing" secondItem="CJd-1Z-ZgZ" secondAttribute="trailing" constant="45" id="di5-Qy-SzJ"/>
+                                    <constraint firstItem="CJd-1Z-ZgZ" firstAttribute="leading" secondItem="8FZ-OV-v0O" secondAttribute="leading" constant="45" id="m1s-7h-yrI"/>
+                                    <constraint firstItem="oCo-8U-oep" firstAttribute="leading" secondItem="8FZ-OV-v0O" secondAttribute="leading" constant="133" id="tqI-Gn-GzP"/>
+                                    <constraint firstItem="5YY-hF-fPk" firstAttribute="top" secondItem="8FZ-OV-v0O" secondAttribute="top" constant="16" id="zgw-iY-SAK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KEATS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPt-Ss-0lO">
+                                <rect key="frame" x="138" y="243.5" width="138" height="52.5"/>
+                                <fontDescription key="fontDescription" name="GothicA1-Regular" family="Gothic A1" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8FZ-OV-v0O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="2Rv-tE-trN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8FZ-OV-v0O" secondAttribute="trailing" constant="15" id="8jo-Jp-eJL"/>
+                            <constraint firstItem="qPt-Ss-0lO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DY3-sw-sXv"/>
+                            <constraint firstItem="AMy-GV-KrT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SQh-Gz-0nP"/>
+                            <constraint firstAttribute="bottom" secondItem="AMy-GV-KrT" secondAttribute="bottom" id="bYj-f0-1Qf"/>
+                            <constraint firstItem="8FZ-OV-v0O" firstAttribute="top" secondItem="qPt-Ss-0lO" secondAttribute="bottom" constant="50" id="gnW-oo-f2h"/>
+                            <constraint firstItem="AMy-GV-KrT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="r4h-q9-CG1"/>
+                            <constraint firstItem="8FZ-OV-v0O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t9N-Zh-S46"/>
+                            <constraint firstItem="AMy-GV-KrT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yw5-kZ-1Vb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="appSky" width="360" height="640"/>
+        <namedColor name="darkViolet">
+            <color red="0.13333333333333333" green="0.10980392156862745" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="fieldColor">
+            <color red="0.21176470588235294" green="0.18823529411764706" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightViolet">
+            <color red="0.73333333333333328" green="0.52549019607843139" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
