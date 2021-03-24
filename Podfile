@@ -6,6 +6,8 @@ target 'keats' do
   use_frameworks!
 
   # Pods for keats
+  #pod 'GoogleUtilities/NSData+zlib'
+  #pod 'GoogleUtilities/Network'
   pod 'Firebase/Analytics'
 
   target 'keatsTests' do
