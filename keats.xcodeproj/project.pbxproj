@@ -20,15 +20,10 @@
 		7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06725EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06825EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
-		7099E81D25F1887700AC732A /* GothicA1-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E81C25F1887600AC732A /* GothicA1-Regular.ttf */; };
-		7099E81E25F1887700AC732A /* GothicA1-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E81C25F1887600AC732A /* GothicA1-Regular.ttf */; };
-		7099E81F25F1887700AC732A /* GothicA1-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E81C25F1887600AC732A /* GothicA1-Regular.ttf */; };
-		7099E82825F188B400AC732A /* Dosis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E82625F188B400AC732A /* Dosis-Regular.ttf */; };
-		7099E82925F188B400AC732A /* Dosis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E82625F188B400AC732A /* Dosis-Regular.ttf */; };
-		7099E82A25F188B400AC732A /* Dosis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E82625F188B400AC732A /* Dosis-Regular.ttf */; };
-		7099E82B25F188B400AC732A /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E82725F188B400AC732A /* Dosis-SemiBold.ttf */; };
-		7099E82C25F188B400AC732A /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E82725F188B400AC732A /* Dosis-SemiBold.ttf */; };
-		7099E82D25F188B400AC732A /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099E82725F188B400AC732A /* Dosis-SemiBold.ttf */; };
+		70764562260B5E310000B52A /* Berlin Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7076455E260B5E310000B52A /* Berlin Bold.ttf */; };
+		70764563260B5E310000B52A /* Berlin X-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7076455F260B5E310000B52A /* Berlin X-Bold.ttf */; };
+		70764564260B5E310000B52A /* Berlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70764560260B5E310000B52A /* Berlin.ttf */; };
+		70764565260B5E310000B52A /* Berlin - Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70764561260B5E310000B52A /* Berlin - Italic.ttf */; };
 		96128FDCA485AE355DCE0753 /* Pods_keats_keatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5A33084BBA16680928A599 /* Pods_keats_keatsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,9 +66,10 @@
 		7031CB2725D12BA10002E641 /* keatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keatsUITests.swift; sourceTree = "<group>"; };
 		7031CB2925D12BA10002E641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7057A06525EC106000CEA17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7099E81C25F1887600AC732A /* GothicA1-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothicA1-Regular.ttf"; sourceTree = "<group>"; };
-		7099E82625F188B400AC732A /* Dosis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Regular.ttf"; sourceTree = "<group>"; };
-		7099E82725F188B400AC732A /* Dosis-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.ttf"; sourceTree = "<group>"; };
+		7076455E260B5E310000B52A /* Berlin Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berlin Bold.ttf"; sourceTree = "<group>"; };
+		7076455F260B5E310000B52A /* Berlin X-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berlin X-Bold.ttf"; sourceTree = "<group>"; };
+		70764560260B5E310000B52A /* Berlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Berlin.ttf; sourceTree = "<group>"; };
+		70764561260B5E310000B52A /* Berlin - Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berlin - Italic.ttf"; sourceTree = "<group>"; };
 		AC5CDE0FAE2F6DD1BFA43A10 /* Pods-keats-keatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.release.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B82BC534F27EC4CB60CB54 /* Pods-keats-keatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9CE90B1F7C293B686E38FAF /* Pods_keats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,9 +185,10 @@
 		7099E83425F188BD00AC732A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				7099E81C25F1887600AC732A /* GothicA1-Regular.ttf */,
-				7099E82625F188B400AC732A /* Dosis-Regular.ttf */,
-				7099E82725F188B400AC732A /* Dosis-SemiBold.ttf */,
+				70764561260B5E310000B52A /* Berlin - Italic.ttf */,
+				7076455E260B5E310000B52A /* Berlin Bold.ttf */,
+				7076455F260B5E310000B52A /* Berlin X-Bold.ttf */,
+				70764560260B5E310000B52A /* Berlin.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -304,12 +301,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70764565260B5E310000B52A /* Berlin - Italic.ttf in Resources */,
+				70764563260B5E310000B52A /* Berlin X-Bold.ttf in Resources */,
+				70764562260B5E310000B52A /* Berlin Bold.ttf in Resources */,
+				70764564260B5E310000B52A /* Berlin.ttf in Resources */,
 				7031CB1225D12BA10002E641 /* LaunchScreen.storyboard in Resources */,
 				7031CB0F25D12BA10002E641 /* Assets.xcassets in Resources */,
-				7099E81D25F1887700AC732A /* GothicA1-Regular.ttf in Resources */,
 				7031CB0D25D12B9E0002E641 /* Main.storyboard in Resources */,
-				7099E82825F188B400AC732A /* Dosis-Regular.ttf in Resources */,
-				7099E82B25F188B400AC732A /* Dosis-SemiBold.ttf in Resources */,
 				7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,10 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7099E82C25F188B400AC732A /* Dosis-SemiBold.ttf in Resources */,
 				7057A06725EC106000CEA17A /* GoogleService-Info.plist in Resources */,
-				7099E82925F188B400AC732A /* Dosis-Regular.ttf in Resources */,
-				7099E81E25F1887700AC732A /* GothicA1-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7099E82D25F188B400AC732A /* Dosis-SemiBold.ttf in Resources */,
 				7057A06825EC106000CEA17A /* GoogleService-Info.plist in Resources */,
-				7099E82A25F188B400AC732A /* Dosis-Regular.ttf in Resources */,
-				7099E81F25F1887700AC732A /* GothicA1-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

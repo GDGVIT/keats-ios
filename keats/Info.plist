@@ -4,9 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>GothicA1-Regular.ttf</string>
-		<string>Dosis-Regular.ttf</string>
-		<string>Dosis-SemiBold.ttf</string>
+		<string>Berlin.ttf</string>
+		<string>Berlin - Italic.ttf</string>
+		<string>Berlin Bold.ttf</string>
+		<string>Berlin X-Bold.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
