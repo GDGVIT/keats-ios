@@ -9,6 +9,7 @@ target 'keats' do
   #pod 'GoogleUtilities/NSData+zlib'
   #pod 'GoogleUtilities/Network'
   #pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 
   target 'keatsTests' do
     inherit! :search_paths

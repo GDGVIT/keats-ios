@@ -11,7 +11,6 @@
 		5AE4B5479DF3E7CA56705FD7 /* Pods_keatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF970028685C92805F24810 /* Pods_keatsTests.framework */; };
 		7031CB0625D12B9E0002E641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7031CB0525D12B9E0002E641 /* AppDelegate.swift */; };
 		7031CB0825D12B9E0002E641 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7031CB0725D12B9E0002E641 /* SceneDelegate.swift */; };
-		7031CB0A25D12B9E0002E641 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7031CB0925D12B9E0002E641 /* ViewController.swift */; };
 		7031CB0D25D12B9E0002E641 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7031CB0B25D12B9E0002E641 /* Main.storyboard */; };
 		7031CB0F25D12BA10002E641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7031CB0E25D12BA10002E641 /* Assets.xcassets */; };
 		7031CB1225D12BA10002E641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7031CB1025D12BA10002E641 /* LaunchScreen.storyboard */; };
@@ -24,6 +23,14 @@
 		70764563260B5E310000B52A /* Berlin X-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7076455F260B5E310000B52A /* Berlin X-Bold.ttf */; };
 		70764564260B5E310000B52A /* Berlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70764560260B5E310000B52A /* Berlin.ttf */; };
 		70764565260B5E310000B52A /* Berlin - Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70764561260B5E310000B52A /* Berlin - Italic.ttf */; };
+		707645D42615BB830000B52A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645D32615BB830000B52A /* PhoneViewController.swift */; };
+		707645D52615BB830000B52A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645D32615BB830000B52A /* PhoneViewController.swift */; };
+		707645D62615BB830000B52A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645D32615BB830000B52A /* PhoneViewController.swift */; };
+		707645F62619893D0000B52A /* OTPStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645F52619893D0000B52A /* OTPStackView.swift */; };
+		707645FB261989720000B52A /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645FA261989720000B52A /* OTPTextField.swift */; };
+		7076460026198A360000B52A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645FF26198A360000B52A /* OTPViewController.swift */; };
+		7076460126198A360000B52A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645FF26198A360000B52A /* OTPViewController.swift */; };
+		7076460226198A360000B52A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645FF26198A360000B52A /* OTPViewController.swift */; };
 		96128FDCA485AE355DCE0753 /* Pods_keats_keatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5A33084BBA16680928A599 /* Pods_keats_keatsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +61,6 @@
 		7031CB0225D12B9E0002E641 /* keats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7031CB0525D12B9E0002E641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7031CB0725D12B9E0002E641 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7031CB0925D12B9E0002E641 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7031CB0C25D12B9E0002E641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7031CB0E25D12BA10002E641 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7031CB1125D12BA10002E641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +76,10 @@
 		7076455F260B5E310000B52A /* Berlin X-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berlin X-Bold.ttf"; sourceTree = "<group>"; };
 		70764560260B5E310000B52A /* Berlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Berlin.ttf; sourceTree = "<group>"; };
 		70764561260B5E310000B52A /* Berlin - Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berlin - Italic.ttf"; sourceTree = "<group>"; };
+		707645D32615BB830000B52A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		707645F52619893D0000B52A /* OTPStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackView.swift; sourceTree = "<group>"; };
+		707645FA261989720000B52A /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		707645FF26198A360000B52A /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		AC5CDE0FAE2F6DD1BFA43A10 /* Pods-keats-keatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.release.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B82BC534F27EC4CB60CB54 /* Pods-keats-keatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9CE90B1F7C293B686E38FAF /* Pods_keats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +163,10 @@
 			children = (
 				7031CB0525D12B9E0002E641 /* AppDelegate.swift */,
 				7031CB0725D12B9E0002E641 /* SceneDelegate.swift */,
-				7031CB0925D12B9E0002E641 /* ViewController.swift */,
 				7031CB0B25D12B9E0002E641 /* Main.storyboard */,
+				707645F52619893D0000B52A /* OTPStackView.swift */,
+				707645FA261989720000B52A /* OTPTextField.swift */,
+				707645D22615BB6D0000B52A /* Controller */,
 				7031CB0E25D12BA10002E641 /* Assets.xcassets */,
 				7099E83425F188BD00AC732A /* Fonts */,
 				7031CB1025D12BA10002E641 /* LaunchScreen.storyboard */,
@@ -182,6 +194,15 @@
 			path = keatsUITests;
 			sourceTree = "<group>";
 		};
+		707645D22615BB6D0000B52A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				707645D32615BB830000B52A /* PhoneViewController.swift */,
+				707645FF26198A360000B52A /* OTPViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		7099E83425F188BD00AC732A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +225,7 @@
 				7031CAFE25D12B9E0002E641 /* Sources */,
 				7031CAFF25D12B9E0002E641 /* Frameworks */,
 				7031CB0025D12B9E0002E641 /* Resources */,
+				9A7C1C3D4DDAA41393461FAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +263,7 @@
 				7031CB1F25D12BA10002E641 /* Sources */,
 				7031CB2025D12BA10002E641 /* Frameworks */,
 				7031CB2125D12BA10002E641 /* Resources */,
+				73E8D9F4DCE9716EE46B4887 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +418,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		73E8D9F4DCE9716EE46B4887 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A7C1C3D4DDAA41393461FAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-keats/Pods-keats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-keats/Pods-keats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-keats/Pods-keats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -402,9 +459,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7031CB0A25D12B9E0002E641 /* ViewController.swift in Sources */,
+				7076460026198A360000B52A /* OTPViewController.swift in Sources */,
+				707645D42615BB830000B52A /* PhoneViewController.swift in Sources */,
+				707645F62619893D0000B52A /* OTPStackView.swift in Sources */,
 				7031CB0625D12B9E0002E641 /* AppDelegate.swift in Sources */,
 				7031CB0825D12B9E0002E641 /* SceneDelegate.swift in Sources */,
+				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +472,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7076460126198A360000B52A /* OTPViewController.swift in Sources */,
 				7031CB1D25D12BA10002E641 /* keatsTests.swift in Sources */,
+				707645D52615BB830000B52A /* PhoneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +482,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7076460226198A360000B52A /* OTPViewController.swift in Sources */,
 				7031CB2825D12BA10002E641 /* keatsUITests.swift in Sources */,
+				707645D62615BB830000B52A /* PhoneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
