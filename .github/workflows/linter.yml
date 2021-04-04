@@ -17,9 +17,13 @@ name: Lint Code Base
 on:
   push:
     branches: [master]
+    paths-ignore:
+    - 'Pods/**'
     # Remove the line above to run when pushing to master
   pull_request:
     branches: [master]
+    paths-ignore:
+    - 'Pods/**'
 
 ###############
 # Set the Job #
