@@ -23,8 +23,8 @@ class OTPStackView: UIStackView {
     var showsWarningColor = false
     
     //Colors
-    let inactiveFieldBorderColor = UIColor(white: 1, alpha: 0.3)
-    let textBackgroundColor = UIColor(white: 1, alpha: 0.5)
+    let inactiveFieldBorderColor = UIColor(white: 1, alpha: 0.1)
+    let textBackgroundColor = UIColor(white: 1, alpha: 0.2)
     let activeFieldBorderColor = UIColor.white
     var remainingStrStack: [String] = []
     
@@ -73,7 +73,7 @@ class OTPStackView: UIStackView {
         textField.backgroundColor = textBackgroundColor
         textField.textAlignment = .center
         textField.adjustsFontSizeToFitWidth = false
-        textField.font = UIFont(name: "Kefa", size: 40)
+        textField.font = UIFont(name: "Kefa", size: 30)
         textField.textColor = .white
         textField.layer.cornerRadius = 5
         textField.layer.borderWidth = 2

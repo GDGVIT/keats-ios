@@ -31,6 +31,10 @@
 		7076460026198A360000B52A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645FF26198A360000B52A /* OTPViewController.swift */; };
 		7076460126198A360000B52A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645FF26198A360000B52A /* OTPViewController.swift */; };
 		7076460226198A360000B52A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645FF26198A360000B52A /* OTPViewController.swift */; };
+		707646082619D2E20000B52A /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707646072619D2E20000B52A /* CountryCodes.swift */; };
+		7076460D261A29EB0000B52A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076460C261A29EA0000B52A /* HomeViewController.swift */; };
+		7076460E261A29EB0000B52A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076460C261A29EA0000B52A /* HomeViewController.swift */; };
+		7076460F261A29EB0000B52A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076460C261A29EA0000B52A /* HomeViewController.swift */; };
 		96128FDCA485AE355DCE0753 /* Pods_keats_keatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5A33084BBA16680928A599 /* Pods_keats_keatsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +84,8 @@
 		707645F52619893D0000B52A /* OTPStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackView.swift; sourceTree = "<group>"; };
 		707645FA261989720000B52A /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		707645FF26198A360000B52A /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		707646072619D2E20000B52A /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
+		7076460C261A29EA0000B52A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AC5CDE0FAE2F6DD1BFA43A10 /* Pods-keats-keatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.release.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B82BC534F27EC4CB60CB54 /* Pods-keats-keatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9CE90B1F7C293B686E38FAF /* Pods_keats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,8 +170,7 @@
 				7031CB0525D12B9E0002E641 /* AppDelegate.swift */,
 				7031CB0725D12B9E0002E641 /* SceneDelegate.swift */,
 				7031CB0B25D12B9E0002E641 /* Main.storyboard */,
-				707645F52619893D0000B52A /* OTPStackView.swift */,
-				707645FA261989720000B52A /* OTPTextField.swift */,
+				707646062619D2BD0000B52A /* Model */,
 				707645D22615BB6D0000B52A /* Controller */,
 				7031CB0E25D12BA10002E641 /* Assets.xcassets */,
 				7099E83425F188BD00AC732A /* Fonts */,
@@ -199,8 +204,19 @@
 			children = (
 				707645D32615BB830000B52A /* PhoneViewController.swift */,
 				707645FF26198A360000B52A /* OTPViewController.swift */,
+				7076460C261A29EA0000B52A /* HomeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		707646062619D2BD0000B52A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				707645FA261989720000B52A /* OTPTextField.swift */,
+				707645F52619893D0000B52A /* OTPStackView.swift */,
+				707646072619D2E20000B52A /* CountryCodes.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7099E83425F188BD00AC732A /* Fonts */ = {
@@ -462,8 +478,10 @@
 				7076460026198A360000B52A /* OTPViewController.swift in Sources */,
 				707645D42615BB830000B52A /* PhoneViewController.swift in Sources */,
 				707645F62619893D0000B52A /* OTPStackView.swift in Sources */,
+				7076460D261A29EB0000B52A /* HomeViewController.swift in Sources */,
 				7031CB0625D12B9E0002E641 /* AppDelegate.swift in Sources */,
 				7031CB0825D12B9E0002E641 /* SceneDelegate.swift in Sources */,
+				707646082619D2E20000B52A /* CountryCodes.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +493,7 @@
 				7076460126198A360000B52A /* OTPViewController.swift in Sources */,
 				7031CB1D25D12BA10002E641 /* keatsTests.swift in Sources */,
 				707645D52615BB830000B52A /* PhoneViewController.swift in Sources */,
+				7076460E261A29EB0000B52A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +504,7 @@
 				7076460226198A360000B52A /* OTPViewController.swift in Sources */,
 				7031CB2825D12BA10002E641 /* keatsUITests.swift in Sources */,
 				707645D62615BB830000B52A /* PhoneViewController.swift in Sources */,
+				7076460F261A29EB0000B52A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
