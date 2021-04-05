@@ -1,6 +1,0 @@
-framework module Pods_keats {
-  umbrella header "Pods-keats-umbrella.h"
-
-  export *
-  module * { export * }
-}
