@@ -22,6 +22,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         makeNonEditable()
         fetchUserDetails()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
@@ -34,6 +36,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func makeEditable() {

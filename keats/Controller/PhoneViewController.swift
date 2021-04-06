@@ -31,6 +31,7 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
         buttonView.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
         countryCodeTextField.inputView = countryPicker
+        phoneTextField.text = ""
         countryPicker.countryPickerDelegate = self
         countryPicker.showPhoneNumbers = true
         countryPicker.setLocale("sl_SI")
@@ -68,19 +69,6 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
     }
     
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height/2
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
     
 }
 
@@ -127,6 +115,21 @@ extension UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/2
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
 }
