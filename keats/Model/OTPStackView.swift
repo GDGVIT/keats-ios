@@ -77,7 +77,7 @@ class OTPStackView: UIStackView {
         textField.layer.cornerRadius = 5
         textField.layer.borderWidth = 2
         textField.layer.borderColor = inactiveFieldBorderColor.cgColor
-        textField.keyboardType = .numberPad
+        textField.keyboardType = .phonePad
         textField.textContentType = .oneTimeCode
         textField.doneAccessory = true
     }

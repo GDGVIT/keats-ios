@@ -29,6 +29,7 @@ class ProfileViewController: UIViewController {
     @IBAction func editButtonTapped(_ sender: Any) {
         if isEditingProfile {
             makeNonEditable()
+            updateUserInfo()
             
         } else {
             makeEditable()
@@ -142,18 +143,53 @@ class ProfileViewController: UIViewController {
                                 self.phoneTextField.text = phone
                                 
                             }
-                            
-                            
                         }
-                        
-                        
-                                                
-                        
                     }
                 }
-                
             }
         }
         task.resume()
+    }
+    
+    func updateUserInfo() {
+        
+        if let userName = nameTextField.text, let bio = bioTextField.text, let email = emailTextField.text {
+            
+            let json: [String: Any] = ["username": userName,
+                                       "email": email,
+                                       "bio": bio]
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
+            
+            request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            // insert json data to the request
+            request.httpBody = jsonData
+            
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    let status = responseJSON["status"]
+                    if status as! String != "error" {
+                        print("Successfully updated info")
+                    } else {
+                        print(responseJSON)
+                    }
+                }
+            }
+
+            task.resume()
+        }
     }
 }
