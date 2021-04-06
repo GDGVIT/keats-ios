@@ -172,24 +172,24 @@ class ProfileViewController: UIViewController {
             request.httpBody = jsonData
             
             
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data, error == nil else {
-                    print(error?.localizedDescription ?? "No data")
+            let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let dta = data, error == nil else {
+                    print(error?.localizedDescription ?? "no data")
                     return
                 }
                 
-                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                if let responseJSON = responseJSON as? [String: Any] {
-                    let status = responseJSON["status"]
+                let responseJSON = try? JSONSerialization.jsonObject(with: dta, options: [])
+                if let rsponseJSON = responseJSON as? [String: Any] {
+                    let status = rsponseJSON["status"]
                     if status as! String != "error" {
                         print("Successfully updated info")
                     } else {
-                        print(responseJSON)
+                        print(rsponseJSON)
                     }
                 }
             }
 
-            task.resume()
+            tsk.resume()
         }
     }
 }

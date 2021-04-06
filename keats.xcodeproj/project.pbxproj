@@ -41,6 +41,9 @@
 		70764673261C310F0000B52A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70764672261C310E0000B52A /* ProfileViewController.swift */; };
 		70764674261C310F0000B52A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70764672261C310E0000B52A /* ProfileViewController.swift */; };
 		70764675261C310F0000B52A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70764672261C310E0000B52A /* ProfileViewController.swift */; };
+		70764682261C8B700000B52A /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70764681261C8B700000B52A /* NavBarViewController.swift */; };
+		70764683261C8B710000B52A /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70764681261C8B700000B52A /* NavBarViewController.swift */; };
+		70764684261C8B710000B52A /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70764681261C8B700000B52A /* NavBarViewController.swift */; };
 		96128FDCA485AE355DCE0753 /* Pods_keats_keatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5A33084BBA16680928A599 /* Pods_keats_keatsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,7 @@
 		70764651261B289E0000B52A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		70764656261B295A0000B52A /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
 		70764672261C310E0000B52A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		70764681261C8B700000B52A /* NavBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
 		AC5CDE0FAE2F6DD1BFA43A10 /* Pods-keats-keatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.release.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B82BC534F27EC4CB60CB54 /* Pods-keats-keatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9CE90B1F7C293B686E38FAF /* Pods_keats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +220,7 @@
 				707645FF26198A360000B52A /* OTPViewController.swift */,
 				7076460C261A29EA0000B52A /* HomeViewController.swift */,
 				70764672261C310E0000B52A /* ProfileViewController.swift */,
+				70764681261C8B700000B52A /* NavBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70764682261C8B700000B52A /* NavBarViewController.swift in Sources */,
 				7076460026198A360000B52A /* OTPViewController.swift in Sources */,
 				707645D42615BB830000B52A /* PhoneViewController.swift in Sources */,
 				707645F62619893D0000B52A /* OTPStackView.swift in Sources */,
@@ -510,6 +516,7 @@
 			files = (
 				7076460126198A360000B52A /* OTPViewController.swift in Sources */,
 				7031CB1D25D12BA10002E641 /* keatsTests.swift in Sources */,
+				70764683261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70764674261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D52615BB830000B52A /* PhoneViewController.swift in Sources */,
 				7076460E261A29EB0000B52A /* HomeViewController.swift in Sources */,
@@ -522,6 +529,7 @@
 			files = (
 				7076460226198A360000B52A /* OTPViewController.swift in Sources */,
 				7031CB2825D12BA10002E641 /* keatsUITests.swift in Sources */,
+				70764684261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70764675261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D62615BB830000B52A /* PhoneViewController.swift in Sources */,
 				7076460F261A29EB0000B52A /* HomeViewController.swift in Sources */,
