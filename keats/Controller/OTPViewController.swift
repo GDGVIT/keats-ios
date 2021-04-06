@@ -12,20 +12,29 @@ class OTPViewController: UIViewController {
     
     @IBOutlet weak var otpContainerView: UIView!
     @IBOutlet weak var testButton: UIButton!
+    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let otpStackView = OTPStackView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        testButton.isHidden = true
+        buttonView.isHidden = true
+        activityIndicator.isHidden = true
         otpContainerView.addSubview(otpStackView)
         otpStackView.delegate = self
         otpStackView.heightAnchor.constraint(equalTo: otpContainerView.heightAnchor).isActive = true
         otpStackView.centerXAnchor.constraint(equalTo: otpContainerView.centerXAnchor).isActive = true
         otpStackView.centerYAnchor.constraint(equalTo: otpContainerView.centerYAnchor).isActive = true
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func clickedForHighlight(_ sender: UIButton) {
+        
+        buttonView.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
            
         let verificationCode = otpStackView.getOTP()
         if let verificationID = UserDefaults.standard.string(forKey: "VerificationID") {
@@ -37,15 +46,22 @@ class OTPViewController: UIViewController {
                 Auth.auth().signIn(with: credential) { (authResult, error) in
                   if let error = error {
                     let authError = error as NSError
+                    self.buttonView.isHidden = false
+                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
+                    self.alert(message: authError.localizedDescription, title: "Error")
                     print(authError.localizedDescription)
                   }
                   // User is signed in
                   // ...
-                    print("otp verified")
+                    //print("otp verified")
                     let currentUser = Auth.auth().currentUser
                     currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
                       if let error = error {
-                        // Handle error
+                        self.buttonView.isHidden = false
+                        self.activityIndicator.isHidden = true
+                        self.activityIndicator.stopAnimating()
+                        self.alert(message: error.localizedDescription, title: "Error")
                         print("error in getting id token: \(error.localizedDescription)")
                         return;
                       }
@@ -54,7 +70,7 @@ class OTPViewController: UIViewController {
                         if let token = idToken {
                             UserDefaults.standard.set(token, forKey: "IDToken")
                             self.signInUser(verificationId: token)
-                            self.performSegue(withIdentifier: "otpToHome", sender: self)
+                            
                         }
                         
                       // ...
@@ -89,6 +105,18 @@ class OTPViewController: UIViewController {
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
+                
+                let status = responseJSON["status"]
+                if status as! String != "error" {
+                    let JWToken = responseJSON["data"]
+                    UserDefaults.standard.set(JWToken, forKey: "JWToken")
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "otpToHome", sender: self)
+                        self.buttonView.isHidden = false
+                        self.activityIndicator.isHidden = true
+                        self.activityIndicator.stopAnimating()
+                    }
+                }
                 print(responseJSON)
             }
         }
@@ -96,13 +124,27 @@ class OTPViewController: UIViewController {
         task.resume()
     
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/2
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
 
 }
 
 extension OTPViewController: OTPDelegate {
     
     func didChangeValidity(isValid: Bool) {
-        testButton.isHidden = !isValid
+        buttonView.isHidden = !isValid
     }
     
 }

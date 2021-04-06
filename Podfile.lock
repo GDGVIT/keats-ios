@@ -36,6 +36,7 @@ PODS:
   - GoogleUtilities/Reachability (6.7.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - MRCountryPicker (0.0.8)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -45,6 +46,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Auth
+  - MRCountryPicker
 
 SPEC REPOS:
   trunk:
@@ -55,6 +57,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - MRCountryPicker
     - nanopb
     - PromisesObjC
 
@@ -66,9 +69,10 @@ SPEC CHECKSUMS:
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  MRCountryPicker: 1aeea66de25cdef79dce3b91d8ad9db643c1cc01
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 26b41bf18356c71c2bf2fdd81c7cdfb6aa90c933
+PODFILE CHECKSUM: ca4cb03ff4e9c8d14a49e636ace9a4b0a3248a7a
 
 COCOAPODS: 1.10.1

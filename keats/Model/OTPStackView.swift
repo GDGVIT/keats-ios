@@ -73,14 +73,13 @@ class OTPStackView: UIStackView {
         textField.backgroundColor = textBackgroundColor
         textField.textAlignment = .center
         textField.adjustsFontSizeToFitWidth = false
-        textField.font = UIFont(name: "Kefa", size: 30)
         textField.textColor = .white
         textField.layer.cornerRadius = 5
         textField.layer.borderWidth = 2
         textField.layer.borderColor = inactiveFieldBorderColor.cgColor
         textField.keyboardType = .numberPad
-        textField.autocorrectionType = .yes
         textField.textContentType = .oneTimeCode
+        textField.doneAccessory = true
     }
     
     //checks if all the OTPfields are filled

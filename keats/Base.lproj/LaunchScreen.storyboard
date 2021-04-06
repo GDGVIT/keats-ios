@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +25,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="KeatsDarkBg"/>
                         <constraints>
                             <constraint firstItem="BFA-t7-gpg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="S0E-xV-8Fh"/>
                             <constraint firstItem="BFA-t7-gpg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="j8I-gC-wjr"/>
@@ -38,5 +39,8 @@
     </scenes>
     <resources>
         <image name="Logo" width="168" height="136"/>
+        <namedColor name="KeatsDarkBg">
+            <color red="0.078000001609325409" green="0.086000002920627594" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
