@@ -42,7 +42,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made with ♡ by DSCVIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvx-e4-csB">
-                                <rect key="frame" x="133" y="809" width="148" height="20"/>
+                                <rect key="frame" x="124" y="809" width="166.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="5E9-In-S2Z"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Keats!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-rP-yOB">
-                                <rect key="frame" x="30" y="405" width="240.5" height="32"/>
+                                <rect key="frame" x="30" y="405" width="268.5" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="M9F-lz-Oqe"/>
                                 </constraints>
@@ -60,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your phone number to get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-YZ-mbq">
-                                <rect key="frame" x="30" y="442" width="216.5" height="14"/>
+                                <rect key="frame" x="30" y="442" width="247.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="XT8-vr-LoD"/>
                                 </constraints>
@@ -205,7 +205,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0H-CC-9o0">
-                                <rect key="frame" x="30" y="527" width="114" height="36"/>
+                                <rect key="frame" x="30" y="535" width="114" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIC-ot-XpC">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="36"/>
@@ -235,7 +235,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cX0-SH-fZG">
-                                <rect key="frame" x="30" y="527" width="114" height="36"/>
+                                <rect key="frame" x="30" y="535" width="114" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <constraints>
@@ -245,13 +245,13 @@
                                 <color key="color" systemColor="systemOrangeColor"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPT Sent!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEr-hf-DP6">
-                                <rect key="frame" x="30" y="405" width="125.5" height="32"/>
+                                <rect key="frame" x="30" y="405" width="146.5" height="37.5"/>
                                 <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5R-Un-xNb">
-                                <rect key="frame" x="30" y="476" width="354" height="35"/>
+                                <rect key="frame" x="30" y="484" width="354" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -259,7 +259,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enter the OTP you just recieved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oto-OH-999">
-                                <rect key="frame" x="30" y="442" width="173.5" height="14"/>
+                                <rect key="frame" x="30" y="447.5" width="197" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -337,7 +337,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GJ-ya-sTe">
-                                <rect key="frame" x="37" y="143" width="66.5" height="27"/>
+                                <rect key="frame" x="37" y="143" width="76" height="31.5"/>
                                 <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -730,13 +730,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYM-6D-GYb">
-                                <rect key="frame" x="105" y="50" width="72" height="32"/>
+                                <rect key="frame" x="105" y="50" width="82" height="37.5"/>
                                 <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clubs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFN-99-kG5">
-                                <rect key="frame" x="37" y="143" width="58" height="27"/>
+                                <rect key="frame" x="37" y="143" width="70.5" height="31.5"/>
                                 <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -745,13 +745,13 @@
                                 <rect key="frame" x="90" y="270" width="234" height="154"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join your first book club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRv-As-zlk">
-                                <rect key="frame" x="107" y="470" width="200" height="21"/>
+                                <rect key="frame" x="94" y="470" width="226.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-p4-iF0" userLabel="btn Stack View">
-                                <rect key="frame" x="80.5" y="523" width="253" height="36"/>
+                                <rect key="frame" x="80.5" y="526.5" width="253" height="36"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-7L-ZyO">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="36"/>
