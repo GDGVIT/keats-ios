@@ -491,10 +491,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7X-I0-ck1">
-                                <rect key="frame" x="24" y="786" width="366" height="36"/>
+                                <rect key="frame" x="24" y="782" width="366" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-61-XRd">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="17"/>
                                         <state key="normal" title="Log Out">
@@ -509,7 +509,7 @@
                                 <color key="backgroundColor" name="KeatsViolet"/>
                                 <constraints>
                                     <constraint firstItem="gSk-61-XRd" firstAttribute="top" secondItem="k7X-I0-ck1" secondAttribute="top" id="AFu-Aw-dFK"/>
-                                    <constraint firstAttribute="height" constant="36" id="Ld3-nI-RBo"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ld3-nI-RBo"/>
                                     <constraint firstItem="gSk-61-XRd" firstAttribute="top" secondItem="k7X-I0-ck1" secondAttribute="top" id="PGs-uj-U02"/>
                                     <constraint firstAttribute="bottom" secondItem="gSk-61-XRd" secondAttribute="bottom" id="Vqe-uU-Q1y"/>
                                     <constraint firstItem="gSk-61-XRd" firstAttribute="leading" secondItem="k7X-I0-ck1" secondAttribute="leading" id="iTf-2m-IZO"/>
