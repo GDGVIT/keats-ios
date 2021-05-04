@@ -15,7 +15,6 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
         countryCodeTextField.text = phoneCode
     }
     
-    
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var otpButton: UIButton!

@@ -115,6 +115,7 @@ class OTPViewController: UIViewController {
                         self.buttonView.isHidden = false
                         self.activityIndicator.isHidden = true
                         self.activityIndicator.stopAnimating()
+                        print("Successfully signed in!")
                     }
                 }
                 print(responseJSON)

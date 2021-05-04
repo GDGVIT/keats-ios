@@ -40,6 +40,10 @@ class ProfileViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func makeEditable() {
         isEditingProfile = true
         editToggleButton.setImage(UIImage(systemName: "checkmark"), for: .normal)

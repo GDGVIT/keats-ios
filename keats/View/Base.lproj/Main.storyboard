@@ -12,8 +12,17 @@
         <array key="Berlin Bold.ttf">
             <string>BerlinBold</string>
         </array>
-        <array key="Berlin.ttf">
-            <string>Berlin</string>
+        <array key="CircularStd-Bold.ttf">
+            <string>CircularStd-Bold</string>
+        </array>
+        <array key="CircularStd-Book.ttf">
+            <string>CircularStd-Book</string>
+        </array>
+        <array key="CircularStd-Medium.ttf">
+            <string>CircularStd-Medium</string>
+        </array>
+        <array key="CircularStd-MediumItalic.ttf">
+            <string>CircularStd-MediumItalic</string>
         </array>
     </customFonts>
     <scenes>
@@ -42,29 +51,29 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made with ♡ by DSCVIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvx-e4-csB">
-                                <rect key="frame" x="124" y="809" width="166.5" height="20"/>
+                                <rect key="frame" x="123.5" y="809" width="167.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="5E9-In-S2Z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Keats!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-rP-yOB">
-                                <rect key="frame" x="30" y="405" width="268.5" height="32"/>
+                                <rect key="frame" x="30" y="405" width="280.5" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="M9F-lz-Oqe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your phone number to get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-YZ-mbq">
-                                <rect key="frame" x="30" y="442" width="247.5" height="14"/>
+                                <rect key="frame" x="30" y="442" width="249.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="XT8-vr-LoD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -75,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="34" id="poe-ZO-GFD"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
@@ -87,7 +96,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7h3-3K-vsD">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                         <state key="normal" title="Get OTP">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -118,7 +127,7 @@
                                     <constraint firstAttribute="width" constant="55" id="jDd-vA-2HG"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
@@ -205,11 +214,11 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0H-CC-9o0">
-                                <rect key="frame" x="30" y="535" width="114" height="36"/>
+                                <rect key="frame" x="30" y="539.5" width="114" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIC-ot-XpC">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="36"/>
-                                        <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -235,7 +244,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cX0-SH-fZG">
-                                <rect key="frame" x="30" y="535" width="114" height="36"/>
+                                <rect key="frame" x="30" y="539.5" width="114" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <constraints>
@@ -245,13 +254,13 @@
                                 <color key="color" systemColor="systemOrangeColor"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPT Sent!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEr-hf-DP6">
-                                <rect key="frame" x="30" y="405" width="146.5" height="37.5"/>
-                                <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="32"/>
+                                <rect key="frame" x="30" y="405" width="151.5" height="40.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5R-Un-xNb">
-                                <rect key="frame" x="30" y="484" width="354" height="35"/>
+                                <rect key="frame" x="30" y="488.5" width="354" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -259,8 +268,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enter the OTP you just recieved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oto-OH-999">
-                                <rect key="frame" x="30" y="447.5" width="197" height="16.5"/>
-                                <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="14"/>
+                                <rect key="frame" x="30" y="450.5" width="198" height="18"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -308,7 +317,7 @@
             <objects>
                 <viewController id="Ju0-Hu-kYz" customClass="ProfileViewController" customModule="keats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tu8-Dm-7cJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile bg" translatesAutoresizingMaskIntoConstraints="NO" id="NNn-Ri-Kcn">
@@ -318,7 +327,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aG-GQ-hbF">
-                                <rect key="frame" x="24" y="240" width="366" height="358"/>
+                                <rect key="frame" x="24" y="152" width="366" height="358"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wR-9U-Pb0">
                                         <rect key="frame" x="319" y="19" width="25" height="25"/>
@@ -370,7 +379,7 @@
                                         <rect key="frame" x="64" y="292" width="272" height="34"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20784313725490194" blue="0.25098039215686274" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
@@ -380,7 +389,7 @@
                                         <rect key="frame" x="65" y="234" width="272" height="34"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20784313725490194" blue="0.25098039215686274" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
@@ -390,7 +399,7 @@
                                         <rect key="frame" x="65" y="176" width="272" height="34"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20784313725490194" blue="0.25098039215686274" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
@@ -400,7 +409,7 @@
                                         <rect key="frame" x="64" y="118" width="272" height="34"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20784313730000001" blue="0.25098039220000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
@@ -440,7 +449,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DL7-gc-Y6s">
-                                <rect key="frame" x="123" y="156" width="168" height="168"/>
+                                <rect key="frame" x="123" y="68" width="168" height="168"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81a-DW-e4Y">
                                         <rect key="frame" x="4" y="4" width="160" height="160"/>
@@ -491,12 +500,12 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7X-I0-ck1">
-                                <rect key="frame" x="24" y="782" width="366" height="40"/>
+                                <rect key="frame" x="24" y="728" width="366" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-61-XRd">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                         <state key="normal" title="Log Out">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -523,6 +532,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-6a-Fp2">
+                                <rect key="frame" x="24" y="24" width="21" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="Ju0-Hu-kYz" eventType="touchUpInside" id="f0j-xn-5by"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ul1-Eb-pCf"/>
                         <color key="backgroundColor" name="KeatsDarkBg"/>
@@ -531,6 +550,8 @@
                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="0aG-GQ-hbF" secondAttribute="bottom" constant="80" id="OFg-XZ-2Xc"/>
                             <constraint firstItem="NNn-Ri-Kcn" firstAttribute="trailing" secondItem="ul1-Eb-pCf" secondAttribute="trailing" id="SHx-tX-eNe"/>
                             <constraint firstItem="DL7-gc-Y6s" firstAttribute="top" secondItem="0aG-GQ-hbF" secondAttribute="top" constant="-84" id="VQc-8t-Ig1"/>
+                            <constraint firstItem="Tag-6a-Fp2" firstAttribute="top" secondItem="ul1-Eb-pCf" secondAttribute="top" constant="24" id="b0B-nb-WFT"/>
+                            <constraint firstItem="Tag-6a-Fp2" firstAttribute="leading" secondItem="ul1-Eb-pCf" secondAttribute="leading" constant="24" id="bTH-x8-kah"/>
                             <constraint firstItem="k7X-I0-ck1" firstAttribute="width" secondItem="0aG-GQ-hbF" secondAttribute="width" id="dIc-gN-THK"/>
                             <constraint firstItem="NNn-Ri-Kcn" firstAttribute="leading" secondItem="ul1-Eb-pCf" secondAttribute="leading" id="e7v-Jn-5P2"/>
                             <constraint firstItem="0aG-GQ-hbF" firstAttribute="top" relation="lessThanOrEqual" secondItem="Tu8-Dm-7cJ" secondAttribute="top" constant="240" id="f6i-S4-xTA"/>
@@ -554,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPZ-wF-zYJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3731.884057971015" y="95.758928571428569"/>
+            <point key="canvasLocation" x="3009" y="-601"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="wRh-vA-6E2">
@@ -618,8 +639,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYM-6D-GYb">
-                                        <rect key="frame" x="125" y="50" width="82" height="37.5"/>
-                                        <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="32"/>
+                                        <rect key="frame" x="125" y="50" width="80.5" height="40.5"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -639,29 +660,29 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clubs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFN-99-kG5">
-                                <rect key="frame" x="37" y="143" width="70.5" height="31.5"/>
-                                <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="27"/>
+                                <rect key="frame" x="37" y="143" width="70.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="readingGirl" translatesAutoresizingMaskIntoConstraints="NO" id="9Xh-Zf-o5w">
-                                <rect key="frame" x="90" y="270" width="234" height="154"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookshelf" translatesAutoresizingMaskIntoConstraints="NO" id="9Xh-Zf-o5w">
+                                <rect key="frame" x="90" y="350" width="234" height="77"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join your first book club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRv-As-zlk">
-                                <rect key="frame" x="94" y="470" width="226.5" height="24.5"/>
-                                <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="21"/>
+                                <rect key="frame" x="92.5" y="473" width="229" height="27"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-p4-iF0" userLabel="btn Stack View">
-                                <rect key="frame" x="80.5" y="526.5" width="253" height="36"/>
+                                <rect key="frame" x="80.5" y="532" width="253" height="36"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-7L-ZyO">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKl-D9-htn">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="36"/>
-                                                <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                                 <state key="normal" title="Create a Club">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -690,7 +711,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-pW-Ohr">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="36"/>
-                                                <fontDescription key="fontDescription" name="Berlin" family="Berlin" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                                                 <state key="normal" title="Join a Club">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -734,7 +755,7 @@
                             <constraint firstItem="ynp-Tr-2co" firstAttribute="top" secondItem="ECo-i5-h2F" secondAttribute="top" id="gSw-MG-fhw"/>
                             <constraint firstItem="dB7-p4-iF0" firstAttribute="top" secondItem="bRv-As-zlk" secondAttribute="bottom" constant="32" id="jZF-rd-hpC"/>
                             <constraint firstItem="MFN-99-kG5" firstAttribute="top" secondItem="ynp-Tr-2co" secondAttribute="bottom" constant="25" id="m4D-IH-nBS"/>
-                            <constraint firstItem="9Xh-Zf-o5w" firstAttribute="top" secondItem="ECo-i5-h2F" secondAttribute="top" constant="270" id="vSj-rf-BFS"/>
+                            <constraint firstItem="9Xh-Zf-o5w" firstAttribute="top" secondItem="ECo-i5-h2F" secondAttribute="top" constant="350" id="vSj-rf-BFS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FUg-Sp-wmr"/>
@@ -748,6 +769,531 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oko-0i-BG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3008.6956521739135" y="95.758928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rjj-0k-m9U">
+            <objects>
+                <viewController id="vO5-T3-GP2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JPQ-BL-SCH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join a Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-OC-aKa">
+                                <rect key="frame" x="25" y="143" width="364" height="34.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQg-eE-6pE">
+                                <rect key="frame" x="25" y="188.5" width="364" height="143"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLc-y6-VCO">
+                                        <rect key="frame" x="20" y="17" width="266" height="34"/>
+                                        <color key="backgroundColor" name="TextFieldBg"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A1g-Zz-faA">
+                                        <rect key="frame" x="306" y="18.5" width="40" height="38.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="C7A-Hk-6en"/>
+                                            <constraint firstAttribute="width" constant="40" id="w1L-A7-Zns"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGC-I5-BbK">
+                                        <rect key="frame" x="20" y="78" width="324" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA6-Qm-XwL">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                                <state key="normal" title="Join">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="getOTPTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5vf-Of-L8N"/>
+                                                    <action selector="logOutTapped:" destination="Ju0-Hu-kYz" eventType="touchUpInside" id="Fzy-zG-2Yu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="KeatsViolet"/>
+                                        <constraints>
+                                            <constraint firstItem="bA6-Qm-XwL" firstAttribute="leading" secondItem="SGC-I5-BbK" secondAttribute="leading" id="Byy-fk-2OP"/>
+                                            <constraint firstAttribute="bottom" secondItem="bA6-Qm-XwL" secondAttribute="bottom" id="DR3-vN-fb2"/>
+                                            <constraint firstItem="bA6-Qm-XwL" firstAttribute="leading" secondItem="SGC-I5-BbK" secondAttribute="leading" id="GnP-IC-i9v"/>
+                                            <constraint firstAttribute="height" constant="40" id="JQF-A9-dbb"/>
+                                            <constraint firstAttribute="trailing" secondItem="bA6-Qm-XwL" secondAttribute="trailing" id="TN0-Ui-IT0"/>
+                                            <constraint firstItem="bA6-Qm-XwL" firstAttribute="top" secondItem="SGC-I5-BbK" secondAttribute="top" id="kcZ-lg-gny"/>
+                                            <constraint firstAttribute="bottom" secondItem="bA6-Qm-XwL" secondAttribute="bottom" id="pQB-rd-1Po"/>
+                                            <constraint firstItem="bA6-Qm-XwL" firstAttribute="top" secondItem="SGC-I5-BbK" secondAttribute="top" id="qqr-7W-dL2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="KeatsSecondaryBg"/>
+                                <constraints>
+                                    <constraint firstItem="A1g-Zz-faA" firstAttribute="top" secondItem="QQg-eE-6pE" secondAttribute="top" constant="18" id="98W-CG-2Na"/>
+                                    <constraint firstItem="SGC-I5-BbK" firstAttribute="leading" secondItem="QQg-eE-6pE" secondAttribute="leading" constant="20" id="Ami-ZD-u5z"/>
+                                    <constraint firstItem="QLc-y6-VCO" firstAttribute="top" secondItem="QQg-eE-6pE" secondAttribute="top" constant="17" id="c1T-qb-8p2"/>
+                                    <constraint firstItem="QLc-y6-VCO" firstAttribute="leading" secondItem="QQg-eE-6pE" secondAttribute="leading" constant="20" id="dJL-X6-TRI"/>
+                                    <constraint firstItem="SGC-I5-BbK" firstAttribute="top" secondItem="A1g-Zz-faA" secondAttribute="bottom" constant="20" id="pZg-ze-T4F"/>
+                                    <constraint firstItem="A1g-Zz-faA" firstAttribute="leading" secondItem="QLc-y6-VCO" secondAttribute="trailing" constant="20" id="tSd-IH-WsF"/>
+                                    <constraint firstAttribute="trailing" secondItem="A1g-Zz-faA" secondAttribute="trailing" constant="18" id="v0f-Wp-U5j"/>
+                                    <constraint firstAttribute="bottom" secondItem="SGC-I5-BbK" secondAttribute="bottom" constant="25" id="vI4-CO-veZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="SGC-I5-BbK" secondAttribute="trailing" constant="20" id="zo3-TV-PmY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public Clubs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-U0-hEt">
+                                <rect key="frame" x="25" y="359.5" width="364" height="34.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ye-3v-SFm">
+                                <rect key="frame" x="0.0" y="409" width="414" height="487"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="52h-aP-oMO"/>
+                        <color key="backgroundColor" name="KeatsDarkBg"/>
+                        <constraints>
+                            <constraint firstItem="52h-aP-oMO" firstAttribute="trailing" secondItem="QQg-eE-6pE" secondAttribute="trailing" constant="25" id="1qh-Yb-yt0"/>
+                            <constraint firstItem="vcg-OC-aKa" firstAttribute="leading" secondItem="52h-aP-oMO" secondAttribute="leading" constant="25" id="3ae-aX-dnA"/>
+                            <constraint firstItem="9ye-3v-SFm" firstAttribute="top" secondItem="7Oy-U0-hEt" secondAttribute="bottom" constant="15" id="E7i-Ez-cg9"/>
+                            <constraint firstItem="52h-aP-oMO" firstAttribute="trailing" secondItem="7Oy-U0-hEt" secondAttribute="trailing" constant="25" id="Hdb-sH-426"/>
+                            <constraint firstItem="7Oy-U0-hEt" firstAttribute="top" secondItem="QQg-eE-6pE" secondAttribute="bottom" constant="28" id="IUw-L9-GM0"/>
+                            <constraint firstItem="7Oy-U0-hEt" firstAttribute="leading" secondItem="JPQ-BL-SCH" secondAttribute="leading" constant="25" id="Lo8-QC-JX2"/>
+                            <constraint firstItem="9ye-3v-SFm" firstAttribute="trailing" secondItem="52h-aP-oMO" secondAttribute="trailing" id="TGV-4S-m5U"/>
+                            <constraint firstItem="QQg-eE-6pE" firstAttribute="top" secondItem="vcg-OC-aKa" secondAttribute="bottom" constant="11" id="TXe-nN-Rpd"/>
+                            <constraint firstAttribute="bottom" secondItem="9ye-3v-SFm" secondAttribute="bottom" id="Unx-hE-V8D"/>
+                            <constraint firstItem="vcg-OC-aKa" firstAttribute="top" secondItem="52h-aP-oMO" secondAttribute="top" constant="99" id="WYc-5m-Tpw"/>
+                            <constraint firstItem="9ye-3v-SFm" firstAttribute="leading" secondItem="52h-aP-oMO" secondAttribute="leading" id="gSA-Yi-qPr"/>
+                            <constraint firstItem="QQg-eE-6pE" firstAttribute="leading" secondItem="52h-aP-oMO" secondAttribute="leading" constant="25" id="gmX-xe-YhU"/>
+                            <constraint firstItem="52h-aP-oMO" firstAttribute="trailing" secondItem="vcg-OC-aKa" secondAttribute="trailing" constant="25" id="p9j-V7-jBy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEa-Qx-OPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3767" y="96"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xsb-4Y-Zi8">
+            <objects>
+                <viewController id="JXx-ZV-dgE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o37-4H-wAl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-I7-gn3">
+                                <rect key="frame" x="25" y="143" width="364" height="34.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start your own new club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieK-U3-thc">
+                                <rect key="frame" x="25" y="177.5" width="364" height="22"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwT-7p-Ehj">
+                                <rect key="frame" x="25" y="224.5" width="88.5" height="22"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYT-uZ-bqP">
+                                <rect key="frame" x="25" y="589.5" width="53" height="22"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Sync" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Q1-Ct-BSD">
+                                <rect key="frame" x="25" y="634.5" width="79" height="22"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2T-eC-3Br">
+                                <rect key="frame" x="25" y="746.5" width="89" height="22"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbY-YL-HEH">
+                                <rect key="frame" x="25" y="492.5" width="364" height="22"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qb-h7-3Og">
+                                <rect key="frame" x="132" y="284.5" width="150" height="150"/>
+                                <color key="backgroundColor" name="KeatsSecondaryBg"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="NRF-i8-O7p"/>
+                                    <constraint firstAttribute="height" constant="150" id="P54-Dz-Des"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axi-pY-ZoS" userLabel="Upload View">
+                                <rect key="frame" x="258" y="410.5" width="30" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18Q-Nj-LAA">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="square.and.arrow.up.fill" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4cG-Z0-PQs"/>
+                                    <constraint firstAttribute="trailing" secondItem="18Q-Nj-LAA" secondAttribute="trailing" id="B67-6E-y4S"/>
+                                    <constraint firstItem="18Q-Nj-LAA" firstAttribute="leading" secondItem="axi-pY-ZoS" secondAttribute="leading" id="GN2-mF-bae"/>
+                                    <constraint firstItem="18Q-Nj-LAA" firstAttribute="top" secondItem="axi-pY-ZoS" secondAttribute="top" id="ZC9-KC-Q38"/>
+                                    <constraint firstAttribute="bottom" secondItem="18Q-Nj-LAA" secondAttribute="bottom" id="lmJ-0Y-3Ua"/>
+                                    <constraint firstAttribute="width" constant="30" id="wph-GV-OIa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kN7-Wi-5dw">
+                                <rect key="frame" x="25" y="526.5" width="224" height="34"/>
+                                <color key="backgroundColor" name="TextFieldBg"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="ME6-lE-Mat"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PrB-27-dyF">
+                                <rect key="frame" x="132" y="585.5" width="51" height="31"/>
+                                <color key="onTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" name="KeatsDarkBg"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vVY-r6-7JR">
+                                <rect key="frame" x="132" y="630.5" width="51" height="31"/>
+                                <color key="onTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" name="KeatsDarkBg"/>
+                            </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UC8-Xx-rk7">
+                                <rect key="frame" x="25" y="686.5" width="130" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmn-Te-29W">
+                                        <rect key="frame" x="13" y="9" width="77" height="22"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9wt-pg-bbS">
+                                        <rect key="frame" x="99" y="10.5" width="17" height="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="8dR-QJ-CmS"/>
+                                            <constraint firstAttribute="width" constant="17" id="SsN-56-tZW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fY-Xh-OHU">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="keatsBlack"/>
+                                <constraints>
+                                    <constraint firstItem="Cmn-Te-29W" firstAttribute="leading" secondItem="UC8-Xx-rk7" secondAttribute="leading" constant="13" id="0fA-B5-SBE"/>
+                                    <constraint firstAttribute="height" constant="40" id="1d3-Zm-C7K"/>
+                                    <constraint firstItem="9wt-pg-bbS" firstAttribute="leading" secondItem="Cmn-Te-29W" secondAttribute="trailing" constant="9" id="BGl-Ri-G7w"/>
+                                    <constraint firstItem="1fY-Xh-OHU" firstAttribute="top" secondItem="UC8-Xx-rk7" secondAttribute="top" id="Bbo-fC-XXf"/>
+                                    <constraint firstAttribute="bottom" secondItem="1fY-Xh-OHU" secondAttribute="bottom" id="IoX-3m-kAb"/>
+                                    <constraint firstAttribute="trailing" secondItem="9wt-pg-bbS" secondAttribute="trailing" constant="14" id="Jyk-ak-nqh"/>
+                                    <constraint firstItem="1fY-Xh-OHU" firstAttribute="leading" secondItem="UC8-Xx-rk7" secondAttribute="leading" id="PJB-3n-Xt5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="hDG-gR-Hor"/>
+                                    <constraint firstAttribute="trailing" secondItem="1fY-Xh-OHU" secondAttribute="trailing" id="rJe-1I-zbd"/>
+                                    <constraint firstItem="Cmn-Te-29W" firstAttribute="centerY" secondItem="UC8-Xx-rk7" secondAttribute="centerY" id="vRq-pk-vIq"/>
+                                    <constraint firstItem="9wt-pg-bbS" firstAttribute="centerY" secondItem="UC8-Xx-rk7" secondAttribute="centerY" id="wkk-d2-t73"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" systemColor="systemOrangeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdP-sV-wUy">
+                                <rect key="frame" x="122" y="746.5" width="18" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUK-mv-gDD">
+                                <rect key="frame" x="142" y="818.5" width="130" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB2-eB-3F0">
+                                        <rect key="frame" x="13" y="9" width="104" height="22"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pF-75-m6f">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="keatsBlack"/>
+                                <constraints>
+                                    <constraint firstItem="LB2-eB-3F0" firstAttribute="centerX" secondItem="hUK-mv-gDD" secondAttribute="centerX" id="3fs-do-b0L"/>
+                                    <constraint firstAttribute="trailing" secondItem="9pF-75-m6f" secondAttribute="trailing" id="6Uk-qK-msa"/>
+                                    <constraint firstItem="LB2-eB-3F0" firstAttribute="centerY" secondItem="hUK-mv-gDD" secondAttribute="centerY" id="DER-kh-g9P"/>
+                                    <constraint firstItem="9pF-75-m6f" firstAttribute="leading" secondItem="hUK-mv-gDD" secondAttribute="leading" id="FWX-R0-Z9e"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="UQa-xX-V2G"/>
+                                    <constraint firstItem="LB2-eB-3F0" firstAttribute="leading" secondItem="hUK-mv-gDD" secondAttribute="leading" constant="13" id="j4p-zs-kzZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="9pF-75-m6f" secondAttribute="bottom" id="nr9-Ds-Oq4"/>
+                                    <constraint firstItem="9pF-75-m6f" firstAttribute="top" secondItem="hUK-mv-gDD" secondAttribute="top" id="oxL-Nu-Izv"/>
+                                    <constraint firstAttribute="height" constant="40" id="pEd-52-EGG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" systemColor="systemOrangeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PVK-D5-PWc"/>
+                        <color key="backgroundColor" name="KeatsDarkBg"/>
+                        <constraints>
+                            <constraint firstItem="hUK-mv-gDD" firstAttribute="centerX" secondItem="o37-4H-wAl" secondAttribute="centerX" id="2O7-px-cXF"/>
+                            <constraint firstItem="aqC-I7-gn3" firstAttribute="leading" secondItem="o37-4H-wAl" secondAttribute="leading" constant="25" id="364-Qt-N7l"/>
+                            <constraint firstItem="FwT-7p-Ehj" firstAttribute="top" secondItem="ieK-U3-thc" secondAttribute="bottom" constant="25" id="45I-BV-AE2"/>
+                            <constraint firstItem="axi-pY-ZoS" firstAttribute="bottom" secondItem="4Qb-h7-3Og" secondAttribute="bottom" constant="6" id="4z2-DW-zWg"/>
+                            <constraint firstItem="kN7-Wi-5dw" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="5Jq-Xx-gfw"/>
+                            <constraint firstItem="ieK-U3-thc" firstAttribute="top" secondItem="aqC-I7-gn3" secondAttribute="bottom" id="5jc-Lo-SFG"/>
+                            <constraint firstItem="vVY-r6-7JR" firstAttribute="leading" secondItem="9Q1-Ct-BSD" secondAttribute="trailing" constant="28" id="6Kh-FJ-WdS"/>
+                            <constraint firstItem="xdP-sV-wUy" firstAttribute="leading" secondItem="Z2T-eC-3Br" secondAttribute="trailing" constant="8" symbolic="YES" id="A3o-aG-aKu"/>
+                            <constraint firstItem="4Qb-h7-3Og" firstAttribute="centerX" secondItem="o37-4H-wAl" secondAttribute="centerX" id="BXX-uY-bhp"/>
+                            <constraint firstItem="hUK-mv-gDD" firstAttribute="top" secondItem="Z2T-eC-3Br" secondAttribute="bottom" constant="50" id="Ivl-xZ-OcE"/>
+                            <constraint firstItem="Z2T-eC-3Br" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="O7z-cR-qau"/>
+                            <constraint firstItem="UbY-YL-HEH" firstAttribute="top" secondItem="FwT-7p-Ehj" secondAttribute="bottom" constant="246" id="PnO-8g-Hui"/>
+                            <constraint firstItem="PVK-D5-PWc" firstAttribute="trailing" secondItem="ieK-U3-thc" secondAttribute="trailing" constant="25" id="QGQ-GD-MbD"/>
+                            <constraint firstItem="PVK-D5-PWc" firstAttribute="trailing" secondItem="aqC-I7-gn3" secondAttribute="trailing" constant="25" id="Z3h-fW-A7W"/>
+                            <constraint firstItem="PrB-27-dyF" firstAttribute="leading" secondItem="pYT-uZ-bqP" secondAttribute="trailing" constant="54" id="Z8h-LL-Ls0"/>
+                            <constraint firstItem="pYT-uZ-bqP" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="aeI-ce-FUy"/>
+                            <constraint firstItem="kN7-Wi-5dw" firstAttribute="top" secondItem="UbY-YL-HEH" secondAttribute="bottom" constant="12" id="cEd-ML-AqD"/>
+                            <constraint firstItem="UbY-YL-HEH" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="czm-cp-W4U"/>
+                            <constraint firstItem="UC8-Xx-rk7" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="fLb-0Z-GzT"/>
+                            <constraint firstItem="FwT-7p-Ehj" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="gWE-pA-GMQ"/>
+                            <constraint firstItem="pYT-uZ-bqP" firstAttribute="top" secondItem="kN7-Wi-5dw" secondAttribute="bottom" constant="29" id="gdU-b7-UOM"/>
+                            <constraint firstItem="9Q1-Ct-BSD" firstAttribute="top" secondItem="pYT-uZ-bqP" secondAttribute="bottom" constant="23" id="hUw-6w-ZYE"/>
+                            <constraint firstItem="PrB-27-dyF" firstAttribute="top" secondItem="kN7-Wi-5dw" secondAttribute="bottom" constant="25" id="hVU-ud-acP"/>
+                            <constraint firstItem="axi-pY-ZoS" firstAttribute="trailing" secondItem="4Qb-h7-3Og" secondAttribute="trailing" constant="6" id="jng-S2-TLQ"/>
+                            <constraint firstItem="4Qb-h7-3Og" firstAttribute="top" secondItem="FwT-7p-Ehj" secondAttribute="bottom" constant="38" id="oA8-dS-Nzd"/>
+                            <constraint firstItem="Z2T-eC-3Br" firstAttribute="top" secondItem="UC8-Xx-rk7" secondAttribute="bottom" constant="20" id="qmD-s2-rbr"/>
+                            <constraint firstItem="vVY-r6-7JR" firstAttribute="top" secondItem="PrB-27-dyF" secondAttribute="bottom" constant="14" id="skL-Sx-bNJ"/>
+                            <constraint firstItem="xdP-sV-wUy" firstAttribute="top" secondItem="UC8-Xx-rk7" secondAttribute="bottom" constant="20" id="uV2-h7-xP5"/>
+                            <constraint firstItem="ieK-U3-thc" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="waM-C3-qVM"/>
+                            <constraint firstItem="9Q1-Ct-BSD" firstAttribute="leading" secondItem="PVK-D5-PWc" secondAttribute="leading" constant="25" id="z4o-tG-Ypr"/>
+                            <constraint firstItem="PVK-D5-PWc" firstAttribute="trailing" secondItem="UbY-YL-HEH" secondAttribute="trailing" constant="25" id="zQZ-wT-hGO"/>
+                            <constraint firstItem="aqC-I7-gn3" firstAttribute="top" secondItem="PVK-D5-PWc" secondAttribute="top" constant="99" id="ziB-pg-48I"/>
+                            <constraint firstItem="UC8-Xx-rk7" firstAttribute="top" secondItem="vVY-r6-7JR" secondAttribute="bottom" constant="25" id="zqj-AR-FnZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fp-xh-aQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3753.6231884057975" y="756.69642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7qA-vH-WC2">
+            <objects>
+                <viewController id="94w-zY-A5L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dpB-Mo-CB3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V5-gz-tHV">
+                                <rect key="frame" x="25" y="143" width="60.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwC-lv-KMC">
+                                <rect key="frame" x="370" y="149" width="19" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="qrcode" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11X-If-rgr">
+                                <rect key="frame" x="316" y="149" width="19" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="square.and.arrow.up.fill" catalog="system"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-0L-myg">
+                                <rect key="frame" x="20" y="197.5" width="374" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx5-sB-Hlp">
+                                        <rect key="frame" x="10" y="15" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="hty-st-QM0"/>
+                                            <constraint firstAttribute="height" constant="120" id="qlA-tF-5IY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After Fanclub" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LR-Bg-HX5">
+                                        <rect key="frame" x="145" y="23" width="214" height="23"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Host: sheldon" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z10-gQ-rAl">
+                                        <rect key="frame" x="145" y="52" width="214" height="19"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-MediumItalic" family="Circular Std" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tii-QJ-qgA">
+                                        <rect key="frame" x="145" y="79" width="214" height="19"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="KeatsSecondaryBg"/>
+                                <constraints>
+                                    <constraint firstItem="z10-gQ-rAl" firstAttribute="top" secondItem="1LR-Bg-HX5" secondAttribute="bottom" constant="6" id="8Md-zY-q0a"/>
+                                    <constraint firstItem="Tx5-sB-Hlp" firstAttribute="centerY" secondItem="LHo-0L-myg" secondAttribute="centerY" id="LfK-Lx-rIz"/>
+                                    <constraint firstItem="1LR-Bg-HX5" firstAttribute="leading" secondItem="Tx5-sB-Hlp" secondAttribute="trailing" constant="15" id="Wiu-oT-ZGw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tii-QJ-qgA" secondAttribute="trailing" constant="15" id="Xkf-Xm-ydA"/>
+                                    <constraint firstAttribute="height" constant="150" id="cKZ-eU-huk"/>
+                                    <constraint firstItem="1LR-Bg-HX5" firstAttribute="top" secondItem="LHo-0L-myg" secondAttribute="top" constant="23" id="csd-QA-gtN"/>
+                                    <constraint firstAttribute="trailing" secondItem="1LR-Bg-HX5" secondAttribute="trailing" constant="15" id="eLD-lv-LdA"/>
+                                    <constraint firstItem="z10-gQ-rAl" firstAttribute="leading" secondItem="Tx5-sB-Hlp" secondAttribute="trailing" constant="15" id="lCb-aw-QR5"/>
+                                    <constraint firstAttribute="trailing" secondItem="z10-gQ-rAl" secondAttribute="trailing" constant="15" id="pE6-DO-OGW"/>
+                                    <constraint firstItem="Tii-QJ-qgA" firstAttribute="leading" secondItem="Tx5-sB-Hlp" secondAttribute="trailing" constant="15" id="sKX-qV-Q0D"/>
+                                    <constraint firstItem="Tx5-sB-Hlp" firstAttribute="leading" secondItem="LHo-0L-myg" secondAttribute="leading" constant="10" id="ura-XF-QPO"/>
+                                    <constraint firstItem="Tii-QJ-qgA" firstAttribute="top" secondItem="z10-gQ-rAl" secondAttribute="bottom" constant="8" id="v6H-cD-4pt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sg7-cS-SMp">
+                                <rect key="frame" x="309" y="379.5" width="75" height="28"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOM-8e-Iy0">
+                                        <rect key="frame" x="15" y="3" width="45" height="22"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="KeatsOrange"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DOM-8e-Iy0" secondAttribute="trailing" constant="15" id="Bpf-ll-7OP"/>
+                                    <constraint firstItem="DOM-8e-Iy0" firstAttribute="leading" secondItem="Sg7-cS-SMp" secondAttribute="leading" constant="15" id="FvS-9d-6xD"/>
+                                    <constraint firstAttribute="height" constant="28" id="Sji-dq-BEk"/>
+                                    <constraint firstItem="DOM-8e-Iy0" firstAttribute="centerY" secondItem="Sg7-cS-SMp" secondAttribute="centerY" id="kIj-mk-Qbj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEf-CA-VKj">
+                                <rect key="frame" x="25" y="377.5" width="119.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xzz-BD-C3V">
+                                <rect key="frame" x="20" y="432" width="374" height="464"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-Y5-kU4">
+                                <rect key="frame" x="259" y="149" width="22" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="message.fill" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m6Y-ZT-289"/>
+                        <color key="backgroundColor" name="KeatsDarkBg"/>
+                        <constraints>
+                            <constraint firstItem="5V5-gz-tHV" firstAttribute="leading" secondItem="m6Y-ZT-289" secondAttribute="leading" constant="25" id="5Sd-Py-DA7"/>
+                            <constraint firstItem="m6Y-ZT-289" firstAttribute="trailing" secondItem="LHo-0L-myg" secondAttribute="trailing" constant="20" id="6Kv-QE-bHL"/>
+                            <constraint firstAttribute="bottom" secondItem="Xzz-BD-C3V" secondAttribute="bottom" id="AsH-Pq-jFh"/>
+                            <constraint firstItem="Xzz-BD-C3V" firstAttribute="leading" secondItem="m6Y-ZT-289" secondAttribute="leading" constant="20" id="BIf-yM-btn"/>
+                            <constraint firstItem="m6Y-ZT-289" firstAttribute="trailing" secondItem="Sg7-cS-SMp" secondAttribute="trailing" constant="30" id="BK2-HT-mge"/>
+                            <constraint firstItem="LHo-0L-myg" firstAttribute="leading" secondItem="m6Y-ZT-289" secondAttribute="leading" constant="20" id="KTo-Ww-skG"/>
+                            <constraint firstItem="11X-If-rgr" firstAttribute="leading" secondItem="JDv-Y5-kU4" secondAttribute="trailing" constant="35" id="Ly0-6U-c6q"/>
+                            <constraint firstItem="PwC-lv-KMC" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="105" id="MCx-iX-qso"/>
+                            <constraint firstItem="5V5-gz-tHV" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="99" id="O1L-u2-HId"/>
+                            <constraint firstItem="Xzz-BD-C3V" firstAttribute="top" secondItem="zEf-CA-VKj" secondAttribute="bottom" constant="20" id="QtZ-BS-0Vh"/>
+                            <constraint firstItem="m6Y-ZT-289" firstAttribute="trailing" secondItem="Xzz-BD-C3V" secondAttribute="trailing" constant="20" id="WNr-0f-Gjt"/>
+                            <constraint firstItem="JDv-Y5-kU4" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="105" id="ZOR-V7-Ju7"/>
+                            <constraint firstItem="zEf-CA-VKj" firstAttribute="top" secondItem="LHo-0L-myg" secondAttribute="bottom" constant="30" id="bGL-qK-Akw"/>
+                            <constraint firstItem="zEf-CA-VKj" firstAttribute="leading" secondItem="m6Y-ZT-289" secondAttribute="leading" constant="25" id="baz-6D-hYC"/>
+                            <constraint firstItem="PwC-lv-KMC" firstAttribute="leading" secondItem="11X-If-rgr" secondAttribute="trailing" constant="35" id="ePu-wT-k3K"/>
+                            <constraint firstItem="LHo-0L-myg" firstAttribute="top" secondItem="5V5-gz-tHV" secondAttribute="bottom" constant="20" id="egR-ay-MuG"/>
+                            <constraint firstItem="Sg7-cS-SMp" firstAttribute="top" secondItem="LHo-0L-myg" secondAttribute="bottom" constant="32" id="f6w-nL-9Ba"/>
+                            <constraint firstItem="m6Y-ZT-289" firstAttribute="trailing" secondItem="PwC-lv-KMC" secondAttribute="trailing" constant="25" id="mNl-j2-135"/>
+                            <constraint firstItem="11X-If-rgr" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="105" id="xPS-5p-ZGr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STF-9A-zw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4482.608695652174" y="766.74107142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0yU-nO-9vM">
+            <objects>
+                <viewController id="HuX-iC-cDb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Vg-aD-gah">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload PDF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9m-zS-FRr">
+                                <rect key="frame" x="25" y="143" width="147.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xrt-GG-Ngm"/>
+                        <color key="backgroundColor" name="KeatsDarkBg"/>
+                        <constraints>
+                            <constraint firstItem="R9m-zS-FRr" firstAttribute="top" secondItem="Xrt-GG-Ngm" secondAttribute="top" constant="99" id="V2k-9u-ici"/>
+                            <constraint firstItem="R9m-zS-FRr" firstAttribute="leading" secondItem="Xrt-GG-Ngm" secondAttribute="leading" constant="25" id="sQp-6S-osI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVU-Je-rgp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5227" y="771"/>
         </scene>
         <!--Nav Bar View Controller-->
         <scene sceneID="DyM-wC-E1Y">
@@ -812,7 +1358,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfn-rd-esz">
-                                        <rect key="frame" x="125" y="50" width="72" height="32"/>
+                                        <rect key="frame" x="125" y="50" width="82" height="37.5"/>
                                         <fontDescription key="fontDescription" name="BerlinBold" family="Berlin Bold" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -871,30 +1417,45 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xI8-0B-gUP"/>
+        <segue reference="Dac-RK-VQ2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="KeatsLeaves" width="128" height="96.5"/>
         <image name="Logo" width="168" height="136"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="bg Layer 1" width="414" height="374"/>
         <image name="bg Layer 2" width="414" height="412"/>
+        <image name="bookshelf" width="217" height="77"/>
         <image name="default-profile" width="73" height="74"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="navBar" width="414" height="108"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="profile bg" width="414" height="314"/>
-        <image name="readingGirl" width="233" height="154"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="KeatsDarkBg">
             <color red="0.078000001609325409" green="0.086000002920627594" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="KeatsOrange">
+            <color red="0.95686274509803915" green="0.47450980392156861" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="KeatsSecondaryBg">
             <color red="0.13300000131130219" green="0.14900000393390656" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="KeatsViolet">
             <color red="0.19200000166893005" green="0.17599999904632568" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextFieldBg">
+            <color red="0.20000000298023224" green="0.20800000429153442" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="keatsBlack">
+            <color red="0.054901960784313725" green="0.054901960784313725" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
