@@ -25,25 +25,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        joinButtonView.layer.cornerRadius = 4
-        joinButtonView.layer.borderWidth = 1
-        joinButtonView.layer.borderColor = UIColor(named: "KeatsViolet")?.cgColor
-        
-        popupJoinButtonView.layer.cornerRadius = 4
-        popupJoinButtonView.layer.borderWidth = 2
-        popupJoinButtonView.layer.borderColor = UIColor(named: "KeatsOrange")?.cgColor
-        
-        popupCreateButtonView.layer.cornerRadius = 4
-        popupCreateButtonView.layer.borderWidth = 2
-        popupCreateButtonView.layer.borderColor = UIColor(named: "KeatsOrange")?.cgColor
-        
+        joinButtonView.curvedButtonView(color: "KeatsViolet")
+        popupJoinButtonView.curvedButtonView(color: "KeatsOrange")
+        popupCreateButtonView.curvedButtonView(color: "KeatsOrange")
         clubsTableView.isHidden = true
         self.popUpOptionView.isHidden = true
         //fetchClubDetails()
     }
     
     @IBAction func createClubTapped(_ sender: Any) {
-        print("hi")
     }
     
     @IBAction func joinClubTapped(_ sender: Any) {
@@ -53,14 +43,17 @@ class HomeViewController: UIViewController {
         //buttonView.transform = CGAffineTransform(rotationAngle: .pi/4)
         //buttonView.rotate()
         sender.isHidden = true
-        UIView.animate(withDuration: 1, delay: 0, options: [], animations:  {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [], animations:  {
             switch self.currentAnimation {
             case 0:
                 self.buttonView.transform = CGAffineTransform(rotationAngle: CGFloat.pi/4)
                 self.popUpOptionView.isHidden = false
+                self.popUpOptionView.alpha = 1
             case 1:
                 self.buttonView.transform = .identity
+                self.popUpOptionView.alpha = 0
                 self.popUpOptionView.isHidden = true
+                
             
             default:
                 break
@@ -73,9 +66,6 @@ class HomeViewController: UIViewController {
         if currentAnimation > 1 {
             currentAnimation = 0
         }
-
-        
-        print("Moving?")
     }
     
 }
@@ -178,6 +168,11 @@ extension UIView{
         rotation.isCumulative = false
         rotation.repeatCount = 1
         self.layer.add(rotation, forKey: "rotationAnimation")
-        
+    }
+    
+    func curvedButtonView(color: String) {
+        self.layer.cornerRadius = 4
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor(named: color)?.cgColor
     }
 }

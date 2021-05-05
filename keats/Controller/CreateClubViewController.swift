@@ -33,4 +33,8 @@ class CreateClubViewController: UIViewController {
     
     @IBAction func submitTapped(_ sender: Any) {
     }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }

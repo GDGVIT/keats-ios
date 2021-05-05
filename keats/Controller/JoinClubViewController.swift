@@ -23,4 +23,7 @@ class JoinClubViewController: UIViewController {
     @IBAction func joinTapped(_ sender: Any) {
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
