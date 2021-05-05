@@ -9,15 +9,18 @@ import UIKit
 
 class ClubTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var clubImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var privacyLabel: UILabel!
+    @IBOutlet weak var hostLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }

@@ -13,18 +13,76 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var readingImage: UIImageView!
     @IBOutlet weak var readingLabel: UILabel!
     @IBOutlet weak var buttonStack: UIStackView!
-    
     @IBOutlet weak var joinButtonView: UIView!
+    @IBOutlet weak var popUpOptionView: UIView!
+    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var clubsTableView: UITableView!
+    @IBOutlet weak var popupCreateButtonView: UIView!
+    @IBOutlet weak var popupJoinButtonView: UIView!
+    
     var clubList : [ClubModel] = []
+    var currentAnimation = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         joinButtonView.layer.cornerRadius = 4
         joinButtonView.layer.borderWidth = 1
         joinButtonView.layer.borderColor = UIColor(named: "KeatsViolet")?.cgColor
+        
+        popupJoinButtonView.layer.cornerRadius = 4
+        popupJoinButtonView.layer.borderWidth = 2
+        popupJoinButtonView.layer.borderColor = UIColor(named: "KeatsOrange")?.cgColor
+        
+        popupCreateButtonView.layer.cornerRadius = 4
+        popupCreateButtonView.layer.borderWidth = 2
+        popupCreateButtonView.layer.borderColor = UIColor(named: "KeatsOrange")?.cgColor
+        
+        clubsTableView.isHidden = true
+        self.popUpOptionView.isHidden = true
         //fetchClubDetails()
     }
     
+    @IBAction func createClubTapped(_ sender: Any) {
+        print("hi")
+    }
+    
+    @IBAction func joinClubTapped(_ sender: Any) {
+    }
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        //buttonView.transform = CGAffineTransform(rotationAngle: .pi/4)
+        //buttonView.rotate()
+        sender.isHidden = true
+        UIView.animate(withDuration: 1, delay: 0, options: [], animations:  {
+            switch self.currentAnimation {
+            case 0:
+                self.buttonView.transform = CGAffineTransform(rotationAngle: CGFloat.pi/4)
+                self.popUpOptionView.isHidden = false
+            case 1:
+                self.buttonView.transform = .identity
+                self.popUpOptionView.isHidden = true
+            
+            default:
+                break
+            }
+        }) { finished in
+            sender.isHidden = false
+        }
+        
+        currentAnimation += 1
+        if currentAnimation > 1 {
+            currentAnimation = 0
+        }
+
+        
+        print("Moving?")
+    }
+    
+}
+
+//MARK: - fetch club details
+
+extension HomeViewController {
     func fetchClubDetails() {
         let url = URL(string: "https://keats-testing.herokuapp.com/api/user/clubs")
         guard let requestUrl = url else { return }
@@ -110,4 +168,16 @@ class HomeViewController: UIViewController {
         return clubList
     }
 
+}
+
+extension UIView{
+    func rotate() {
+        let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = NSNumber(value: Double.pi / 4)
+        rotation.duration = 0.25
+        rotation.isCumulative = false
+        rotation.repeatCount = 1
+        self.layer.add(rotation, forKey: "rotationAnimation")
+        
+    }
 }
