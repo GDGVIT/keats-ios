@@ -22,6 +22,9 @@
 		706A494D2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
 		706A494E2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
 		706A494F2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
+		706A49542645965400278222 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A49532645965400278222 /* ScannerViewController.swift */; };
+		706A49552645965400278222 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A49532645965400278222 /* ScannerViewController.swift */; };
+		706A49562645965400278222 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A49532645965400278222 /* ScannerViewController.swift */; };
 		707645D42615BB830000B52A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645D32615BB830000B52A /* PhoneViewController.swift */; };
 		707645D52615BB830000B52A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645D32615BB830000B52A /* PhoneViewController.swift */; };
 		707645D62615BB830000B52A /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707645D32615BB830000B52A /* PhoneViewController.swift */; };
@@ -124,6 +127,7 @@
 		7031CB2925D12BA10002E641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7057A06525EC106000CEA17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		706A494C2645865F00278222 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		706A49532645965400278222 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		707645D32615BB830000B52A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		707645F52619893D0000B52A /* OTPStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackView.swift; sourceTree = "<group>"; };
 		707645FA261989720000B52A /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				70C16C9A2641574700F5FD7C /* CreateClubViewController.swift */,
 				70C16CA12641575600F5FD7C /* ClubViewController.swift */,
 				706A494C2645865F00278222 /* ReadViewController.swift */,
+				706A49532645965400278222 /* ScannerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -586,6 +591,7 @@
 				70764682261C8B700000B52A /* NavBarViewController.swift in Sources */,
 				7076468B263B20A80000B52A /* ClubTableViewCell.swift in Sources */,
 				70C16C9B2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
+				706A49542645965400278222 /* ScannerViewController.swift in Sources */,
 				7076460026198A360000B52A /* OTPViewController.swift in Sources */,
 				706A494D2645865F00278222 /* ReadViewController.swift in Sources */,
 				707645D42615BB830000B52A /* PhoneViewController.swift in Sources */,
@@ -615,6 +621,7 @@
 				70C16C9C2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70764683261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C952641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
+				706A49552645965400278222 /* ScannerViewController.swift in Sources */,
 				70764674261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D52615BB830000B52A /* PhoneViewController.swift in Sources */,
 				70C16CA32641575600F5FD7C /* ClubViewController.swift in Sources */,
@@ -633,6 +640,7 @@
 				70C16C9D2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70764684261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C962641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
+				706A49562645965400278222 /* ScannerViewController.swift in Sources */,
 				70764675261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D62615BB830000B52A /* PhoneViewController.swift in Sources */,
 				70C16CA42641575600F5FD7C /* ClubViewController.swift in Sources */,
