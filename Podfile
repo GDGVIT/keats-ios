@@ -6,11 +6,10 @@ target 'keats' do
   use_frameworks!
 
   # Pods for keats
-  #pod 'GoogleUtilities/NSData+zlib'
-  #pod 'GoogleUtilities/Network'
-  #pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'MRCountryPicker'
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
 
   target 'keatsTests' do
     inherit! :search_paths

@@ -16,6 +16,10 @@
 		7031CB1225D12BA10002E641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7031CB1025D12BA10002E641 /* LaunchScreen.storyboard */; };
 		7031CB1D25D12BA10002E641 /* keatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7031CB1C25D12BA10002E641 /* keatsTests.swift */; };
 		7031CB2825D12BA10002E641 /* keatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7031CB2725D12BA10002E641 /* keatsUITests.swift */; };
+		7040E11F26467A450047125D /* alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040E11E26467A450047125D /* alert.swift */; };
+		7040E12426467AA40047125D /* Keyboards&h.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040E12326467AA40047125D /* Keyboards&h.swift */; };
+		7040E12C26467B1B0047125D /* KeyboardDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040E12B26467B1B0047125D /* KeyboardDoneButton.swift */; };
+		7040E15E2646B7020047125D /* RotatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040E15D2646B7020047125D /* RotatingButton.swift */; };
 		7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06725EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06825EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
@@ -125,6 +129,10 @@
 		7031CB2325D12BA10002E641 /* keatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7031CB2725D12BA10002E641 /* keatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keatsUITests.swift; sourceTree = "<group>"; };
 		7031CB2925D12BA10002E641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7040E11E26467A450047125D /* alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alert.swift; sourceTree = "<group>"; };
+		7040E12326467AA40047125D /* Keyboards&h.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboards&h.swift"; sourceTree = "<group>"; };
+		7040E12B26467B1B0047125D /* KeyboardDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDoneButton.swift; sourceTree = "<group>"; };
+		7040E15D2646B7020047125D /* RotatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingButton.swift; sourceTree = "<group>"; };
 		7057A06525EC106000CEA17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		706A494C2645865F00278222 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		706A49532645965400278222 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +246,7 @@
 				707646062619D2BD0000B52A /* Model */,
 				70764688263B1FB00000B52A /* View */,
 				707645D22615BB6D0000B52A /* Controller */,
+				70764681261C8B700000B52A /* NavBarViewController.swift */,
 				7031CB0E25D12BA10002E641 /* Assets.xcassets */,
 				7099E83425F188BD00AC732A /* Fonts */,
 				7031CB1025D12BA10002E641 /* LaunchScreen.storyboard */,
@@ -265,12 +274,29 @@
 			path = keatsUITests;
 			sourceTree = "<group>";
 		};
+		7040E13026467D0C0047125D /* Keyboard Functions */ = {
+			isa = PBXGroup;
+			children = (
+				7040E12326467AA40047125D /* Keyboards&h.swift */,
+				7040E12B26467B1B0047125D /* KeyboardDoneButton.swift */,
+			);
+			path = "Keyboard Functions";
+			sourceTree = "<group>";
+		};
+		7040E13426467D220047125D /* OTP Stack */ = {
+			isa = PBXGroup;
+			children = (
+				707645FA261989720000B52A /* OTPTextField.swift */,
+				707645F52619893D0000B52A /* OTPStackView.swift */,
+			);
+			path = "OTP Stack";
+			sourceTree = "<group>";
+		};
 		707645D22615BB6D0000B52A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				707645D32615BB830000B52A /* PhoneViewController.swift */,
 				707645FF26198A360000B52A /* OTPViewController.swift */,
-				70764681261C8B700000B52A /* NavBarViewController.swift */,
 				7076460C261A29EA0000B52A /* HomeViewController.swift */,
 				70764672261C310E0000B52A /* ProfileViewController.swift */,
 				70C16C932641572E00F5FD7C /* JoinClubViewController.swift */,
@@ -285,12 +311,14 @@
 		707646062619D2BD0000B52A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				707645FA261989720000B52A /* OTPTextField.swift */,
-				707645F52619893D0000B52A /* OTPStackView.swift */,
+				7040E13426467D220047125D /* OTP Stack */,
 				707646072619D2E20000B52A /* CountryCodes.swift */,
 				70764649261B26620000B52A /* ClubModel.swift */,
 				70764651261B289E0000B52A /* UserModel.swift */,
 				70764656261B295A0000B52A /* DetailsModel.swift */,
+				7040E11E26467A450047125D /* alert.swift */,
+				7040E13026467D0C0047125D /* Keyboard Functions */,
+				7040E15D2646B7020047125D /* RotatingButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -597,15 +625,19 @@
 				707645D42615BB830000B52A /* PhoneViewController.swift in Sources */,
 				707645F62619893D0000B52A /* OTPStackView.swift in Sources */,
 				70C16C942641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
+				7040E15E2646B7020047125D /* RotatingButton.swift in Sources */,
 				7076464A261B26620000B52A /* ClubModel.swift in Sources */,
 				7076460D261A29EB0000B52A /* HomeViewController.swift in Sources */,
 				7031CB0625D12B9E0002E641 /* AppDelegate.swift in Sources */,
+				7040E12C26467B1B0047125D /* KeyboardDoneButton.swift in Sources */,
 				70764673261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				70C16CA22641575600F5FD7C /* ClubViewController.swift in Sources */,
 				70764657261B295A0000B52A /* DetailsModel.swift in Sources */,
 				7031CB0825D12B9E0002E641 /* SceneDelegate.swift in Sources */,
+				7040E12426467AA40047125D /* Keyboards&h.swift in Sources */,
 				707646082619D2E20000B52A /* CountryCodes.swift in Sources */,
 				70764652261B289E0000B52A /* UserModel.swift in Sources */,
+				7040E11F26467A450047125D /* alert.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

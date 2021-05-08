@@ -35,8 +35,8 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
         countryPicker.showPhoneNumbers = true
         countryPicker.setLocale("sl_SI")
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         phoneTextField.text = ""
@@ -61,78 +61,16 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
                   }
                   // Sign in using the verificationID and the code sent to the user
                   // ...
-                    UserDefaults.standard.set(verificationID, forKey: "VerificationID")
-                    print("Verification id saved")                    
-                    self.performSegue(withIdentifier: "phoneToOtp", sender: self)
-                    self.activityIndicator.isHidden = true
-                    self.activityIndicator.stopAnimating()
-                    buttonView.isHidden = false
-                }
-            }
-    }
-    
-    
-    
-}
-
-extension UITextField{
-    @IBInspectable var doneAccessory: Bool{
-        get{
-            return self.doneAccessory
-        }
-        set (hasDone) {
-            if hasDone{
-                addDoneButtonOnKeyboard()
+                UserDefaults.standard.set(verificationID, forKey: "VerificationID")
+                print("Verification id saved")
+                self.performSegue(withIdentifier: "phoneToOtp", sender: self)
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+                buttonView.isHidden = false
             }
         }
-    }
-
-    func addDoneButtonOnKeyboard()
-    {
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        doneToolbar.barStyle = .default
-
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
-
-        let items = [flexSpace, done]
-        doneToolbar.items = items
-        doneToolbar.sizeToFit()
-
-        self.inputAccessoryView = doneToolbar
-    }
-
-    @objc func doneButtonAction()
-    {
-        self.resignFirstResponder()
     }
 }
 
 
 
-extension UIViewController {
-    
-    func alert(message: String, title: String ) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height/2
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-    
-}

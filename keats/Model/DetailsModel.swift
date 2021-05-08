@@ -23,6 +23,6 @@ struct DetailsData: Codable {
 }
 
 struct DetailsDataData: Codable {
-    var clubs : [ClubData]
+    var clubs : ([ClubData])
     var user: UserData
 }

@@ -29,6 +29,8 @@ class OTPViewController: UIViewController {
         //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    @IBAction func backTapped(_ sender: Any) {
+    }
     
     @IBAction func clickedForHighlight(_ sender: UIButton) {
         
@@ -52,9 +54,7 @@ class OTPViewController: UIViewController {
                     self.alert(message: authError.localizedDescription, title: "Error")
                     print(authError.localizedDescription)
                   }
-                  // User is signed in
-                  // ...
-                    //print("otp verified")
+                    
                     let currentUser = Auth.auth().currentUser
                     currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
                       if let error = error {
@@ -66,20 +66,14 @@ class OTPViewController: UIViewController {
                         return;
                       }
 
-                      // Send token to your backend via HTTPS
                         if let token = idToken {
                             UserDefaults.standard.set(token, forKey: "IDToken")
                             self.signInUser(verificationId: token)
                             
                         }
-                        
-                      // ...
                     }
-                    
                 }
             }
-        
-        
        }
     
     func signInUser(verificationId: String) {
@@ -108,17 +102,22 @@ class OTPViewController: UIViewController {
                 
                 let status = responseJSON["status"]
                 if status as! String != "error" {
-                    let JWToken = responseJSON["data"]
-                    UserDefaults.standard.set(JWToken, forKey: "JWToken")
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "otpToHome", sender: self)
-                        self.buttonView.isHidden = false
-                        self.activityIndicator.isHidden = true
-                        self.activityIndicator.stopAnimating()
-                        print("Successfully signed in!")
+                    let data = responseJSON["data"]
+                    if let data = data as? [String: Any] {
+                        guard let JWToken = data["token"] else {return}
+                        //print("otp jwtoken: \(JWToken)")
+                        UserDefaults.standard.set(JWToken, forKey: "JWToken")
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "otpToHome", sender: self)
+                            self.buttonView.isHidden = false
+                            self.activityIndicator.isHidden = true
+                            self.activityIndicator.stopAnimating()
+                            print("Successfully signed in!")
+                        }
                     }
+                    
                 }
-                print(responseJSON)
+                //print(responseJSON)
             }
         }
 

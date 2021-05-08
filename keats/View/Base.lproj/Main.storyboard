@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmF-zm-boc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kwx-5D-PMH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -74,7 +74,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-Dq-LdK">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9999999999" borderStyle="roundedRect" placeholder="Enter Your Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-Dq-LdK">
                                 <rect key="frame" x="90" y="476" width="294" height="34"/>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                 <constraints>
@@ -270,6 +270,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD3-Vl-hHN">
+                                <rect key="frame" x="35" y="50" width="13" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backTapped:" destination="dmE-so-6My" eventType="touchUpInside" id="vPO-Xc-fv1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4U5-eH-YCV"/>
                         <color key="backgroundColor" name="KeatsDarkBg"/>
@@ -281,6 +289,7 @@
                             <constraint firstItem="r5R-Un-xNb" firstAttribute="centerX" secondItem="y4d-p5-3dA" secondAttribute="centerX" id="AKZ-Kc-mG6"/>
                             <constraint firstAttribute="trailing" secondItem="bum-NA-bR6" secondAttribute="trailing" id="Eae-ct-7o4"/>
                             <constraint firstItem="bum-NA-bR6" firstAttribute="leading" secondItem="4U5-eH-YCV" secondAttribute="leading" id="FQt-xt-LsP"/>
+                            <constraint firstItem="AD3-Vl-hHN" firstAttribute="top" secondItem="LEg-Mn-bA9" secondAttribute="top" constant="50" id="IgE-xN-DWe"/>
                             <constraint firstItem="AEr-hf-DP6" firstAttribute="leading" secondItem="4U5-eH-YCV" secondAttribute="leading" constant="30" id="Ity-fe-d6k"/>
                             <constraint firstItem="cX0-SH-fZG" firstAttribute="leading" secondItem="4U5-eH-YCV" secondAttribute="leading" constant="30" id="LEc-xn-FE1"/>
                             <constraint firstItem="oto-OH-999" firstAttribute="leading" secondItem="4U5-eH-YCV" secondAttribute="leading" constant="30" id="NQ9-5Z-ej3"/>
@@ -293,6 +302,7 @@
                             <constraint firstItem="S0H-CC-9o0" firstAttribute="top" secondItem="r5R-Un-xNb" secondAttribute="bottom" constant="16" id="iyL-lG-v8I"/>
                             <constraint firstItem="r5R-Un-xNb" firstAttribute="top" secondItem="oto-OH-999" secondAttribute="bottom" constant="20" id="j5z-FZ-e6w"/>
                             <constraint firstItem="bum-NA-bR6" firstAttribute="top" secondItem="LEg-Mn-bA9" secondAttribute="top" id="o9M-wb-DlJ"/>
+                            <constraint firstItem="AD3-Vl-hHN" firstAttribute="leading" secondItem="4U5-eH-YCV" secondAttribute="leading" constant="35" id="rY9-ze-f78"/>
                             <constraint firstItem="r5R-Un-xNb" firstAttribute="leading" secondItem="4U5-eH-YCV" secondAttribute="leading" constant="30" id="uva-8D-gnd"/>
                         </constraints>
                     </view>
@@ -943,6 +953,10 @@
                                     <constraint firstAttribute="bottom" secondItem="aDx-6k-LMF" secondAttribute="bottom" constant="6" id="vPO-gJ-8yu"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fJB-ge-J1L">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="color" name="KeatsOrange"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kaO-Yv-nuE"/>
                         <color key="backgroundColor" name="KeatsDarkBg"/>
@@ -954,7 +968,9 @@
                             <constraint firstItem="eeF-RF-eGA" firstAttribute="top" secondItem="ROn-HQ-rtj" secondAttribute="bottom" constant="6" id="Aar-mG-Rep"/>
                             <constraint firstItem="dB7-p4-iF0" firstAttribute="centerX" secondItem="ECo-i5-h2F" secondAttribute="centerX" id="ByY-tg-Wa3"/>
                             <constraint firstItem="MFN-99-kG5" firstAttribute="leading" secondItem="kaO-Yv-nuE" secondAttribute="leading" constant="37" id="E46-Y1-u3L"/>
+                            <constraint firstItem="fJB-ge-J1L" firstAttribute="centerX" secondItem="ECo-i5-h2F" secondAttribute="centerX" id="E5a-Y3-MsF"/>
                             <constraint firstItem="ynp-Tr-2co" firstAttribute="leading" secondItem="ECo-i5-h2F" secondAttribute="leading" id="GrL-Bp-eDk"/>
+                            <constraint firstItem="fJB-ge-J1L" firstAttribute="centerY" secondItem="ECo-i5-h2F" secondAttribute="centerY" id="OkV-mr-DB0"/>
                             <constraint firstItem="9Xh-Zf-o5w" firstAttribute="leading" secondItem="kaO-Yv-nuE" secondAttribute="leading" constant="90" id="RGr-uE-T8f"/>
                             <constraint firstItem="bRv-As-zlk" firstAttribute="top" secondItem="9Xh-Zf-o5w" secondAttribute="bottom" constant="46" id="aN7-kS-Rxt"/>
                             <constraint firstItem="ROn-HQ-rtj" firstAttribute="trailing" secondItem="eeF-RF-eGA" secondAttribute="trailing" id="bIK-v1-apD"/>
@@ -971,6 +987,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FUg-Sp-wmr"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="fJB-ge-J1L" id="cWZ-OK-vkK"/>
                         <outlet property="buttonStack" destination="dB7-p4-iF0" id="27x-zi-Z2P"/>
                         <outlet property="buttonView" destination="eeF-RF-eGA" id="t4B-iF-99K"/>
                         <outlet property="clubsTableView" destination="hEH-bq-2rk" id="6ly-AQ-Afk"/>
@@ -978,6 +995,7 @@
                         <outlet property="popUpOptionView" destination="ROn-HQ-rtj" id="fIn-Ll-mva"/>
                         <outlet property="popupCreateButtonView" destination="vHM-2b-cSm" id="ErV-Bf-bEx"/>
                         <outlet property="popupJoinButtonView" destination="aDx-6k-LMF" id="uJ1-bM-TpW"/>
+                        <outlet property="profileImage" destination="LB1-03-zZt" id="UZB-1M-i7u"/>
                         <outlet property="readingImage" destination="9Xh-Zf-o5w" id="5t0-rR-4rb"/>
                         <outlet property="readingLabel" destination="bRv-As-zlk" id="ERV-70-Vpp"/>
                     </connections>
@@ -2187,6 +2205,7 @@
         <image name="bookshelf" width="217" height="77"/>
         <image name="bubble.left.and.bubble.right.fill" catalog="system" width="128" height="97"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="create club icon" width="30" height="30"/>
         <image name="default-profile" width="73" height="74"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>

@@ -13,7 +13,7 @@ struct ClubModel {
     var club_pic: String
     var file_url: String
     var page_no: Int
-    var privateBool: Bool
+    var privatet: Int
     var page_sync: Bool
     var host_id: String
     var host_name: String
@@ -26,7 +26,7 @@ struct ClubData : Codable {
     var club_pic: String
     var file_url: String
     var page_no: Int
-    var privateBool: Bool
+    var privatet: Int
     var page_sync: Bool
     var host_id: String
     var host_name: String
