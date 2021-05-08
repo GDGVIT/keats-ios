@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 struct ClubModel {
     var id: String
@@ -18,6 +19,17 @@ struct ClubModel {
     var host_id: String
     var host_name: String
     var host_profile_pic: String
+    
+//    var clubImage: UIImage? {
+//        guard let imgurl = URL.init(string: club_pic) else {return}
+//        
+//            DispatchQueue.global().async { [self] in
+//                if let data = try? Data(contentsOf: imgurl) {
+//                    return UIImage(data: data)
+//                }
+//            }
+//        
+//    }
 }
 
 struct ClubData : Codable {

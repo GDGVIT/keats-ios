@@ -102,61 +102,85 @@ class ProfileViewController: UIViewController {
         }
     
     func fetchUserDetails() {
-        let url = URL(string: "https://keats-testing.herokuapp.com/api/user")
-        guard let requestUrl = url else { return }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "GET"
-        
-        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
-        
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        if let bio = UserDefaults.standard.string(forKey: "bio"), let email = UserDefaults.standard.string(forKey: "email"), let username = UserDefaults.standard.string(forKey: "username"), let phone = UserDefaults.standard.string(forKey: "phone_number"), let profile_pic = UserDefaults.standard.string(forKey: "profile_pic") {
             
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
+            guard let url = URL(string: profile_pic) else {return}
+            
+            DispatchQueue.global().async {
+                guard let data = try? Data(contentsOf: url) else {return }
+                guard let image = UIImage(data: data) else {return }
+                DispatchQueue.main.async {
+                    self.profileImage.image = image
+                }
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-                let status = responseJSON["status"]
-                if status as! String != "error" {
-                    let userdata = responseJSON["data"]
-                    if let userresponseJSON = userdata as? [String: Any] {
-                        if let bio = userresponseJSON["bio"] as? String, let email = userresponseJSON["email"] as? String, let id = userresponseJSON["id"] as? String, let phone = userresponseJSON["phone_number"] as? String, let profile_pic = userresponseJSON["profile_pic"] as? String, let username = userresponseJSON["username"] as? String{
-                            
-                            //print(id)
-                            
-                            guard let url = URL(string: profile_pic) else {
-                                print("error1")
-                                return}
-                            print(url)
-                            DispatchQueue.global().async {
-                                guard let data = try? Data(contentsOf: url) else {
-                                    print("error2")
-                                    return }
-                                guard let image = UIImage(data: data) else {
-                                    print("error3")
-                                    return }
-                                DispatchQueue.main.async {
-                                    self.profileImage.image = image
-                                }
-                            }
-                            
-                            DispatchQueue.main.async {
-                                self.bioTextField.text = bio
-                                self.emailTextField.text = email
-                                self.nameTextField.text = username
-                                self.phoneTextField.text = phone
+            
+            DispatchQueue.main.async {
+                self.bioTextField.text = bio
+                self.emailTextField.text = email
+                self.nameTextField.text = username
+                self.phoneTextField.text = phone
+                
+
+            }
+            
+        } else {
+            
+            let url = URL(string: "https://keats-testing.herokuapp.com/api/user")
+            guard let requestUrl = url else { return }
+            var request = URLRequest(url: requestUrl)
+            request.httpMethod = "GET"
+            
+            guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
+            
+            request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    print(responseJSON)
+                    let status = responseJSON["status"]
+                    if status as! String != "error" {
+                        let userdata = responseJSON["data"]
+                        if let userresponseJSON = userdata as? [String: Any] {
+                            if let bio = userresponseJSON["bio"] as? String, let email = userresponseJSON["email"] as? String, let id = userresponseJSON["id"] as? String, let phone = userresponseJSON["phone_number"] as? String, let profile_pic = userresponseJSON["profile_pic"] as? String, let username = userresponseJSON["username"] as? String{
                                 
+                                //print(id)
+                                
+                                guard let url = URL(string: profile_pic) else {
+                                    print("error1")
+                                    return}
+                                print(url)
+                                DispatchQueue.global().async {
+                                    guard let data = try? Data(contentsOf: url) else {
+                                        print("error2")
+                                        return }
+                                    guard let image = UIImage(data: data) else {
+                                        print("error3")
+                                        return }
+                                    DispatchQueue.main.async {
+                                        self.profileImage.image = image
+                                    }
+                                }
+                                
+                                DispatchQueue.main.async {
+                                    self.bioTextField.text = bio
+                                    self.emailTextField.text = email
+                                    self.nameTextField.text = username
+                                    self.phoneTextField.text = phone
+                                    
+                                }
                             }
                         }
                     }
                 }
             }
+            task.resume()
         }
-        task.resume()
     }
     
     func updateUserInfo() {

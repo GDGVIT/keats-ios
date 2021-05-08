@@ -20,6 +20,7 @@
 		7040E12426467AA40047125D /* Keyboards&h.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040E12326467AA40047125D /* Keyboards&h.swift */; };
 		7040E12C26467B1B0047125D /* KeyboardDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040E12B26467B1B0047125D /* KeyboardDoneButton.swift */; };
 		7040E15E2646B7020047125D /* RotatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040E15D2646B7020047125D /* RotatingButton.swift */; };
+		704217642646F8E100141548 /* loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704217632646F8E100141548 /* loadImage.swift */; };
 		7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06725EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06825EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
@@ -133,6 +134,7 @@
 		7040E12326467AA40047125D /* Keyboards&h.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboards&h.swift"; sourceTree = "<group>"; };
 		7040E12B26467B1B0047125D /* KeyboardDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDoneButton.swift; sourceTree = "<group>"; };
 		7040E15D2646B7020047125D /* RotatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingButton.swift; sourceTree = "<group>"; };
+		704217632646F8E100141548 /* loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadImage.swift; sourceTree = "<group>"; };
 		7057A06525EC106000CEA17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		706A494C2645865F00278222 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		706A49532645965400278222 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				7040E11E26467A450047125D /* alert.swift */,
 				7040E13026467D0C0047125D /* Keyboard Functions */,
 				7040E15D2646B7020047125D /* RotatingButton.swift */,
+				704217632646F8E100141548 /* loadImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				7040E12426467AA40047125D /* Keyboards&h.swift in Sources */,
 				707646082619D2E20000B52A /* CountryCodes.swift in Sources */,
 				70764652261B289E0000B52A /* UserModel.swift in Sources */,
+				704217642646F8E100141548 /* loadImage.swift in Sources */,
 				7040E11F26467A450047125D /* alert.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
 			);

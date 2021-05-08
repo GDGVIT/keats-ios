@@ -22,11 +22,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var clubList : [Any] = []
+    var clubList : [ClubModel] = []
     var currentAnimation = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        clubsTableView.delegate = self
+        clubsTableView.dataSource = self
         joinButtonView.curvedButtonView(color: "KeatsViolet")
         popupJoinButtonView.curvedButtonView(color: "KeatsOrange")
         popupCreateButtonView.curvedButtonView(color: "KeatsOrange")
@@ -36,6 +38,7 @@ class HomeViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         fetchClubDetails()
+        clubsTableView.register(UINib(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubCell")
     }
     
     @IBAction func createClubTapped(_ sender: Any) {
@@ -71,6 +74,17 @@ class HomeViewController: UIViewController {
         }
     }
     
+//    private func loadImage(url: URL, completion: @escaping (UIImage?) -> ()) {
+//        utilityQueue.async {
+//                guard let data = try? Data(contentsOf: url) else { return }
+//                let image = UIImage(data: data)
+//
+//                DispatchQueue.main.async {
+//                    completion(image)
+//                }
+//            }
+//        }
+    
 }
 
 //MARK: - fetch club details
@@ -100,14 +114,14 @@ extension HomeViewController {
             
             if let data = data {
                 let json = JSON(data)
-                debugPrint(json)
+                //debugPrint(json)
                 
                 if json["status"] == "success" {
                     let username = json["data"]["user"]["username"]
-                    UserDefaults.standard.set(username, forKey: "username")
+                    UserDefaults.standard.set(username.rawString(), forKey: "username")
                     
                     let email = json["data"]["user"]["email"]
-                    UserDefaults.standard.set(email, forKey: "email")
+                    UserDefaults.standard.set(email.rawString(), forKey: "email")
                     
                     let profile_pic = json["data"]["user"]["profile_pic"]
                     if let profile_string = profile_pic.rawString() {
@@ -116,57 +130,56 @@ extension HomeViewController {
                         DispatchQueue.global().async {
                             guard let data = try? Data(contentsOf: url) else {return }
                             guard let image = UIImage(data: data) else {return }
-                            UserDefaults.standard.set(image, forKey: "profile_pic")
                             DispatchQueue.main.async {
                                 self.profileImage.image = image
                             }
                         }
                     }
-                    
-                    UserDefaults.standard.set(profile_pic, forKey: "profile_pic")
-                    
+                    UserDefaults.standard.set(profile_pic.rawString(), forKey: "profile_pic")
+
                     let bio = json["data"]["user"]["bio"]
-                    UserDefaults.standard.set(bio, forKey: "bio")
+                    UserDefaults.standard.set(bio.rawString(), forKey: "bio")
                     
                     let phone_number = json["data"]["user"]["phone_number"]
-                    UserDefaults.standard.set(phone_number, forKey: "phone_number")
+                    UserDefaults.standard.set(phone_number.rawString(), forKey: "phone_number")
                     
                     let id = json["data"]["user"]["id"]
-                    UserDefaults.standard.set(id, forKey: "id")
+                    UserDefaults.standard.set(id.rawString(), forKey: "id")
                     
                     let clubs = json["data"]["clubs"]
                     
                     for i in 0...clubs.count-1 {
-                        let club_pic = json["data"]["clubs"][i]["club_pic"]
-                        let clubname = json["data"]["clubs"][i]["clubname"]
-                        let file_url = json["data"]["clubs"][i]["file_url"]
-                        let host_id = json["data"]["clubs"][i]["host_id"]
-                        let host_name = json["data"]["clubs"][i]["host_name"]
-                        let host_profile_pic = json["data"]["clubs"][i]["host_profile_pic"]
-                        let id = json["data"]["clubs"][i]["id"]
-                        let page_no = json["data"]["clubs"][i]["page_no"]
-                        let page_sync = json["data"]["clubs"][i]["page_sync"]
-                        let privatet = json["data"]["clubs"][i]["private"]
+                        if let club_pic = json["data"]["clubs"][i]["club_pic"].rawString(),
+                        let clubname = json["data"]["clubs"][i]["clubname"].rawString(),
+                        let file_url = json["data"]["clubs"][i]["file_url"].rawString(),
+                        let host_id = json["data"]["clubs"][i]["host_id"].rawString(),
+                        let host_name = json["data"]["clubs"][i]["host_name"].rawString(),
+                        let host_profile_pic = json["data"]["clubs"][i]["host_profile_pic"].rawString(),
+                        let id = json["data"]["clubs"][i]["id"].rawString(),
+                        let page_no = json["data"]["clubs"][i]["page_no"].int,
+                        let page_sync = json["data"]["clubs"][i]["page_sync"].bool,
+                        let privatet = json["data"]["clubs"][i]["private"].int {
+                            
+                            let club = ClubModel(id: id, clubname: clubname, club_pic: club_pic, file_url: file_url, page_no: page_no, privatet: privatet, page_sync: page_sync, host_id: host_id, host_name: host_name, host_profile_pic: host_profile_pic)
+
+                            self.clubList.append(club)
+                        }
                         
-                        let club = [
-                            "club_pic" : club_pic,
-                            "clubname" : clubname,
-                            "file_url" : file_url,
-                            "host_id" : host_id,
-                            "host_name" : host_name,
-                            "host_profile_pic" : host_profile_pic,
-                            "id" : id,
-                            "page_no" : page_no,
-                            "page_sync" : page_sync,
-                            "privatet" : privatet
-                        ]
-                        
-                        self.clubList.append(club)
-                        print(self.clubList.count)
+                        //print(self.clubList.count)
                     }
                     
-                    if clubs.count > 0 {
-                        //
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                        self.activityIndicator.isHidden = true
+                        
+                        if clubs.count > 0 {
+                            self.readingImage.isHidden = true
+                            self.readingLabel.isHidden = true
+                            self.buttonStack.isHidden = true
+                            self.clubsTableView.isHidden = false
+                            self.buttonView.isHidden = false
+                            self.clubsTableView.reloadData()
+                        }
                     }
                     
                 }
@@ -174,66 +187,33 @@ extension HomeViewController {
         }
         task.resume()
     }
-//
-//    func parseJSON(_ detailsData: Data) -> [ClubModel]?
-//    {
-//        let decoder = JSONDecoder()
-//        
-//        var clubList : [ClubModel] = []
-//
-//        let responseJSON = try? JSONSerialization.jsonObject(with: detailsData, options: [])
-//        if let responseJSON = responseJSON as? [String: Any] {
-//            print(responseJSON)
-//        }
-//
-//        print("Lets parse...")
-//
-//        do {
-//            let decodedData = try decoder.decode(DetailsData.self, from: detailsData)
-//            let status = decodedData.status
-//            print("status: \(status)")
-//            if status != "error" {
-//                let clubs = decodedData.data.clubs
-//                print("Club count: \(clubs.count)")
-//
-//                for i in 0...clubs.count {
-//                    let club_pic = decodedData.data.clubs[i].club_pic
-//                    let clubname = decodedData.data.clubs[i].clubname
-//                    let file_url = decodedData.data.clubs[i].file_url
-//                    let host_id = decodedData.data.clubs[i].host_id
-//                    let host_name = decodedData.data.clubs[i].host_name
-//                    let host_profile_pic = decodedData.data.clubs[i].host_profile_pic
-//                    let id = decodedData.data.clubs[i].id
-//                    let page_no = decodedData.data.clubs[i].page_no
-//                    let page_sync = decodedData.data.clubs[i].page_sync
-//                    let privatet = decodedData.data.clubs[i].privatet
-//
-//                    let club = ClubModel (id: id, clubname: clubname, club_pic: club_pic, file_url: file_url, page_no: page_no, privatet: privatet, page_sync: page_sync, host_id: host_id, host_name: host_name, host_profile_pic: host_profile_pic)
-//
-//                    clubList.append(club)
-//                    print("Appending clublist: \(clubList)")
-//                }
-//
-//                let user = decodedData.data.user
-//
-//                let bio = decodedData.data.user.bio
-//                let email = decodedData.data.user.email
-//                let id = decodedData.data.user.id
-//                let phone_number = decodedData.data.user.phone_number
-//                let profile_pic = decodedData.data.user.profile_pic
-//                let username = decodedData.data.user.username
-//
-//                let userDetails = UserModel (bio: bio, email: email, id: id, phone_number: phone_number, profile_pic: profile_pic, username: username)
-//
-//
-//            }
-//        } catch {
-//
-//        }
-//        print("Return clublist: \(clubList)")
-//        return clubList
-//    }
+}
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        clubList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClubCell") as! ClubTableViewCell
+        let thisClub = clubList[indexPath.row]
+        cell.hostLabel.text = thisClub.host_name
+        let privacyLabel = thisClub.privatet == 0 ? "Private" : "Public"
+        cell.privacyLabel.text = privacyLabel
+        cell.titleLabel.text = thisClub.clubname
+        print(thisClub.clubname)
+        if let imgurl = URL.init(string: thisClub.club_pic) {
+            cell.clubImageView.loadImage(url: imgurl)
+//            self.loadImage(url: imgurl) { [weak self] (image) in
+//                guard let self = self, let image = image else { return }
+//                cell.clubImageView.loadImage(url: imgurl)
+//            }
+        }
+        
+        return cell
+    }
+    
+    
 }
 
 
