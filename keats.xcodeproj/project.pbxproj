@@ -300,10 +300,10 @@
 				707645D32615BB830000B52A /* PhoneViewController.swift */,
 				707645FF26198A360000B52A /* OTPViewController.swift */,
 				7076460C261A29EA0000B52A /* HomeViewController.swift */,
+				70C16CA12641575600F5FD7C /* ClubViewController.swift */,
 				70764672261C310E0000B52A /* ProfileViewController.swift */,
 				70C16C932641572E00F5FD7C /* JoinClubViewController.swift */,
 				70C16C9A2641574700F5FD7C /* CreateClubViewController.swift */,
-				70C16CA12641575600F5FD7C /* ClubViewController.swift */,
 				706A494C2645865F00278222 /* ReadViewController.swift */,
 				706A49532645965400278222 /* ScannerViewController.swift */,
 			);

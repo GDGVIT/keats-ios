@@ -34,8 +34,11 @@ class HomeViewController: UIViewController {
         popupCreateButtonView.curvedButtonView(color: "KeatsOrange")
         clubsTableView.isHidden = true
         buttonView.isHidden = true
-        self.popUpOptionView.isHidden = true
+        popUpOptionView.isHidden = true
         activityIndicator.isHidden = false
+        readingImage.isHidden = true
+        readingLabel.isHidden = true
+        buttonStack.isHidden = true
         activityIndicator.startAnimating()
         fetchClubDetails()
         clubsTableView.register(UINib(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubCell")
@@ -148,40 +151,54 @@ extension HomeViewController {
                     
                     let clubs = json["data"]["clubs"]
                     
-                    for i in 0...clubs.count-1 {
-                        if let club_pic = json["data"]["clubs"][i]["club_pic"].rawString(),
-                        let clubname = json["data"]["clubs"][i]["clubname"].rawString(),
-                        let file_url = json["data"]["clubs"][i]["file_url"].rawString(),
-                        let host_id = json["data"]["clubs"][i]["host_id"].rawString(),
-                        let host_name = json["data"]["clubs"][i]["host_name"].rawString(),
-                        let host_profile_pic = json["data"]["clubs"][i]["host_profile_pic"].rawString(),
-                        let id = json["data"]["clubs"][i]["id"].rawString(),
-                        let page_no = json["data"]["clubs"][i]["page_no"].int,
-                        let page_sync = json["data"]["clubs"][i]["page_sync"].bool,
-                        let privatet = json["data"]["clubs"][i]["private"].int {
-                            
-                            let club = ClubModel(id: id, clubname: clubname, club_pic: club_pic, file_url: file_url, page_no: page_no, privatet: privatet, page_sync: page_sync, host_id: host_id, host_name: host_name, host_profile_pic: host_profile_pic)
+                    if clubs.count > 0 {
+                        for i in 0...clubs.count-1 {
+                            if let club_pic = json["data"]["clubs"][i]["club_pic"].rawString(),
+                            let clubname = json["data"]["clubs"][i]["clubname"].rawString(),
+                            let file_url = json["data"]["clubs"][i]["file_url"].rawString(),
+                            let host_id = json["data"]["clubs"][i]["host_id"].rawString(),
+                            let host_name = json["data"]["clubs"][i]["host_name"].rawString(),
+                            let host_profile_pic = json["data"]["clubs"][i]["host_profile_pic"].rawString(),
+                            let id = json["data"]["clubs"][i]["id"].rawString(),
+                            let page_no = json["data"]["clubs"][i]["page_no"].int,
+                            let page_sync = json["data"]["clubs"][i]["page_sync"].bool,
+                            let privatet = json["data"]["clubs"][i]["private"].int {
+                                
+                                let club = ClubModel(id: id, clubname: clubname, club_pic: club_pic, file_url: file_url, page_no: page_no, privatet: privatet, page_sync: page_sync, host_id: host_id, host_name: host_name, host_profile_pic: host_profile_pic)
 
-                            self.clubList.append(club)
+                                self.clubList.append(club)
+                            }
+                            
+                            //print(self.clubList.count)
                         }
-                        
-                        //print(self.clubList.count)
                     }
+                    
+                    
                     
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
                         self.activityIndicator.isHidden = true
                         
                         if clubs.count > 0 {
-                            self.readingImage.isHidden = true
-                            self.readingLabel.isHidden = true
-                            self.buttonStack.isHidden = true
+                            
                             self.clubsTableView.isHidden = false
                             self.buttonView.isHidden = false
                             self.clubsTableView.reloadData()
+                        } else {
+                            self.readingImage.isHidden = false
+                            self.readingLabel.isHidden = false
+                            self.buttonStack.isHidden = false
                         }
                     }
                     
+                } else {
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                        self.activityIndicator.isHidden = true
+                        self.readingImage.isHidden = false
+                        self.readingLabel.isHidden = false
+                        self.buttonStack.isHidden = false
+                    }
                 }
             }
         }
@@ -201,7 +218,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let privacyLabel = thisClub.privatet == 0 ? "Private" : "Public"
         cell.privacyLabel.text = privacyLabel
         cell.titleLabel.text = thisClub.clubname
-        print(thisClub.clubname)
+        print(thisClub.id)
         if let imgurl = URL.init(string: thisClub.club_pic) {
             cell.clubImageView.loadImage(url: imgurl)
 //            self.loadImage(url: imgurl) { [weak self] (image) in
@@ -211,6 +228,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let id = clubList[indexPath.row].id
     }
     
     
