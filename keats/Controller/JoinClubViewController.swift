@@ -43,6 +43,61 @@ class JoinClubViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    func joinClub(code: String) {
+        
+        let json: [String: Any] = ["id_token": code]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+
+        // create post request
+        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {
+            return}
+        
+        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                
+                let status = responseJSON["status"] as? String
+                if status  == "success" {
+                    let data = responseJSON["data"]
+                    if let data = data as? [String: Any] {
+                        
+                        DispatchQueue.main.async {
+//                            self.performSegue(withIdentifier: "otpToHome", sender: self)
+//                            self.buttonView.isHidden = false
+//                            self.activityIndicator.isHidden = true
+//                            self.activityIndicator.stopAnimating()
+//                            print("Successfully signed in!")
+                        }
+                    }
+                    
+                } else {
+                    if let message = responseJSON["message"] as? String, let status = responseJSON["status"] as? String {
+                        self.alert(message: message, title: status)
+                    }
+                    
+                }
+                //print(responseJSON)
+            }
+        }
+
+        task.resume()
+
+    }
+    
     func getPublicClubs() {
         let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/list")
         guard let requestUrl = url else { return }

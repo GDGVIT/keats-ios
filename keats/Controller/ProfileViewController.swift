@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import FirebaseStorage
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bioTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var editToggleButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var uploadImageButtonView: UIView!
     @IBOutlet weak var phoneTextField: UITextField!
     
-    var isEditingProfile = false
+    private let storage = Storage.storage().reference()
 
+    var isEditingProfile = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNonEditable()
         fetchUserDetails()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
@@ -45,13 +49,59 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func updateImageTapped(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        profileImage.image = image
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        let identifier = UUID()
+        let path = "public/\(identifier).png"
+        print(path)
+        
+        let uploadTask = storage.child(path).putData(imageData, metadata: nil) { (metadata, error) in
+          guard let metadata = metadata else {
+            print("Uh-oh, an error occurred!")
+            return
+          }
+          // Metadata contains file metadata such as size, content-type.
+          let size = metadata.size
+          // You can also access to download URL after upload.
+            self.storage.child(path).downloadURL { (url, error) in
+            guard let downloadURL = url else {
+              print("Uh-oh, an error occurred! 2")
+              return
+            }
+                print(downloadURL.absoluteString)
+          }
+        }
+            
+        
+        
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     
     func makeEditable() {
         isEditingProfile = true
         editToggleButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
-
+        
         nameTextField.isUserInteractionEnabled = true
         nameTextField.borderStyle = .roundedRect
         nameTextField.backgroundColor = UIColor(named: "TextFieldBg")
@@ -91,15 +141,17 @@ class ProfileViewController: UIViewController {
     }
     
     private func loadImage(url: URL, completion: @escaping (UIImage?) -> ()) {
-            //utilityQueue.async {
-                guard let data = try? Data(contentsOf: url) else { return }
-                let image = UIImage(data: data)
-
-                DispatchQueue.main.async {
-                    completion(image)
-                }
-            
+        //utilityQueue.async {
+        guard let data = try? Data(contentsOf: url) else { return }
+        let image = UIImage(data: data)
+        
+        DispatchQueue.main.async {
+            completion(image)
         }
+        
+    }
+    
+    //MARK: - Fetch User Details
     
     func fetchUserDetails() {
         if let bio = UserDefaults.standard.string(forKey: "bio"), let email = UserDefaults.standard.string(forKey: "email"), let username = UserDefaults.standard.string(forKey: "username"), let phone = UserDefaults.standard.string(forKey: "phone_number"), let profile_pic = UserDefaults.standard.string(forKey: "profile_pic") {
@@ -120,7 +172,7 @@ class ProfileViewController: UIViewController {
                 self.nameTextField.text = username
                 self.phoneTextField.text = phone
                 
-
+                
             }
             
         } else {
@@ -183,6 +235,8 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    //MARK: - Update User Info
+    
     func updateUserInfo() {
         
         if let userName = nameTextField.text, let bio = bioTextField.text, let email = emailTextField.text {
@@ -199,7 +253,7 @@ class ProfileViewController: UIViewController {
             request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
             
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+            
             // insert json data to the request
             request.httpBody = jsonData
             
@@ -220,7 +274,7 @@ class ProfileViewController: UIViewController {
                     }
                 }
             }
-
+            
             tsk.resume()
         }
     }

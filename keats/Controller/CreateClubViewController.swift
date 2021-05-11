@@ -12,8 +12,6 @@ class CreateClubViewController: UIViewController {
     @IBOutlet weak var clubImageView: UIView!
     @IBOutlet weak var clubNameTextField: UITextField!
     @IBOutlet weak var privateToggle: UISwitch!
-    @IBOutlet weak var syncToggle: UISwitch!
-    @IBOutlet weak var selectedBookLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +26,14 @@ class CreateClubViewController: UIViewController {
     @IBAction func addBookPressed(_ sender: Any) {
     }
     
-    @IBAction func removeSelectedtapped(_ sender: Any) {
-    }
-    
     @IBAction func submitTapped(_ sender: Any) {
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func createNewClub() {
+        
     }
 }

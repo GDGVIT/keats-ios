@@ -10,6 +10,8 @@ target 'keats' do
   pod 'MRCountryPicker'
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Core'
 
   target 'keatsTests' do
     inherit! :search_paths
