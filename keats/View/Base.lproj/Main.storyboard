@@ -997,6 +997,7 @@
                         <outlet property="profileImage" destination="LB1-03-zZt" id="UZB-1M-i7u"/>
                         <outlet property="readingImage" destination="9Xh-Zf-o5w" id="5t0-rR-4rb"/>
                         <outlet property="readingLabel" destination="bRv-As-zlk" id="ERV-70-Vpp"/>
+                        <segue destination="94w-zY-A5L" kind="show" identifier="HomeToClub" id="Mta-F0-l7r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oko-0i-BG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1942,7 +1943,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STF-9A-zw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3767" y="96"/>
+            <point key="canvasLocation" x="3766" y="85"/>
         </scene>
         <!--Read View Controller-->
         <scene sceneID="1cE-E2-Rxo">
@@ -2179,8 +2180,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Mta-F0-l7r"/>
         <segue reference="r8I-47-2wE"/>
-        <segue reference="jO5-S1-Zna"/>
+        <segue reference="pZC-5o-B97"/>
         <segue reference="Dac-RK-VQ2"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -13,7 +13,7 @@ struct UserModel {
     var id: String
     var phone_number: String
     var profile_pic: String
-    var username: Int
+    var username: String
 }
 
 struct UserData : Codable {
@@ -22,5 +22,5 @@ struct UserData : Codable {
     var id: String
     var phone_number: String
     var profile_pic: String
-    var username: Int
+    var username: String
 }

@@ -20,10 +20,15 @@ class ClubViewController: UIViewController {
     @IBOutlet weak var membersTableView: UITableView!
     
     var currentAnimation = 0
+    var users : [UserModel] = []
+    var clubId : String = "" 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        membersTableView.delegate = self
+        membersTableView.dataSource = self
         uploadMenu.isHidden = true
-        getClubDetails()
+        getClubDetails(clubid: "xyz")
 
     }
     
@@ -70,13 +75,16 @@ class ClubViewController: UIViewController {
     }
     
     @IBAction func leaveTapped(_ sender: Any) {
+        leaveClub()
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
-    func getClubDetails() {
+    //MARK: - Get club details
+    
+    func getClubDetails(clubid: String) {
         let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs?club_id=adfcab83-dca1-49d5-b9dc-13dfdb2cba38")
         guard let requestUrl = url else { return }
         var request = URLRequest(url: requestUrl)
@@ -102,81 +110,75 @@ class ClubViewController: UIViewController {
                 debugPrint(json)
                 
                 if json["status"] == "success" {
-                    //
+                    let clubname = json["data"]["club"]["clubname"].string
+                    let club_pic = json["data"]["club"]["club_pic"].rawString()
+                    let host_name = json["data"]["club"]["host_name"].string
+                    let file_url = json["data"]["club"]["file_url"].rawString()
+                    let privacy = json["data"]["club"]["private"].bool == true ? "Private" : "Public"
+                    
+                    if let profile_string = club_pic {
+                        guard let url = URL(string: profile_string) else {return}
+                        
+                        DispatchQueue.global().async {
+                            guard let data = try? Data(contentsOf: url) else {return }
+                            guard let image = UIImage(data: data) else {return }
+                            DispatchQueue.main.async {
+                                self.clubImageView.image = image
+                            }
+                        }
+                    }
+                    
+                    let users = json["data"]["users"]
+                    if users.count > 0 {
+                        for i in 0...users.count-1 {
+                            if let id = json["data"]["users"][i]["id"].string,
+                               let username = json["data"]["users"][i]["username"].string,
+                               let profile_pic = json["data"]["users"][i]["profile_pic"].string,
+                               let bio = json["data"]["users"][i]["bio"].string,
+                               let phone_number = json["data"]["users"][i]["phone_number"].string,
+                               let email = json["data"]["users"][i]["email"].string {
+                                
+                                let user = UserModel(bio: bio, email: email, id: id, phone_number: phone_number, profile_pic: profile_pic, username: username)
+                                
+                                self.users.append(user)
+                            }
+                        }
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.clubNameLabel.text = clubname
+                        self.hostLabel.text = host_name
+                        self.privacyLabel.text = privacy
+                        self.membersTableView.reloadData()
+                    }
                 }
-                
-                
-                
-//
-//                if json["status"] == "success" {
-//                    let username = json["data"]["user"]["username"]
-//                    UserDefaults.standard.set(username.rawString(), forKey: "username")
-//
-//                    let email = json["data"]["user"]["email"]
-//                    UserDefaults.standard.set(email.rawString(), forKey: "email")
-//
-//                    let profile_pic = json["data"]["user"]["profile_pic"]
-//                    if let profile_string = profile_pic.rawString() {
-//                        guard let url = URL(string: profile_string) else {return}
-//
-//                        DispatchQueue.global().async {
-//                            guard let data = try? Data(contentsOf: url) else {return }
-//                            guard let image = UIImage(data: data) else {return }
-//                            DispatchQueue.main.async {
-//                                self.profileImage.image = image
-//                            }
-//                        }
-//                    }
-//                    UserDefaults.standard.set(profile_pic.rawString(), forKey: "profile_pic")
-//
-//                    let bio = json["data"]["user"]["bio"]
-//                    UserDefaults.standard.set(bio.rawString(), forKey: "bio")
-//
-//                    let phone_number = json["data"]["user"]["phone_number"]
-//                    UserDefaults.standard.set(phone_number.rawString(), forKey: "phone_number")
-//
-//                    let id = json["data"]["user"]["id"]
-//                    UserDefaults.standard.set(id.rawString(), forKey: "id")
-//
-//                    let clubs = json["data"]["clubs"]
-//
-//                    for i in 0...clubs.count-1 {
-//                        if let club_pic = json["data"]["clubs"][i]["club_pic"].rawString(),
-//                        let clubname = json["data"]["clubs"][i]["clubname"].rawString(),
-//                        let file_url = json["data"]["clubs"][i]["file_url"].rawString(),
-//                        let host_id = json["data"]["clubs"][i]["host_id"].rawString(),
-//                        let host_name = json["data"]["clubs"][i]["host_name"].rawString(),
-//                        let host_profile_pic = json["data"]["clubs"][i]["host_profile_pic"].rawString(),
-//                        let id = json["data"]["clubs"][i]["id"].rawString(),
-//                        let page_no = json["data"]["clubs"][i]["page_no"].int,
-//                        let page_sync = json["data"]["clubs"][i]["page_sync"].bool,
-//                        let privatet = json["data"]["clubs"][i]["private"].int {
-//
-//                            let club = ClubModel(id: id, clubname: clubname, club_pic: club_pic, file_url: file_url, page_no: page_no, privatet: privatet, page_sync: page_sync, host_id: host_id, host_name: host_name, host_profile_pic: host_profile_pic)
-//
-//                            self.clubList.append(club)
-//                        }
-//
-//                        //print(self.clubList.count)
-//                    }
-//
-//                    DispatchQueue.main.async {
-//                        self.activityIndicator.stopAnimating()
-//                        self.activityIndicator.isHidden = true
-//
-//                        if clubs.count > 0 {
-//                            self.readingImage.isHidden = true
-//                            self.readingLabel.isHidden = true
-//                            self.buttonStack.isHidden = true
-//                            self.clubsTableView.isHidden = false
-//                            self.buttonView.isHidden = false
-//                            self.clubsTableView.reloadData()
-//                        }
-//                    }
-//
-//                }
             }
         }
         task.resume()
     }
+    
+    //MARK: - Leave Club
+    
+    func leaveClub() {
+        
+    }
+}
+
+
+//MARK: - Table View Methods
+
+extension ClubViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let user = users[indexPath.row]
+        cell.textLabel?.text = user.username
+        cell.detailTextLabel?.text = user.bio
+        return cell
+    }
+    
+    
 }

@@ -232,6 +232,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = clubList[indexPath.row].id
+        let destinationVC = ClubViewController()
+        destinationVC.clubId = id
+        self.performSegue(withIdentifier: "HomeToClub", sender: self)
     }
     
     
