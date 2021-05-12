@@ -1264,8 +1264,17 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qb-h7-3Og">
                                 <rect key="frame" x="132" y="254.5" width="111" height="111"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2me-Ma-TAt">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="111"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" name="KeatsSecondaryBg"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2me-Ma-TAt" secondAttribute="bottom" id="BYp-kl-Umr"/>
+                                    <constraint firstItem="2me-Ma-TAt" firstAttribute="top" secondItem="4Qb-h7-3Og" secondAttribute="top" id="DLl-FD-nRM"/>
+                                    <constraint firstAttribute="trailing" secondItem="2me-Ma-TAt" secondAttribute="trailing" id="Fam-tp-1L9"/>
+                                    <constraint firstItem="2me-Ma-TAt" firstAttribute="leading" secondItem="4Qb-h7-3Og" secondAttribute="leading" id="efv-2x-YWc"/>
                                     <constraint firstAttribute="width" secondItem="4Qb-h7-3Og" secondAttribute="height" multiplier="1:1" id="vii-N5-nN6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -1527,6 +1536,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lf8-ft-GSd"/>
                     <connections>
+                        <outlet property="clubImageImageView" destination="2me-Ma-TAt" id="RgI-mv-7YE"/>
                         <outlet property="clubImageView" destination="4Qb-h7-3Og" id="aGc-9C-FO5"/>
                         <outlet property="clubNameTextField" destination="kN7-Wi-5dw" id="3rv-hy-43j"/>
                         <outlet property="privateToggle" destination="PrB-27-dyF" id="Jly-iD-8DT"/>
@@ -2181,10 +2191,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J12-nv-5ws"/>
+        <segue reference="FjX-nW-p8f"/>
         <segue reference="r8I-47-2wE"/>
         <segue reference="pZC-5o-B97"/>
-        <segue reference="yll-99-itn"/>
+        <segue reference="Nho-2L-6Pv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="KeatsLeaves" width="128" height="96.5"/>

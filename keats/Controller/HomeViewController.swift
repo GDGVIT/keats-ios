@@ -215,6 +215,8 @@ extension HomeViewController {
     }
 }
 
+//MARK: - Table View Methods
+
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         clubList.count
@@ -227,7 +229,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let privacyLabel = thisClub.privatet == 0 ? "Private" : "Public"
         cell.privacyLabel.text = privacyLabel
         cell.titleLabel.text = thisClub.clubname
-        print(thisClub.id)
+        //print(thisClub.id)
         if let imgurl = URL.init(string: thisClub.club_pic) {
             cell.clubImageView.loadImage(url: imgurl)
 //            self.loadImage(url: imgurl) { [weak self] (image) in

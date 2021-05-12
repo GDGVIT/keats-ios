@@ -90,6 +90,12 @@
 		70C16CA22641575600F5FD7C /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C16CA12641575600F5FD7C /* ClubViewController.swift */; };
 		70C16CA32641575600F5FD7C /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C16CA12641575600F5FD7C /* ClubViewController.swift */; };
 		70C16CA42641575600F5FD7C /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C16CA12641575600F5FD7C /* ClubViewController.swift */; };
+		70CE2267264C3B7300079067 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE2265264C3B7300079067 /* MemberTableViewCell.swift */; };
+		70CE2268264C3B7300079067 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE2265264C3B7300079067 /* MemberTableViewCell.swift */; };
+		70CE2269264C3B7300079067 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE2265264C3B7300079067 /* MemberTableViewCell.swift */; };
+		70CE226A264C3B7300079067 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CE2266264C3B7300079067 /* MemberTableViewCell.xib */; };
+		70CE226B264C3B7300079067 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CE2266264C3B7300079067 /* MemberTableViewCell.xib */; };
+		70CE226C264C3B7300079067 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CE2266264C3B7300079067 /* MemberTableViewCell.xib */; };
 		70F2EE63264BED7C00B5B455 /* generateQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2EE62264BED7C00B5B455 /* generateQRCode.swift */; };
 		70F2EE64264BED7C00B5B455 /* generateQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2EE62264BED7C00B5B455 /* generateQRCode.swift */; };
 		70F2EE65264BED7C00B5B455 /* generateQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2EE62264BED7C00B5B455 /* generateQRCode.swift */; };
@@ -165,6 +171,8 @@
 		70C16C932641572E00F5FD7C /* JoinClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClubViewController.swift; sourceTree = "<group>"; };
 		70C16C9A2641574700F5FD7C /* CreateClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClubViewController.swift; sourceTree = "<group>"; };
 		70C16CA12641575600F5FD7C /* ClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
+		70CE2265264C3B7300079067 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		70CE2266264C3B7300079067 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 		70F2EE62264BED7C00B5B455 /* generateQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generateQRCode.swift; sourceTree = "<group>"; };
 		AC5CDE0FAE2F6DD1BFA43A10 /* Pods-keats-keatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.release.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B82BC534F27EC4CB60CB54 /* Pods-keats-keatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -337,6 +345,8 @@
 				7031CB0B25D12B9E0002E641 /* Main.storyboard */,
 				70764689263B20A80000B52A /* ClubTableViewCell.swift */,
 				7076468A263B20A80000B52A /* ClubTableViewCell.xib */,
+				70CE2265264C3B7300079067 /* MemberTableViewCell.swift */,
+				70CE2266264C3B7300079067 /* MemberTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -465,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C16C8126412B1700F5FD7C /* CircularStd-BookItalic.ttf in Resources */,
+				70CE226A264C3B7300079067 /* MemberTableViewCell.xib in Resources */,
 				7076468E263B20A80000B52A /* ClubTableViewCell.xib in Resources */,
 				70C16C8726412B1700F5FD7C /* CircularStd-Bold.ttf in Resources */,
 				70C16C7826412B1700F5FD7C /* CircularStd-BoldItalic.ttf in Resources */,
@@ -490,6 +501,7 @@
 				70C16C7626412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */,
 				70C16C8226412B1700F5FD7C /* CircularStd-BookItalic.ttf in Resources */,
 				70C16C8826412B1700F5FD7C /* CircularStd-Bold.ttf in Resources */,
+				70CE226B264C3B7300079067 /* MemberTableViewCell.xib in Resources */,
 				70C16C7926412B1700F5FD7C /* CircularStd-BoldItalic.ttf in Resources */,
 				7076468F263B20A80000B52A /* ClubTableViewCell.xib in Resources */,
 				70C16C7C26412B1700F5FD7C /* CircularStd-MediumItalic.ttf in Resources */,
@@ -507,6 +519,7 @@
 				70C16C7726412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */,
 				70C16C8326412B1700F5FD7C /* CircularStd-BookItalic.ttf in Resources */,
 				70C16C8926412B1700F5FD7C /* CircularStd-Bold.ttf in Resources */,
+				70CE226C264C3B7300079067 /* MemberTableViewCell.xib in Resources */,
 				70C16C7A26412B1700F5FD7C /* CircularStd-BoldItalic.ttf in Resources */,
 				70764690263B20A80000B52A /* ClubTableViewCell.xib in Resources */,
 				70C16C7D26412B1700F5FD7C /* CircularStd-MediumItalic.ttf in Resources */,
@@ -643,6 +656,7 @@
 				70C16CA22641575600F5FD7C /* ClubViewController.swift in Sources */,
 				70764657261B295A0000B52A /* DetailsModel.swift in Sources */,
 				7031CB0825D12B9E0002E641 /* SceneDelegate.swift in Sources */,
+				70CE2267264C3B7300079067 /* MemberTableViewCell.swift in Sources */,
 				7040E12426467AA40047125D /* Keyboards&h.swift in Sources */,
 				707646082619D2E20000B52A /* CountryCodes.swift in Sources */,
 				70764652261B289E0000B52A /* UserModel.swift in Sources */,
@@ -659,6 +673,7 @@
 				7076460126198A360000B52A /* OTPViewController.swift in Sources */,
 				7076468C263B20A80000B52A /* ClubTableViewCell.swift in Sources */,
 				7031CB1D25D12BA10002E641 /* keatsTests.swift in Sources */,
+				70CE2268264C3B7300079067 /* MemberTableViewCell.swift in Sources */,
 				706A494E2645865F00278222 /* ReadViewController.swift in Sources */,
 				70C16C9C2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70F2EE64264BED7C00B5B455 /* generateQRCode.swift in Sources */,
@@ -679,6 +694,7 @@
 				7076460226198A360000B52A /* OTPViewController.swift in Sources */,
 				7076468D263B20A80000B52A /* ClubTableViewCell.swift in Sources */,
 				7031CB2825D12BA10002E641 /* keatsUITests.swift in Sources */,
+				70CE2269264C3B7300079067 /* MemberTableViewCell.swift in Sources */,
 				706A494F2645865F00278222 /* ReadViewController.swift in Sources */,
 				70C16C9D2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70F2EE65264BED7C00B5B455 /* generateQRCode.swift in Sources */,

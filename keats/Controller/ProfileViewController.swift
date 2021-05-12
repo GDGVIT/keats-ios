@@ -72,26 +72,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         print(path)
         
         let uploadTask = storage.child(path).putData(imageData, metadata: nil) { (metadata, error) in
-          guard let metadata = metadata else {
-            print("Uh-oh, an error occurred!")
-            return
-          }
-          // Metadata contains file metadata such as size, content-type.
-          let size = metadata.size
-          // You can also access to download URL after upload.
-            self.storage.child(path).downloadURL { (url, error) in
-            guard let downloadURL = url else {
-              print("Uh-oh, an error occurred! 2")
-              return
+            guard let metadata = metadata else {
+                print("Uh-oh, an error occurred!")
+                return
             }
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            // You can also access to download URL after upload.
+            self.storage.child(path).downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    print("Uh-oh, an error occurred! 2")
+                    return
+                }
                 print(downloadURL.absoluteString)
-          }
+            }
         }
-            
-        
-        
     }
-    
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

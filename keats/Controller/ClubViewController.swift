@@ -29,6 +29,7 @@ class ClubViewController: UIViewController {
         membersTableView.dataSource = self
         uploadMenu.isHidden = true
         getClubDetails(clubid: clubId)
+        membersTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberIdentifier")
     }
     
     @IBAction func qrTapped(_ sender: Any) {
@@ -225,10 +226,13 @@ extension ClubViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemberIdentifier") as! MemberTableViewCell
         let user = users[indexPath.row]
-        cell.textLabel?.text = user.username
-        cell.detailTextLabel?.text = user.bio
+        cell.usernameLabel.text = user.username
+        cell.bioLabel.text = user.bio
+        if let imgurl = URL.init(string: user.profile_pic) {
+            cell.profileImageView.loadImage(url: imgurl)
+        }
         return cell
     }
     
