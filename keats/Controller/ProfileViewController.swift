@@ -154,28 +154,27 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: - Fetch User Details
     
     func fetchUserDetails() {
-        if let bio = UserDefaults.standard.string(forKey: "bio"), let email = UserDefaults.standard.string(forKey: "email"), let username = UserDefaults.standard.string(forKey: "username"), let phone = UserDefaults.standard.string(forKey: "phone_number"), let profile_pic = UserDefaults.standard.string(forKey: "profile_pic") {
+        if let bio = UserDefaults.standard.string(forKey: "bio"), let em = UserDefaults.standard.string(forKey: "email"), let un = UserDefaults.standard.string(forKey: "username"), let ph = UserDefaults.standard.string(forKey: "phone_number"), let profile_pic = UserDefaults.standard.string(forKey: "profile_pic") {
             
             guard let url = URL(string: profile_pic) else {return}
             
             DispatchQueue.global().async {
                 guard let data = try? Data(contentsOf: url) else {return }
-                guard let image = UIImage(data: data) else {return }
+                guard let img = UIImage(data: data) else {return }
                 DispatchQueue.main.async {
-                    self.profileImage.image = image
+                    self.profileImage.image = img
                 }
             }
             
             DispatchQueue.main.async {
                 self.bioTextField.text = bio
-                self.emailTextField.text = email
-                self.nameTextField.text = username
-                self.phoneTextField.text = phone
-                
-                
+                self.emailTextField.text = em
+                self.nameTextField.text = un
+                self.phoneTextField.text = ph
             }
-            
-        } else {
+        }
+        
+        else {
             
             let url = URL(string: "https://keats-testing.herokuapp.com/api/user")
             guard let requestUrl = url else { return }

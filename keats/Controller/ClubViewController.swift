@@ -21,7 +21,7 @@ class ClubViewController: UIViewController {
     
     var currentAnimation = 0
     var users : [UserModel] = []
-    var clubId : String = "Nope"
+    var clubId : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +36,17 @@ class ClubViewController: UIViewController {
     
     @IBAction func shareTapped(_ sender: Any) {
         let text = clubId
+        var textToShare = [ text ] as [Any]
         
-        let textToShare = [ text ]
-        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
+        if let qrImage = generateQRCode(from: text) {
+            textToShare = [ text, qrImage ]
+            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            
+            self.present(activityViewController, animated: true, completion: nil)
+        }
         
-        self.present(activityViewController, animated: true, completion: nil)
+        
     }
     
     @IBAction func chatTapped(_ sender: Any) {

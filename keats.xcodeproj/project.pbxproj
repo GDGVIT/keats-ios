@@ -90,6 +90,9 @@
 		70C16CA22641575600F5FD7C /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C16CA12641575600F5FD7C /* ClubViewController.swift */; };
 		70C16CA32641575600F5FD7C /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C16CA12641575600F5FD7C /* ClubViewController.swift */; };
 		70C16CA42641575600F5FD7C /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C16CA12641575600F5FD7C /* ClubViewController.swift */; };
+		70F2EE63264BED7C00B5B455 /* generateQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2EE62264BED7C00B5B455 /* generateQRCode.swift */; };
+		70F2EE64264BED7C00B5B455 /* generateQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2EE62264BED7C00B5B455 /* generateQRCode.swift */; };
+		70F2EE65264BED7C00B5B455 /* generateQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2EE62264BED7C00B5B455 /* generateQRCode.swift */; };
 		96128FDCA485AE355DCE0753 /* Pods_keats_keatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5A33084BBA16680928A599 /* Pods_keats_keatsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +165,7 @@
 		70C16C932641572E00F5FD7C /* JoinClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClubViewController.swift; sourceTree = "<group>"; };
 		70C16C9A2641574700F5FD7C /* CreateClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClubViewController.swift; sourceTree = "<group>"; };
 		70C16CA12641575600F5FD7C /* ClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
+		70F2EE62264BED7C00B5B455 /* generateQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generateQRCode.swift; sourceTree = "<group>"; };
 		AC5CDE0FAE2F6DD1BFA43A10 /* Pods-keats-keatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.release.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B82BC534F27EC4CB60CB54 /* Pods-keats-keatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keats-keatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-keats-keatsUITests/Pods-keats-keatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9CE90B1F7C293B686E38FAF /* Pods_keats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -322,6 +326,7 @@
 				7040E13026467D0C0047125D /* Keyboard Functions */,
 				7040E15D2646B7020047125D /* RotatingButton.swift */,
 				704217632646F8E100141548 /* loadImage.swift */,
+				70F2EE62264BED7C00B5B455 /* generateQRCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				7031CB0625D12B9E0002E641 /* AppDelegate.swift in Sources */,
 				7040E12C26467B1B0047125D /* KeyboardDoneButton.swift in Sources */,
 				70764673261C310F0000B52A /* ProfileViewController.swift in Sources */,
+				70F2EE63264BED7C00B5B455 /* generateQRCode.swift in Sources */,
 				70C16CA22641575600F5FD7C /* ClubViewController.swift in Sources */,
 				70764657261B295A0000B52A /* DetailsModel.swift in Sources */,
 				7031CB0825D12B9E0002E641 /* SceneDelegate.swift in Sources */,
@@ -655,6 +661,7 @@
 				7031CB1D25D12BA10002E641 /* keatsTests.swift in Sources */,
 				706A494E2645865F00278222 /* ReadViewController.swift in Sources */,
 				70C16C9C2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
+				70F2EE64264BED7C00B5B455 /* generateQRCode.swift in Sources */,
 				70764683261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C952641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
 				706A49552645965400278222 /* ScannerViewController.swift in Sources */,
@@ -674,6 +681,7 @@
 				7031CB2825D12BA10002E641 /* keatsUITests.swift in Sources */,
 				706A494F2645865F00278222 /* ReadViewController.swift in Sources */,
 				70C16C9D2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
+				70F2EE65264BED7C00B5B455 /* generateQRCode.swift in Sources */,
 				70764684261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C962641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
 				706A49562645965400278222 /* ScannerViewController.swift in Sources */,
