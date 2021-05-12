@@ -43,6 +43,8 @@ class JoinClubViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    //MARK: - Join Club
+    
     func joinClub(code: String) {
         
         let json: [String: Any] = ["id_token": code]
@@ -74,13 +76,16 @@ class JoinClubViewController: UIViewController {
                 if status  == "success" {
                     let data = responseJSON["data"]
                     if let data = data as? [String: Any] {
-                        
-                        DispatchQueue.main.async {
-//                            self.performSegue(withIdentifier: "otpToHome", sender: self)
-//                            self.buttonView.isHidden = false
-//                            self.activityIndicator.isHidden = true
-//                            self.activityIndicator.stopAnimating()
-//                            print("Successfully signed in!")
+                        let club = data["club"]
+                        if let club = club as? [String: Any] {
+                            let id = club["id"]
+                            if let id = id as? String {
+                                DispatchQueue.main.async {
+                                    let destinationVC = ClubViewController()
+                                    destinationVC.clubId = id
+                                    self.performSegue(withIdentifier: "JoinToClub", sender: self)
+                                }
+                            }
                         }
                     }
                     
@@ -97,6 +102,8 @@ class JoinClubViewController: UIViewController {
         task.resume()
 
     }
+    
+    //MARK: - Get Public Clubs
     
     func getPublicClubs() {
         let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/list")

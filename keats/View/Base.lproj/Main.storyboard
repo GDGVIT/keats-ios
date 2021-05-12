@@ -1229,6 +1229,7 @@
                         <outlet property="clubsTableView" destination="9ye-3v-SFm" id="OuY-CS-KpB"/>
                         <outlet property="codeTextField" destination="QLc-y6-VCO" id="aOC-gI-KDY"/>
                         <outlet property="publicLabel" destination="Hn8-fq-Zuz" id="1Dv-xd-qCo"/>
+                        <segue destination="94w-zY-A5L" kind="show" identifier="JoinToClub" id="J12-nv-5ws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEa-Qx-OPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1943,7 +1944,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STF-9A-zw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766" y="85"/>
+            <point key="canvasLocation" x="3766" y="96"/>
         </scene>
         <!--Read View Controller-->
         <scene sceneID="1cE-E2-Rxo">
@@ -2180,10 +2181,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mta-F0-l7r"/>
+        <segue reference="J12-nv-5ws"/>
         <segue reference="r8I-47-2wE"/>
         <segue reference="pZC-5o-B97"/>
-        <segue reference="Dac-RK-VQ2"/>
+        <segue reference="yll-99-itn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="KeatsLeaves" width="128" height="96.5"/>
