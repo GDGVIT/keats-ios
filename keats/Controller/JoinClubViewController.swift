@@ -205,5 +205,10 @@ extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let id = clubList[indexPath.row].id
+        joinClub(code: id)
+    }
+    
     
 }
