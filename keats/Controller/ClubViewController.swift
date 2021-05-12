@@ -21,21 +21,27 @@ class ClubViewController: UIViewController {
     
     var currentAnimation = 0
     var users : [UserModel] = []
-    var clubId : String = ""
+    var clubId : String = "Nope"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         membersTableView.delegate = self
         membersTableView.dataSource = self
         uploadMenu.isHidden = true
-        getClubDetails(clubid: "xyz")
-
+        getClubDetails(clubid: clubId)
     }
     
     @IBAction func qrTapped(_ sender: Any) {
     }
     
     @IBAction func shareTapped(_ sender: Any) {
+        let text = clubId
+        
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func chatTapped(_ sender: Any) {
@@ -85,7 +91,8 @@ class ClubViewController: UIViewController {
     //MARK: - Get club details
     
     func getClubDetails(clubid: String) {
-        let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs?club_id=adfcab83-dca1-49d5-b9dc-13dfdb2cba38")
+        let urlString = "https://keats-testing.herokuapp.com/api/clubs?club_id=\(clubid)"
+        let url = URL(string: urlString)
         guard let requestUrl = url else { return }
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"

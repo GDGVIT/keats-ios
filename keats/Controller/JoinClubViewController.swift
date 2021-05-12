@@ -31,6 +31,7 @@ class JoinClubViewController: UIViewController {
     }
     
     @IBAction func qrTapped(_ sender: Any) {
+        
     }
     
     @IBAction func joinTapped(_ sender: Any) {
