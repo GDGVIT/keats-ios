@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Book.ttf">
+            <string>CircularStd-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="keats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-profile" translatesAutoresizingMaskIntoConstraints="NO" id="hdB-fh-vVr">
+                        <rect key="frame" x="15" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="3cI-39-dBT"/>
+                            <constraint firstAttribute="width" constant="40" id="MQ4-Zz-ksS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-profile" translatesAutoresizingMaskIntoConstraints="NO" id="9aK-yg-oph">
+                        <rect key="frame" x="265" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="R6m-df-bhb"/>
+                            <constraint firstAttribute="width" constant="40" id="Xod-dI-NcG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y05-yd-4Iu">
+                        <rect key="frame" x="65" y="10" width="190" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgg-NK-dqC">
+                                <rect key="frame" x="10" y="10" width="170" height="21"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="KeatsSecondaryBg"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zgg-NK-dqC" secondAttribute="trailing" constant="10" id="2fF-yr-0zd"/>
+                            <constraint firstAttribute="bottom" secondItem="zgg-NK-dqC" secondAttribute="bottom" constant="10" id="IdE-on-pn2"/>
+                            <constraint firstItem="zgg-NK-dqC" firstAttribute="leading" secondItem="y05-yd-4Iu" secondAttribute="leading" constant="10" id="J68-Mf-mti"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ofq-v2-Vb2"/>
+                            <constraint firstItem="zgg-NK-dqC" firstAttribute="top" secondItem="y05-yd-4Iu" secondAttribute="top" constant="10" id="tzX-sd-dvo"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="y05-yd-4Iu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4iw-2D-d9A"/>
+                    <constraint firstItem="y05-yd-4Iu" firstAttribute="leading" secondItem="hdB-fh-vVr" secondAttribute="trailing" constant="10" id="Afw-sZ-LbX"/>
+                    <constraint firstItem="9aK-yg-oph" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JfY-4Q-jmT"/>
+                    <constraint firstItem="hdB-fh-vVr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="PIS-w7-aEf"/>
+                    <constraint firstAttribute="trailing" secondItem="9aK-yg-oph" secondAttribute="trailing" constant="15" id="fne-m2-uAr"/>
+                    <constraint firstItem="hdB-fh-vVr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hcI-Fw-D3N"/>
+                    <constraint firstAttribute="bottom" secondItem="y05-yd-4Iu" secondAttribute="bottom" constant="10" id="oB0-cW-9bg"/>
+                    <constraint firstItem="9aK-yg-oph" firstAttribute="leading" secondItem="y05-yd-4Iu" secondAttribute="trailing" constant="10" id="pty-Ey-uiZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="commentBubble" destination="y05-yd-4Iu" id="354-dB-bed"/>
+                <outlet property="commentLabel" destination="zgg-NK-dqC" id="N6l-Tq-HhH"/>
+                <outlet property="theirImageView" destination="hdB-fh-vVr" id="tZL-IN-ydd"/>
+                <outlet property="yourImageView" destination="hdB-fh-vVr" id="4X6-Oc-nFB"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="90.066964285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="default-profile" width="73" height="74"/>
+        <namedColor name="KeatsSecondaryBg">
+            <color red="0.13333333333333333" green="0.14901960784313725" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
