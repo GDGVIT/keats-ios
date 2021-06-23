@@ -17,9 +17,14 @@ name: Lint Code Base
 on:
   push:
     branches: [master]
+    paths-ignore:
+    - 'Pods/**'
+    - '/github/workspace/Pods/**'
     # Remove the line above to run when pushing to master
   pull_request:
     branches: [master]
+    paths-ignore:
+    - 'Pods/**'
 
 ###############
 # Set the Job #
