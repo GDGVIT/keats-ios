@@ -57,6 +57,9 @@
 		7076468E263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
 		7076468F263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
 		70764690263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
+		70A47A1226870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
+		70A47A1326870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
+		70A47A1426870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
 		70C16C7526412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7626412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7726412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
@@ -166,6 +169,7 @@
 		70764681261C8B700000B52A /* NavBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
 		70764689263B20A80000B52A /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		7076468A263B20A80000B52A /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
+		70A47A1126870A91007CB8FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BlackItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6E26412B1600F5FD7C /* CircularStd-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BoldItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6F26412B1600F5FD7C /* CircularStd-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				7031CB0E25D12BA10002E641 /* Assets.xcassets */,
 				7099E83425F188BD00AC732A /* Fonts */,
 				7031CB1025D12BA10002E641 /* LaunchScreen.storyboard */,
+				70A47A1126870A91007CB8FB /* GoogleService-Info.plist */,
 				7057A06525EC106000CEA17A /* GoogleService-Info.plist */,
 				7031CB1325D12BA10002E641 /* Info.plist */,
 			);
@@ -499,6 +504,7 @@
 				70C16C8426412B1700F5FD7C /* CircularStd-Book.ttf in Resources */,
 				7031CB0D25D12B9E0002E641 /* Main.storyboard in Resources */,
 				7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */,
+				70A47A1226870A91007CB8FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +519,7 @@
 				70C16C8226412B1700F5FD7C /* CircularStd-BookItalic.ttf in Resources */,
 				70C16C8826412B1700F5FD7C /* CircularStd-Bold.ttf in Resources */,
 				70CE226B264C3B7300079067 /* MemberTableViewCell.xib in Resources */,
+				70A47A1326870A91007CB8FB /* GoogleService-Info.plist in Resources */,
 				70CE2276264C44A900079067 /* CommentTableViewCell.xib in Resources */,
 				70C16C7926412B1700F5FD7C /* CircularStd-BoldItalic.ttf in Resources */,
 				7076468F263B20A80000B52A /* ClubTableViewCell.xib in Resources */,
@@ -532,6 +539,7 @@
 				70C16C8326412B1700F5FD7C /* CircularStd-BookItalic.ttf in Resources */,
 				70C16C8926412B1700F5FD7C /* CircularStd-Bold.ttf in Resources */,
 				70CE226C264C3B7300079067 /* MemberTableViewCell.xib in Resources */,
+				70A47A1426870A91007CB8FB /* GoogleService-Info.plist in Resources */,
 				70CE2277264C44A900079067 /* CommentTableViewCell.xib in Resources */,
 				70C16C7A26412B1700F5FD7C /* CircularStd-BoldItalic.ttf in Resources */,
 				70764690263B20A80000B52A /* ClubTableViewCell.xib in Resources */,
