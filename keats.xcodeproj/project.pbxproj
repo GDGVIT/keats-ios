@@ -60,6 +60,9 @@
 		70A47A1226870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
 		70A47A1326870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
 		70A47A1426870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
+		70A47A6226871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
+		70A47A6326871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
+		70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
 		70C16C7526412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7626412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7726412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
@@ -170,6 +173,7 @@
 		70764689263B20A80000B52A /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		7076468A263B20A80000B52A /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
 		70A47A1126870A91007CB8FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = samplecoredata.xcdatamodel; sourceTree = "<group>"; };
 		70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BlackItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6E26412B1600F5FD7C /* CircularStd-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BoldItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6F26412B1600F5FD7C /* CircularStd-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 				7031CB1025D12BA10002E641 /* LaunchScreen.storyboard */,
 				70A47A1126870A91007CB8FB /* GoogleService-Info.plist */,
 				7057A06525EC106000CEA17A /* GoogleService-Info.plist */,
+				70A47A6026871061007CB8FB /* keats.xcdatamodeld */,
 				7031CB1325D12BA10002E641 /* Info.plist */,
 			);
 			path = keats;
@@ -658,6 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A47A6226871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764682261C8B700000B52A /* NavBarViewController.swift in Sources */,
 				7076468B263B20A80000B52A /* ClubTableViewCell.swift in Sources */,
 				70C16C9B2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
@@ -700,6 +706,7 @@
 				70C16C9C2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70F2EE64264BED7C00B5B455 /* generateQRCode.swift in Sources */,
 				70CE2273264C44A900079067 /* CommentTableViewCell.swift in Sources */,
+				70A47A6326871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764683261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C952641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
 				706A49552645965400278222 /* ScannerViewController.swift in Sources */,
@@ -722,6 +729,7 @@
 				70C16C9D2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70F2EE65264BED7C00B5B455 /* generateQRCode.swift in Sources */,
 				70CE2274264C44A900079067 /* CommentTableViewCell.swift in Sources */,
+				70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764684261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C962641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
 				706A49562645965400278222 /* ScannerViewController.swift in Sources */,
@@ -1051,6 +1059,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70A47A6026871061007CB8FB /* keats.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */,
+			);
+			currentVersion = 70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */;
+			path = keats.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7031CAFA25D12B9E0002E641 /* Project object */;
 }

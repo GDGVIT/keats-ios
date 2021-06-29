@@ -229,6 +229,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let privacyLabel = thisClub.privatet == 0 ? "Private" : "Public"
         cell.privacyLabel.text = privacyLabel
         cell.titleLabel.text = thisClub.clubname
+        cell.clubImageView.image = UIImage(named: "KeatsLeaves")
         //print(thisClub.id)
         if let imgurl = URL.init(string: thisClub.club_pic) {
             cell.clubImageView.loadImage(url: imgurl)

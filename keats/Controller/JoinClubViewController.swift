@@ -26,6 +26,7 @@ class JoinClubViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         getPublicClubs()
+        joinClub(code: "13355952-5b2c-4608-8c52-defe15e67cf4")
         clubsTableView.register(UINib(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubCell")
 
     }
@@ -159,7 +160,6 @@ class JoinClubViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
                         self.activityIndicator.isHidden = true
-//
                         if clubs.count > 0 {
                             self.clubsTableView.isHidden = false
                             print(self.clubList)
@@ -208,7 +208,8 @@ extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = clubList[indexPath.row].id
-        joinClub(code: id)
+        print(id)
+        //joinClub(code: id)
     }
     
     
