@@ -18,12 +18,18 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
 
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
+            alert(message: "Your device is not suitable for video capturing", title: "Error")
+            return
+            
+        }
+        
         let videoInput: AVCaptureDeviceInput
 
         do {
             videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
         } catch {
+            alert(message: "Your device can't give video input", title: "Error")
             return
         }
 
