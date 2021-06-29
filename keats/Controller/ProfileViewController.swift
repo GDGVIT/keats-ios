@@ -270,15 +270,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
             var request = URLRequest(url: url)
             request.httpMethod = "PATCH"
-            guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
-            
-            request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-            
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            // insert json data to the request
-            request.httpBody = jsonData
-            
+            prepareRequest()
             
             let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let dta = data, error == nil else {
@@ -312,15 +304,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updateprofilepic") else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
-        print("Bearer \(token)")
-        
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        // insert json data to the request
-        request.httpBody = jsonData
+        prepareRequest()
         
         let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let dta = data, error == nil else {
@@ -354,16 +338,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updatephone") else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
-        print("Bearer \(token)")
         
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        // insert json data to the request
-        request.httpBody = jsonData
-        
+        prepareRequest()
         let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let dta = data, error == nil else {
                 print(error?.localizedDescription ?? "no data")
@@ -388,6 +364,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         tsk.resume()
         
+    }
+    
+    func prepareRequest() {
+        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
+        print("Bearer \(token)")
+        
+        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
     }
     
 }
