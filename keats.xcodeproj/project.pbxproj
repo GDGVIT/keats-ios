@@ -63,6 +63,7 @@
 		70A47A6226871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
 		70A47A6326871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
 		70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
+		70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF7975268BCD24005B423C /* prepareRequest.swift */; };
 		70C16C7526412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7626412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7726412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
@@ -174,6 +175,7 @@
 		7076468A263B20A80000B52A /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
 		70A47A1126870A91007CB8FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = samplecoredata.xcdatamodel; sourceTree = "<group>"; };
+		70AF7975268BCD24005B423C /* prepareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prepareRequest.swift; sourceTree = "<group>"; };
 		70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BlackItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6E26412B1600F5FD7C /* CircularStd-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BoldItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6F26412B1600F5FD7C /* CircularStd-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				7040E15D2646B7020047125D /* RotatingButton.swift */,
 				704217632646F8E100141548 /* loadImage.swift */,
 				70F2EE62264BED7C00B5B455 /* generateQRCode.swift */,
+				70AF7975268BCD24005B423C /* prepareRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				704217642646F8E100141548 /* loadImage.swift in Sources */,
 				7040E11F26467A450047125D /* alert.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
+				70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

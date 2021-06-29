@@ -268,28 +268,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             let jsonData = try? JSONSerialization.data(withJSONObject: json)
             guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
-            var request = URLRequest(url: url)
-            request.httpMethod = "PATCH"
-            prepareRequest()
-            
-            let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let dta = data, error == nil else {
-                    print(error?.localizedDescription ?? "no data")
-                    return
-                }
-                
-                let responseJSON = try? JSONSerialization.jsonObject(with: dta, options: [])
-                if let rsponseJSON = responseJSON as? [String: Any] {
-                    let status = rsponseJSON["status"]
-                    if status as! String != "error" {
-                        print("Successfully updated info")
-                    } else {
-                        print(rsponseJSON)
-                    }
-                }
-            }
-            
-            tsk.resume()
+            prepareRequest(method: "PATCH", url: url, jsonData: jsonData)
         }
     }
     
@@ -302,28 +281,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updateprofilepic") else {return}
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        prepareRequest()
         
-        let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let dta = data, error == nil else {
-                print(error?.localizedDescription ?? "no data")
-                return
-            }
-            
-            let responseJSON = try? JSONSerialization.jsonObject(with: dta, options: [])
-            if let rsponseJSON = responseJSON as? [String: Any] {
-                let status = rsponseJSON["status"]
-                if status as! String != "error" {
-                    print("Successfully updated image")
-                } else {
-                    print(rsponseJSON)
-                }
-            }
-        }
+        prepareRequest(method: "POST", url: url, jsonData: jsonData)
         
-        tsk.resume()
+        
         
     }
     
@@ -336,46 +297,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updatephone") else {return}
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
         
-        prepareRequest()
-        let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let dta = data, error == nil else {
-                print(error?.localizedDescription ?? "no data")
-                return
-            }
-            
-            let responseJSON = try? JSONSerialization.jsonObject(with: dta, options: [])
-            if let rsponseJSON = responseJSON as? [String: Any] {
-                let status = rsponseJSON["status"]
-                let message = rsponseJSON["message"]
-                if status as! String == "success" {
-                    print("Successfully updated phone number")
-                } else if message as! String == "phone number already exists" {
-                    self.alert(message: "Phone number already exists", title: "Error")
-                    
-                }
-                    else {
-                    print(rsponseJSON)
-                }
-            }
-        }
+        prepareRequest(method: "POST", url: url, jsonData: jsonData)
         
-        tsk.resume()
         
     }
     
-    func prepareRequest() {
-        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
-        print("Bearer \(token)")
-        
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        // insert json data to the request
-        request.httpBody = jsonData
-    }
+    
     
 }
