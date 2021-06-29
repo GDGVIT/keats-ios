@@ -61,7 +61,7 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
                         self.activityIndicator.isHidden = true
                         self.activityIndicator.stopAnimating()
                         buttonView.isHidden = false
-                        alert(message: "There was an error on our end. Please try again", title: "Error")
+                        alert(message: "Check your phone number and please try again", title: "Error")
                         return
                       }
                       // Sign in using the verificationID and the code sent to the user

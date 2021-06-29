@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     private let storage = Storage.storage().reference()
 
     var isEditingProfile = false
+    var previousPhone = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func editButtonTapped(_ sender: Any) {
         if isEditingProfile {
             makeNonEditable()
-            updateUserInfo()
+            updateUserInfo(imageUrl: "")
             
         } else {
             makeEditable()
@@ -69,7 +70,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let identifier = UUID()
         let path = "public/\(identifier).png"
-        print(path)
+        //print(path)
         
         let uploadTask = storage.child(path).putData(imageData, metadata: nil) { (metadata, error) in
             guard let metadata = metadata else {
@@ -85,6 +86,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     return
                 }
                 print(downloadURL.absoluteString)
+                let imageLink = downloadURL.absoluteString
+                //self.updateProfilePic(downloadUrl: imageLink)
+                self.updateUserInfo(imageUrl: imageLink)
             }
         }
     }
@@ -93,6 +97,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
     }
     
+    //MARK: - Info Change UI
     
     func makeEditable() {
         isEditingProfile = true
@@ -219,6 +224,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                                     self.emailTextField.text = email
                                     self.nameTextField.text = username
                                     self.phoneTextField.text = phone
+                                    self.previousPhone = phone
                                     
                                 }
                             }
@@ -232,13 +238,34 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: - Update User Info
     
-    func updateUserInfo() {
+    func updateUserInfo(imageUrl: String) {
+        
+        if let phone = phoneTextField.text {
+            if phone != previousPhone {
+                if phone.count == 13{
+                    updatePhoneNumber()
+                } else {
+                    alert(message: "Check the phone number and try again with your countrycode. Eg: +91XXXXXXXXXX", title: "Error")
+                }
+                
+            }
+        }
         
         if let userName = nameTextField.text, let bio = bioTextField.text, let email = emailTextField.text {
             
-            let json: [String: Any] = ["username": userName,
-                                       "email": email,
-                                       "bio": bio]
+            var json: [String: Any]
+            
+            if imageUrl == "" {
+                json = ["username": userName,
+                "email": email,
+                "bio": bio]
+            } else {
+                json = ["username": userName,
+                "email": email,
+                "bio": bio,
+                "profile_pic": imageUrl]
+            }
+            
             let jsonData = try? JSONSerialization.data(withJSONObject: json)
             guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
             var request = URLRequest(url: url)
@@ -273,4 +300,94 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             tsk.resume()
         }
     }
+    
+    //MARK: - Update user profile pic
+    
+    func updateProfilePic(downloadUrl: String) {
+        
+        // prepare json data
+        let json: [String: Any] = ["profile_pic": downloadUrl]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updateprofilepic") else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
+        print("Bearer \(token)")
+        
+        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let dta = data, error == nil else {
+                print(error?.localizedDescription ?? "no data")
+                return
+            }
+            
+            let responseJSON = try? JSONSerialization.jsonObject(with: dta, options: [])
+            if let rsponseJSON = responseJSON as? [String: Any] {
+                let status = rsponseJSON["status"]
+                if status as! String != "error" {
+                    print("Successfully updated image")
+                } else {
+                    print(rsponseJSON)
+                }
+            }
+        }
+        
+        tsk.resume()
+        
+    }
+    
+    //MARK: - Update Phone Number
+    
+    func updatePhoneNumber() {
+        // prepare json data
+        guard let idToken = UserDefaults.standard.string(forKey: "JWToken") else {return}
+        let json: [String: Any] = ["id_token": idToken]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updatephone") else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
+        print("Bearer \(token)")
+        
+        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let dta = data, error == nil else {
+                print(error?.localizedDescription ?? "no data")
+                return
+            }
+            
+            let responseJSON = try? JSONSerialization.jsonObject(with: dta, options: [])
+            if let rsponseJSON = responseJSON as? [String: Any] {
+                let status = rsponseJSON["status"]
+                let message = rsponseJSON["message"]
+                if status as! String == "success" {
+                    print("Successfully updated phone number")
+                } else if message as! String == "phone number already exists" {
+                    self.alert(message: "Phone number already exists", title: "Error")
+                    
+                }
+                    else {
+                    print(rsponseJSON)
+                }
+            }
+        }
+        
+        tsk.resume()
+        
+    }
+    
 }
