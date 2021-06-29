@@ -19,6 +19,7 @@ class JoinClubViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusBarColor(view: view)
         clubsTableView.delegate = self
         clubsTableView.dataSource = self
         clubsTableView.isHidden = true

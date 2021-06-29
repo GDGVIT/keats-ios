@@ -29,10 +29,9 @@
                         <rect key="frame" x="25" y="10" width="347" height="128"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KeatsLeaves" translatesAutoresizingMaskIntoConstraints="NO" id="5Oy-yv-ahp">
-                                <rect key="frame" x="17" y="17" width="94" height="94"/>
+                                <rect key="frame" x="17" y="17" width="82" height="94"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="Fz7-Yw-ucI"/>
-                                    <constraint firstAttribute="width" secondItem="5Oy-yv-ahp" secondAttribute="height" multiplier="1:1" id="Knv-WQ-aKZ"/>
+                                    <constraint firstAttribute="width" secondItem="5Oy-yv-ahp" secondAttribute="height" multiplier="87:100" id="Knv-WQ-aKZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -41,23 +40,29 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Flutter Lovers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GB-DS-ieA">
-                                <rect key="frame" x="131" y="13" width="139" height="23.5"/>
-                                <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="20"/>
+                                <rect key="frame" x="119" y="13" width="157" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="dxe-gi-0ME"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fov-b9-mxw">
-                                <rect key="frame" x="290" y="16" width="46" height="15.5"/>
+                                <rect key="frame" x="296" y="16" width="46" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="lMg-tY-KoD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CircularStd-BookItalic" family="Circular Std" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="CircularStd-BookItalic" family="Circular Std" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Host: Prashasti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci8-UZ-8B3">
-                                <rect key="frame" x="131" y="42.5" width="196" height="15.5"/>
-                                <fontDescription key="fontDescription" name="CircularStd-BookItalic" family="Circular Std" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Host: Prashasti" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci8-UZ-8B3">
+                                <rect key="frame" x="119" y="40" width="208" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="zQQ-1g-Gq2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CircularStd-BookItalic" family="Circular Std" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -71,10 +76,10 @@
                             <constraint firstItem="fov-b9-mxw" firstAttribute="top" secondItem="LKR-7R-948" secondAttribute="top" constant="16" id="Ozy-cs-Hkd"/>
                             <constraint firstItem="fov-b9-mxw" firstAttribute="leading" secondItem="3GB-DS-ieA" secondAttribute="trailing" constant="20" id="Tsg-gu-jgd"/>
                             <constraint firstItem="3GB-DS-ieA" firstAttribute="top" secondItem="LKR-7R-948" secondAttribute="top" constant="13" id="TzE-9i-BqU"/>
-                            <constraint firstAttribute="trailing" secondItem="fov-b9-mxw" secondAttribute="trailing" constant="11" id="U1v-oI-53c"/>
+                            <constraint firstAttribute="trailing" secondItem="fov-b9-mxw" secondAttribute="trailing" constant="5" id="U1v-oI-53c"/>
                             <constraint firstAttribute="bottom" secondItem="5Oy-yv-ahp" secondAttribute="bottom" constant="17" id="UJa-ff-hHV"/>
                             <constraint firstItem="5Oy-yv-ahp" firstAttribute="top" secondItem="LKR-7R-948" secondAttribute="top" constant="17" id="hcp-Va-NoO"/>
-                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ci8-UZ-8B3" secondAttribute="bottom" constant="70" id="iQV-GP-NNb"/>
+                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ci8-UZ-8B3" secondAttribute="bottom" constant="80" id="iQV-GP-NNb"/>
                             <constraint firstAttribute="trailing" secondItem="ci8-UZ-8B3" secondAttribute="trailing" constant="20" id="mTR-qD-5tk"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="126" id="yal-G3-3m3"/>
                         </constraints>

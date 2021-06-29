@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        statusBarColor(view: view)
         clubsTableView.delegate = self
         clubsTableView.dataSource = self
         joinButtonView.curvedButtonView(color: "KeatsViolet")
@@ -223,6 +225,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClubCell") as! ClubTableViewCell
         let thisClub = clubList[indexPath.row]
         cell.hostLabel.text = thisClub.host_name

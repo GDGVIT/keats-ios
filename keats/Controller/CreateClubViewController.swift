@@ -19,7 +19,7 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        statusBarColor(view: view)
        
     }
     

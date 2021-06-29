@@ -53,27 +53,31 @@ class OTPViewController: UIViewController {
                     self.buttonView.isHidden = false
                     self.activityIndicator.isHidden = true
                     self.activityIndicator.stopAnimating()
-                    self.alert(message: authError.localizedDescription, title: "Error")
+                    self.alert(message: "Check the OTP and try again.", title: "Error")
                     print(authError.localizedDescription)
-                  }
-                    
+                  } else {
                     let currentUser = Auth.auth().currentUser
                     currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
                       if let error = error {
                         self.buttonView.isHidden = false
                         self.activityIndicator.isHidden = true
                         self.activityIndicator.stopAnimating()
-                        self.alert(message: error.localizedDescription, title: "Error")
+                        self.alert(message: "Sign in unsuccessful. Please try again", title: "Error")
                         print("error in getting id token: \(error.localizedDescription)")
                         return;
-                      }
-
+                        
+                      } else {
                         if let token = idToken {
                             UserDefaults.standard.set(token, forKey: "IDToken")
                             self.signInUser(verificationId: token)
                             
                         }
+                      }
                     }
+                    
+                  }
+                    
+                    
                 }
             }
        }
