@@ -1,14 +1,14 @@
 //
-//  ReadViewController.swift
+//  ChatViewController.swift
 //  keats
 //
-//  Created by Swamita on 07/05/21.
+//  Created by Swamita on 30/06/21.
 //
 
 import UIKit
 import WebKit
 
-class ReadViewController: UIViewController, WKNavigationDelegate,  WKUIDelegate  {
+class ChatViewController: UIViewController, WKNavigationDelegate,  WKUIDelegate {
     
     var webView: WKWebView!
     @IBOutlet weak var readView: UIView!
@@ -17,12 +17,13 @@ class ReadViewController: UIViewController, WKNavigationDelegate,  WKUIDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)
+        
         guard let idToken = UserDefaults.standard.string(forKey: "JWToken") else {return}
-        guard let url = URL(string: "https://keats.pages.dev/club/\(clubId)/read?token=\(idToken)") else {
-            print("Incorrect URL for book")
+        guard let url = URL(string: "https://keats.pages.dev/club/\(clubId)/chat?token=\(idToken)") else {
+            print("Incorrect URL for chat")
             return
         }
-        print("Read URL: \(url)")
+        print("Chat URL: \(url)")
         let request = URLRequest(url: url)
             let webView = WKWebView(frame: self.readView.bounds)
         webView.autoresizingMask = [.flexibleWidth, ] //It assigns Custom View height and width
@@ -34,14 +35,8 @@ class ReadViewController: UIViewController, WKNavigationDelegate,  WKUIDelegate 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func pageChatTapped(_ sender: Any) {
-    }
-    
-    @IBAction func clubChatTapped(_ sender: Any) {
-    }
-    
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
+
 }

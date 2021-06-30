@@ -24,6 +24,9 @@
 		7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06725EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06825EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
+		70634211268C8082007586A4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70634210268C8082007586A4 /* ChatViewController.swift */; };
+		70634212268C8082007586A4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70634210268C8082007586A4 /* ChatViewController.swift */; };
+		70634213268C8082007586A4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70634210268C8082007586A4 /* ChatViewController.swift */; };
 		706A494D2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
 		706A494E2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
 		706A494F2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
@@ -158,6 +161,7 @@
 		7040E15D2646B7020047125D /* RotatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingButton.swift; sourceTree = "<group>"; };
 		704217632646F8E100141548 /* loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadImage.swift; sourceTree = "<group>"; };
 		7057A06525EC106000CEA17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70634210268C8082007586A4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		706A494C2645865F00278222 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		706A49532645965400278222 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		707645D32615BB830000B52A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 				70764672261C310E0000B52A /* ProfileViewController.swift */,
 				706A494C2645865F00278222 /* ReadViewController.swift */,
 				706A49532645965400278222 /* ScannerViewController.swift */,
+				70634210268C8082007586A4 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -694,6 +699,7 @@
 				704217642646F8E100141548 /* loadImage.swift in Sources */,
 				7040E11F26467A450047125D /* alert.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
+				70634211268C8082007586A4 /* ChatViewController.swift in Sources */,
 				70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +719,7 @@
 				70A47A6326871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764683261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C952641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
+				70634212268C8082007586A4 /* ChatViewController.swift in Sources */,
 				706A49552645965400278222 /* ScannerViewController.swift in Sources */,
 				70764674261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D52615BB830000B52A /* PhoneViewController.swift in Sources */,
@@ -736,6 +743,7 @@
 				70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764684261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C962641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
+				70634213268C8082007586A4 /* ChatViewController.swift in Sources */,
 				706A49562645965400278222 /* ScannerViewController.swift in Sources */,
 				70764675261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D62615BB830000B52A /* PhoneViewController.swift in Sources */,

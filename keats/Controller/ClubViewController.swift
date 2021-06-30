@@ -81,6 +81,22 @@ class ClubViewController: UIViewController {
         }
     }
     
+    @IBAction func readTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "clubToRead", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ReadViewController {
+            let vc = segue.destination as? ReadViewController
+            vc?.clubId = clubId
+        }
+        
+        if segue.destination is ChatViewController {
+            let vc = segue.destination as? ChatViewController
+            vc?.clubId = clubId
+        }
+    }
+    
     @IBAction func uploadPDFTapped(_ sender: Any) {
     }
     
