@@ -115,9 +115,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         emailTextField.borderStyle = .roundedRect
         emailTextField.backgroundColor = UIColor(named: "TextFieldBg")
         
-        phoneTextField.isUserInteractionEnabled = true
-        phoneTextField.borderStyle = .roundedRect
-        phoneTextField.backgroundColor = UIColor(named: "TextFieldBg")
+        phoneTextField.isUserInteractionEnabled = false
+        phoneTextField.borderStyle = .none
+        phoneTextField.backgroundColor = .clear
     }
     
     func makeNonEditable() {

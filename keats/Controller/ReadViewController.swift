@@ -25,7 +25,7 @@ class ReadViewController: UIViewController, WKNavigationDelegate,  WKUIDelegate 
         print("Read URL: \(url)")
         let request = URLRequest(url: url)
             let webView = WKWebView(frame: self.readView.bounds)
-        webView.autoresizingMask = [.flexibleWidth, ] //It assigns Custom View height and width
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight] //It assigns Custom View height and width
             webView.navigationDelegate = self
         
         webView.contentMode = .scaleAspectFit

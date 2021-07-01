@@ -17,6 +17,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var clubList : [ClubModel] = []
+    var clubId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,22 +85,21 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func joinClub(code: String) {
         
-        let json: [String: Any] = ["id_token": code]
+        let json: [String: Any] = ["club_id": code]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
-        // create post request
-        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
+        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/join") else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        //request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        
         guard let token = UserDefaults.standard.string(forKey: "JWToken") else {
             return}
         
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-        print("Bearer \(token)")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        // insert json data to the request
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -118,9 +118,11 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
                         if let club = club as? [String: Any] {
                             let id = club["id"]
                             if let id = id as? String {
+                                self.clubId = id
                                 DispatchQueue.main.async {
-                                    let destinationVC = ClubViewController()
-                                    destinationVC.clubId = id
+//                                    let destinationVC = ClubViewController()
+//                                    destinationVC.clubId = id
+                                    print("id: \(id)")
                                     self.performSegue(withIdentifier: "JoinToClub", sender: self)
                                 }
                             }
@@ -248,6 +250,13 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
         joinClub(code: id)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ClubViewController {
+            let vc = segue.destination as? ClubViewController
+            vc?.clubId = clubId
+            print("clubId: \(clubId)")
+        }
+    }
     
 }
 
