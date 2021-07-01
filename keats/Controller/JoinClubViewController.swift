@@ -7,8 +7,9 @@
 
 import UIKit
 import SwiftyJSON
+import AVFoundation
 
-class JoinClubViewController: UIViewController {
+class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var clubsTableView: UITableView!
@@ -33,17 +34,50 @@ class JoinClubViewController: UIViewController {
     }
     
     @IBAction func qrTapped(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
         
     }
     
     @IBAction func joinTapped(_ sender: Any) {
-        if codeTextField.text != "" {
-            
+        guard let clubCode = codeTextField.text else { return}
+        if clubCode == "" {
+            alert(message: "Type or scan the club's code to join.", title: "Empty Field")
+        } else {
+            joinClub(code: clubCode)
         }
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: - QR Image Picker
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let qrcodeImg = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage {
+                let detector:CIDetector=CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])!
+                let ciImage:CIImage=CIImage(image:qrcodeImg)!
+                var qrCodeLink=""
+      
+                let features=detector.features(in: ciImage)
+                for feature in features as! [CIQRCodeFeature] {
+                    qrCodeLink += feature.messageString!
+                }
+                
+                if qrCodeLink=="" {
+                    print("nothing")
+                }else{
+                    print("message: \(qrCodeLink)")
+                    codeTextField.text = qrCodeLink
+                }
+            }
+            else{
+               print("Something went wrong")
+            }
+           self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: - Join Club
@@ -215,3 +249,4 @@ extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
