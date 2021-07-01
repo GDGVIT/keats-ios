@@ -9,7 +9,7 @@ import UIKit
 import SwiftyJSON
 import AVFoundation
 
-class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var clubsTableView: UITableView!
@@ -28,7 +28,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         getPublicClubs()
-        joinClub(code: "13355952-5b2c-4608-8c52-defe15e67cf4")
+        //joinClub(code: "13355952-5b2c-4608-8c52-defe15e67cf4")
         clubsTableView.register(UINib(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubCell")
 
     }
@@ -97,6 +97,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
             return}
         
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        print("Bearer \(token)")
 
         // insert json data to the request
         request.httpBody = jsonData
@@ -128,7 +129,9 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
                     
                 } else {
                     if let message = responseJSON["message"] as? String, let status = responseJSON["status"] as? String {
-                        self.alert(message: message, title: status)
+                        DispatchQueue.main.async {
+                            self.alert(message: message, title: status)
+                        }
                     }
                     
                 }
@@ -215,9 +218,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         task.resume()
     }
-}
 
-extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         clubList.count
     }
@@ -244,7 +245,7 @@ extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = clubList[indexPath.row].id
         print(id)
-        //joinClub(code: id)
+        joinClub(code: id)
     }
     
     
