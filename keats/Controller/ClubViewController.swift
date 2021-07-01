@@ -33,7 +33,7 @@ class ClubViewController: UIViewController {
         editButton.isHidden = true
         buttonView.isHidden = true
         uploadMenu.isHidden = true
-        getClubDetails(clubid: clubId)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,7 @@ class ClubViewController: UIViewController {
         chatButton.isHidden = true
         membersTableView.delegate = self
         membersTableView.dataSource = self
+        getClubDetails(clubid: clubId)
         membersTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberIdentifier")
     }
     

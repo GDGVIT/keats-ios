@@ -1598,7 +1598,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwC-lv-KMC">
-                                <rect key="frame" x="371.5" y="193" width="17.5" height="22"/>
+                                <rect key="frame" x="327.5" y="193" width="17.5" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="pencil" catalog="system"/>
                                 <connections>
@@ -1606,7 +1606,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11X-If-rgr">
-                                <rect key="frame" x="317.5" y="193" width="19" height="22"/>
+                                <rect key="frame" x="370" y="193" width="19" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="square.and.arrow.up.fill" catalog="system"/>
                                 <connections>
@@ -1724,7 +1724,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-Y5-kU4">
-                                <rect key="frame" x="255" y="193" width="27.5" height="22"/>
+                                <rect key="frame" x="275" y="193" width="27.5" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="bubble.left.and.bubble.right.fill" catalog="system"/>
                                 <connections>
@@ -1975,7 +1975,7 @@
                             <constraint firstItem="m6Y-ZT-289" firstAttribute="bottom" secondItem="J8n-sO-a3w" secondAttribute="bottom" constant="35" id="JyQ-91-l2d"/>
                             <constraint firstItem="zr7-uq-bcr" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" id="KD1-Ia-mbC"/>
                             <constraint firstItem="LHo-0L-myg" firstAttribute="leading" secondItem="m6Y-ZT-289" secondAttribute="leading" constant="20" id="KTo-Ww-skG"/>
-                            <constraint firstItem="11X-If-rgr" firstAttribute="leading" secondItem="JDv-Y5-kU4" secondAttribute="trailing" constant="35" id="Ly0-6U-c6q"/>
+                            <constraint firstItem="PwC-lv-KMC" firstAttribute="leading" secondItem="JDv-Y5-kU4" secondAttribute="trailing" constant="25" id="Ly0-6U-c6q"/>
                             <constraint firstItem="PwC-lv-KMC" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="105" id="MCx-iX-qso"/>
                             <constraint firstItem="5V5-gz-tHV" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="99" id="O1L-u2-HId"/>
                             <constraint firstItem="Xzz-BD-C3V" firstAttribute="top" secondItem="zEf-CA-VKj" secondAttribute="bottom" constant="20" id="QtZ-BS-0Vh"/>
@@ -1983,12 +1983,12 @@
                             <constraint firstItem="JDv-Y5-kU4" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="105" id="ZOR-V7-Ju7"/>
                             <constraint firstItem="zEf-CA-VKj" firstAttribute="top" secondItem="LHo-0L-myg" secondAttribute="bottom" constant="30" id="bGL-qK-Akw"/>
                             <constraint firstItem="zEf-CA-VKj" firstAttribute="leading" secondItem="m6Y-ZT-289" secondAttribute="leading" constant="25" id="baz-6D-hYC"/>
-                            <constraint firstItem="PwC-lv-KMC" firstAttribute="leading" secondItem="11X-If-rgr" secondAttribute="trailing" constant="35" id="ePu-wT-k3K"/>
+                            <constraint firstAttribute="trailing" secondItem="11X-If-rgr" secondAttribute="trailing" constant="25" id="ePu-wT-k3K"/>
                             <constraint firstItem="m6Y-ZT-289" firstAttribute="trailing" secondItem="zr7-uq-bcr" secondAttribute="trailing" id="eRS-aF-oFa"/>
                             <constraint firstItem="LHo-0L-myg" firstAttribute="top" secondItem="5V5-gz-tHV" secondAttribute="bottom" constant="20" id="egR-ay-MuG"/>
                             <constraint firstItem="Sg7-cS-SMp" firstAttribute="top" secondItem="LHo-0L-myg" secondAttribute="bottom" constant="32" id="f6w-nL-9Ba"/>
                             <constraint firstItem="zr7-uq-bcr" firstAttribute="leading" secondItem="dpB-Mo-CB3" secondAttribute="leading" id="k60-Wo-Sb1"/>
-                            <constraint firstItem="m6Y-ZT-289" firstAttribute="trailing" secondItem="PwC-lv-KMC" secondAttribute="trailing" constant="25" id="mNl-j2-135"/>
+                            <constraint firstItem="11X-If-rgr" firstAttribute="leading" secondItem="PwC-lv-KMC" secondAttribute="trailing" constant="25" id="mNl-j2-135"/>
                             <constraint firstItem="J8n-sO-a3w" firstAttribute="top" secondItem="bgm-PC-7eD" secondAttribute="bottom" constant="6" id="tBn-GQ-oVX"/>
                             <constraint firstItem="11X-If-rgr" firstAttribute="top" secondItem="m6Y-ZT-289" secondAttribute="top" constant="105" id="xPS-5p-ZGr"/>
                         </constraints>
