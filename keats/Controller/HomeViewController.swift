@@ -8,6 +8,8 @@
 import UIKit
 import SwiftyJSON
 
+var myProfileImage =  UIImage(named: "default-profile")
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var readingImage: UIImageView!
@@ -78,18 +80,6 @@ class HomeViewController: UIViewController {
             currentAnimation = 0
         }
     }
-    
-//    private func loadImage(url: URL, completion: @escaping (UIImage?) -> ()) {
-//        utilityQueue.async {
-//                guard let data = try? Data(contentsOf: url) else { return }
-//                let image = UIImage(data: data)
-//
-//                DispatchQueue.main.async {
-//                    completion(image)
-//                }
-//            }
-//        }
-    
 }
 
 //MARK: - fetch club details
@@ -128,6 +118,9 @@ extension HomeViewController {
                     let email = json["data"]["user"]["email"]
                     UserDefaults.standard.set(email.rawString(), forKey: "email")
                     
+                    let user_id = json["data"]["user"]["id"]
+                    UserDefaults.standard.set(user_id.rawString(), forKey: "uid")
+                    
                     let profile_pic = json["data"]["user"]["profile_pic"]
                     if let profile_string = profile_pic.rawString() {
                         guard let url = URL(string: profile_string) else {return}
@@ -137,6 +130,7 @@ extension HomeViewController {
                             guard let image = UIImage(data: data) else {return }
                             DispatchQueue.main.async {
                                 self.profileImage.image = image
+                                myProfileImage = image
                             }
                         }
                     }

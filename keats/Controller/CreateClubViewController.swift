@@ -13,6 +13,7 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var clubImageView: UIView!
     @IBOutlet weak var clubImageImageView: UIImageView!
     @IBOutlet weak var clubNameTextField: UITextField!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var privateToggle: UISwitch!
     
     private let storage = Storage.storage().reference()
@@ -20,6 +21,8 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)
+        profileImageView.image = myProfileImage
+
        
     }
     

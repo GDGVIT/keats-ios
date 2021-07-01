@@ -17,23 +17,36 @@ class ClubViewController: UIViewController {
     @IBOutlet weak var leaveClubLabel: UILabel!
     @IBOutlet weak var uploadMenu: UIView!
     @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var privateToggle: UISwitch!
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var membersTableView: UITableView!
     
+    @IBOutlet weak var profileImageView: UIImageView!
     var currentAnimation = 0
     var users : [UserModel] = []
     var clubId : String = ""
+    var isHost = false
+    var inEditMode = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        editButton.isHidden = true
+        buttonView.isHidden = true
+        uploadMenu.isHidden = true
+        getClubDetails(clubid: clubId)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)
+        profileImageView.image = myProfileImage
+        chatButton.isHidden = true
         membersTableView.delegate = self
         membersTableView.dataSource = self
-        uploadMenu.isHidden = true
-        getClubDetails(clubid: clubId)
         membersTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberIdentifier")
     }
     
     @IBAction func qrTapped(_ sender: Any) {
+        inEditMode.toggle()
     }
     
     @IBAction func shareTapped(_ sender: Any) {
@@ -145,6 +158,20 @@ class ClubViewController: UIViewController {
                     let host_name = json["data"]["club"]["host_name"].string
                     let file_url = json["data"]["club"]["file_url"].rawString()
                     let privacy = json["data"]["club"]["private"].bool == true ? "Private" : "Public"
+                    
+                    let host_id = json["data"]["club"]["host_id"].string
+                    guard let uid = UserDefaults.standard.string(forKey: "uid") else {
+                        return}
+                    if uid == host_id {
+                        self.isHost = true
+                        print("User is host")
+                        DispatchQueue.main.async {
+                            self.editButton.isHidden = false
+                            self.buttonView.isHidden = false
+                        }
+                        
+                    }
+                    
                     
                     if let profile_string = club_pic {
                         guard let url = URL(string: profile_string) else {return}

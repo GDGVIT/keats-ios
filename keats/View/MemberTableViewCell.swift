@@ -12,6 +12,7 @@ class MemberTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var removeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

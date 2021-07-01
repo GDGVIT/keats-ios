@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileImage.image = myProfileImage
         makeNonEditable()
         fetchUserDetails()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -64,6 +65,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         profileImage.image = image
+        myProfileImage = image
         guard let imageData = image.pngData() else {
             return
         }

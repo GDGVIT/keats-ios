@@ -14,6 +14,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var clubsTableView: UITableView!
     @IBOutlet weak var publicLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var clubList : [ClubModel] = []
@@ -22,6 +23,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)
+        profileImage.image = myProfileImage
         clubsTableView.delegate = self
         clubsTableView.dataSource = self
         clubsTableView.isHidden = true
@@ -229,7 +231,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClubCell") as! ClubTableViewCell
         let thisClub = clubList[indexPath.row]
         cell.hostLabel.text = thisClub.host_name
-        let privacyLabel = thisClub.privatet == 0 ? "Private" : "Public"
+        let privacyLabel = thisClub.privatet == 1 ? "Private" : "Public"
         cell.privacyLabel.text = privacyLabel
         cell.titleLabel.text = thisClub.clubname
         print(thisClub.id)
@@ -254,7 +256,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
         if segue.destination is ClubViewController {
             let vc = segue.destination as? ClubViewController
             vc?.clubId = clubId
-            print("clubId: \(clubId)")
+            //print("clubId: \(clubId)")
         }
     }
     

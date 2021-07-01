@@ -14,10 +14,13 @@ class ChatViewController: UIViewController, WKNavigationDelegate,  WKUIDelegate 
     @IBOutlet weak var readView: UIView!
     var clubId: String = ""
 
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var pageChatButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)
-        
+        chatButton.isHidden = true
+        pageChatButton.isHidden = true
         guard let idToken = UserDefaults.standard.string(forKey: "JWToken") else {return}
         guard let url = URL(string: "https://keats.pages.dev/club/\(clubId)/chat?token=\(idToken)") else {
             print("Incorrect URL for chat")

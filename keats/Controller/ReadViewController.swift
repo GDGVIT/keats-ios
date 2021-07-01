@@ -12,6 +12,7 @@ class ReadViewController: UIViewController, WKNavigationDelegate,  WKUIDelegate 
     
     var webView: WKWebView!
     @IBOutlet weak var readView: UIView!
+    @IBOutlet weak var pageChatButton: UIButton!
     var clubId: String = ""
 
     override func viewDidLoad() {
