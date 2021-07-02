@@ -198,6 +198,8 @@ extension HomeViewController {
                         self.readingImage.isHidden = false
                         self.readingLabel.isHidden = false
                         self.buttonStack.isHidden = false
+                        self.alert(message: "Can't fetch your clubs :(", title: "Error")
+                        
                     }
                 }
             }

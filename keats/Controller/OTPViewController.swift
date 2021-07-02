@@ -125,6 +125,11 @@ class OTPViewController: UIViewController {
                     }
                     
                 }
+                else{
+                    DispatchQueue.main.async {
+                        self.alert(message: "Can't sign in, please try again!", title: "Error")
+                    }
+                }
                 //print(responseJSON)
             }
         }

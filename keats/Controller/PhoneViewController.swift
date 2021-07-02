@@ -61,7 +61,7 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
                         self.activityIndicator.isHidden = true
                         self.activityIndicator.stopAnimating()
                         buttonView.isHidden = false
-                        alert(message: "Check your phone number and please try again", title: "Error")
+                        alert(message: "Check your internet connection and please try again", title: "Error")
                         print(error)
                         return
                       }

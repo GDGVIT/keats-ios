@@ -1668,6 +1668,34 @@
                                         <color key="tintColor" systemColor="linkColor"/>
                                         <color key="onTintColor" systemColor="linkColor"/>
                                     </switch>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1v-OE-GLM" userLabel="Upload View">
+                                        <rect key="frame" x="108" y="112" width="30" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nur-QV-fXK">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="square.and.arrow.up.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="updateImageTapped:" destination="Ju0-Hu-kYz" eventType="touchUpInside" id="Ztk-y2-Fry"/>
+                                                    <action selector="uploadImageTapped:" destination="94w-zY-A5L" eventType="touchUpInside" id="Q5n-uM-QQ7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="nur-QV-fXK" firstAttribute="leading" secondItem="G1v-OE-GLM" secondAttribute="leading" id="85W-ss-Vad"/>
+                                            <constraint firstAttribute="trailing" secondItem="nur-QV-fXK" secondAttribute="trailing" id="EOt-Pp-nSL"/>
+                                            <constraint firstItem="nur-QV-fXK" firstAttribute="top" secondItem="G1v-OE-GLM" secondAttribute="top" id="EdX-bD-NsH"/>
+                                            <constraint firstAttribute="height" constant="30" id="Y6u-bl-kGG"/>
+                                            <constraint firstAttribute="width" constant="30" id="qpZ-jf-1NK"/>
+                                            <constraint firstAttribute="bottom" secondItem="nur-QV-fXK" secondAttribute="bottom" id="vLo-il-VlD"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="KeatsSecondaryBg"/>
                                 <constraints>
@@ -1676,11 +1704,13 @@
                                     <constraint firstItem="lS5-xt-bTO" firstAttribute="leading" secondItem="LHo-0L-myg" secondAttribute="leading" id="It0-6h-zOw"/>
                                     <constraint firstItem="Tx5-sB-Hlp" firstAttribute="centerY" secondItem="LHo-0L-myg" secondAttribute="centerY" id="LfK-Lx-rIz"/>
                                     <constraint firstItem="lS5-xt-bTO" firstAttribute="top" secondItem="LHo-0L-myg" secondAttribute="top" id="LiN-gS-GZg"/>
+                                    <constraint firstAttribute="bottom" secondItem="G1v-OE-GLM" secondAttribute="bottom" constant="8" id="OJm-cH-TeC"/>
                                     <constraint firstAttribute="trailing" secondItem="lS5-xt-bTO" secondAttribute="trailing" id="OMv-2B-K2i"/>
                                     <constraint firstAttribute="bottom" secondItem="lS5-xt-bTO" secondAttribute="bottom" id="Qnl-hY-Fej"/>
                                     <constraint firstItem="xCJ-EB-n9I" firstAttribute="leading" secondItem="Tx5-sB-Hlp" secondAttribute="trailing" constant="77" id="U3J-Y7-VWd"/>
                                     <constraint firstItem="1LR-Bg-HX5" firstAttribute="leading" secondItem="Tx5-sB-Hlp" secondAttribute="trailing" constant="15" id="Wiu-oT-ZGw"/>
                                     <constraint firstAttribute="trailing" secondItem="Tii-QJ-qgA" secondAttribute="trailing" constant="15" id="Xkf-Xm-ydA"/>
+                                    <constraint firstItem="Tx5-sB-Hlp" firstAttribute="trailing" secondItem="G1v-OE-GLM" secondAttribute="trailing" constant="-8" id="YPd-8C-3kS"/>
                                     <constraint firstAttribute="height" constant="150" id="cKZ-eU-huk"/>
                                     <constraint firstItem="1LR-Bg-HX5" firstAttribute="top" secondItem="LHo-0L-myg" secondAttribute="top" constant="23" id="csd-QA-gtN"/>
                                     <constraint firstAttribute="trailing" secondItem="1LR-Bg-HX5" secondAttribute="trailing" constant="15" id="eLD-lv-LdA"/>
@@ -2034,6 +2064,7 @@
                         <outlet property="privacyLabel" destination="Tii-QJ-qgA" id="oFQ-Ox-h3U"/>
                         <outlet property="privateToggle" destination="xCJ-EB-n9I" id="suj-SA-7kN"/>
                         <outlet property="profileImageView" destination="0QS-I3-EtE" id="ZeP-Wy-d3Y"/>
+                        <outlet property="uploadImageView" destination="G1v-OE-GLM" id="IUX-0H-726"/>
                         <outlet property="uploadMenu" destination="bgm-PC-7eD" id="uP0-4d-ti7"/>
                         <segue destination="uOF-rT-Nir" kind="show" identifier="clubToRead" id="tps-UM-q0c"/>
                     </connections>

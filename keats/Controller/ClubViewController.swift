@@ -26,7 +26,9 @@ class ClubViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var leaveView: UIView!
+    @IBOutlet weak var uploadImageView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
+    
     var currentAnimation = 0
     var users : [UserModel] = []
     var clubId : String = ""
@@ -35,6 +37,7 @@ class ClubViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         editButton.isHidden = true
+        uploadImageView.isHidden = true
         buttonView.isHidden = true
         uploadMenu.isHidden = true
         clubInfoView.isHidden = true
@@ -48,6 +51,7 @@ class ClubViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         getClubDetails(clubid: clubId)
+        privateToggle.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -134,6 +138,8 @@ class ClubViewController: UIViewController {
         }
     }
     
+    @IBAction func uploadImageTapped(_ sender: Any) {
+    }
     @IBAction func uploadPDFTapped(_ sender: Any) {
     }
     
@@ -146,6 +152,26 @@ class ClubViewController: UIViewController {
     
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func enableEditMode() {
+        privateToggle.isHidden = false
+        privacyLabel.text = "Private"
+        buttonView.isHidden = false
+        uploadMenu.isHidden = true
+        uploadImageView.isHidden = false
+        membersTableView.reloadData()
+        
+    }
+    
+    func saveAndDisableEditMode() {
+        privateToggle.isHidden = true
+        privacyLabel.text = "Private" // Change
+        buttonView.isHidden = true
+        uploadMenu.isHidden = true
+        uploadImageView.isHidden = true
+        membersTableView.reloadData()
+        // Save
     }
     
     //MARK: - Get club details
@@ -232,6 +258,8 @@ class ClubViewController: UIViewController {
                         self.privacyLabel.text = privacy
                         self.membersTableView.reloadData()
                         self.showStuff()
+                        self.view.isUserInteractionEnabled = true
+                        self.view.alpha = 1
                     }
                 }
             }
@@ -276,7 +304,61 @@ class ClubViewController: UIViewController {
                     
                 } else {
                     if let message = responseJSON["message"] as? String, let status = responseJSON["status"] as? String {
-                        self.alert(message: message, title: status)
+                        DispatchQueue.main.async {
+                            self.alert(message: message, title: "Error")
+                        }
+                    }
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    //MARK: - Remove User
+    
+    func removeUser(userId: String) {
+        let json: [String: Any] = ["club_id": clubId, "user_id": userId]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/kickuser") else {return}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {
+            return}
+        
+        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                
+                let status = responseJSON["status"] as? String
+                if status  == "success" {
+                    
+                        DispatchQueue.main.async {
+                            //self.navigationController?.popViewController(animated: true)
+                            self.view.isUserInteractionEnabled = false
+                            self.view.alpha = 0.5
+                            self.getClubDetails(clubid: self.clubId)
+                        }
+                    
+                } else {
+                    if let message = responseJSON["message"] as? String, let status = responseJSON["status"] as? String {
+                        DispatchQueue.main.async {
+                            self.alert(message: message, title: "Error")
+                        }
                     }
                 }
             }
@@ -299,11 +381,36 @@ extension ClubViewController: UITableViewDelegate, UITableViewDataSource {
         let user = users[indexPath.row]
         cell.usernameLabel.text = user.username
         cell.bioLabel.text = user.bio
+        
+        let saveButton = UIButton(type: .custom) as UIButton
+        saveButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        saveButton.backgroundColor = .clear
+        saveButton.addTarget(self, action:#selector(ClubViewController.checkTapped(_:)),
+                             for: .touchUpInside)
+        //saveButton.setImage(UIImage(named: "xmark"), for: .normal)
+        saveButton.setTitle("fkof", for: .normal)
+        saveButton.titleLabel?.textColor = .red
+        saveButton.tag = indexPath.row
+        //saveButton
+        cell.accessoryView = saveButton as UIView
+        cell.accessoryView?.backgroundColor = .clear
+        
         if let imgurl = URL.init(string: user.profile_pic) {
             cell.profileImageView.loadImage(url: imgurl)
         }
         return cell
     }
+    
+    
+    @objc func checkTapped(_ sender: UIButton) {
+        //print(sender.tag)
+        
+        let toRemoveIndex = sender.tag
+        print(toRemoveIndex)
+        let toRemoveUid = users[toRemoveIndex].id
+        removeUser(userId: toRemoveUid)
+    }
+    
     
     
 }
