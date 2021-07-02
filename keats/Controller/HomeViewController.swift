@@ -27,24 +27,28 @@ class HomeViewController: UIViewController {
     var clubList : [ClubModel] = []
     var currentAnimation = 0
     
+    override func viewWillAppear(_ animated: Bool) {
+        //print("ViewWillAppear")
+        clubsTableView.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        fetchClubDetails()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //print("ViewDidLoad")
         statusBarColor(view: view)
         clubsTableView.delegate = self
         clubsTableView.dataSource = self
         joinButtonView.curvedButtonView(color: "KeatsViolet")
         popupJoinButtonView.curvedButtonView(color: "KeatsOrange")
         popupCreateButtonView.curvedButtonView(color: "KeatsOrange")
-        clubsTableView.isHidden = true
         buttonView.isHidden = true
         popUpOptionView.isHidden = true
-        activityIndicator.isHidden = false
         readingImage.isHidden = true
         readingLabel.isHidden = true
         buttonStack.isHidden = true
-        activityIndicator.startAnimating()
-        fetchClubDetails()
+        
         clubsTableView.register(UINib(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubCell")
     }
     
@@ -240,7 +244,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = clubList[indexPath.row].id
+        //let id = clubList[indexPath.row].id
         self.performSegue(withIdentifier: "HomeToClub", sender: self)
     }
     

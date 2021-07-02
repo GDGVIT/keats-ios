@@ -20,6 +20,10 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
     var clubList : [ClubModel] = []
     var clubId = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        profileImage.image = myProfileImage
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)

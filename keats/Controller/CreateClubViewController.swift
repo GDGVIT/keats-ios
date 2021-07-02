@@ -18,6 +18,10 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
     
     private let storage = Storage.storage().reference()
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profileImageView.image = myProfileImage
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)
@@ -56,7 +60,7 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
                 return
             }
             // Metadata contains file metadata such as size, content-type.
-            let size = metadata.size
+            //let size = metadata.size
             // You can also access to download URL after upload.
             self.storage.child(path).downloadURL { (url, error) in
                 guard let downloadURL = url else {

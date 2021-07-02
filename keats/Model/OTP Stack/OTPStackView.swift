@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol OTPDelegate: class {
+protocol OTPDelegate: AnyObject {
     //always triggers when the OTP field is valid
     func didChangeValidity(isValid: Bool)
 }

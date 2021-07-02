@@ -82,6 +82,8 @@ class OTPViewController: UIViewController {
             }
        }
     
+    //MARK: - Sign In User
+    
     func signInUser(verificationId: String) {
         
         // prepare json data

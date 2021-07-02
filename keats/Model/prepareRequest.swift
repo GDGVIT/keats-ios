@@ -12,7 +12,7 @@ func prepareRequest(method: String, url: URL, jsonData: Data?) {
     request.httpMethod = method
     
     guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
-    print("Bearer \(token)")
+    //print("Bearer \(token)")
     
     request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
     

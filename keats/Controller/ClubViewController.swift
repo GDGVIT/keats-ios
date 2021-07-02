@@ -21,7 +21,11 @@ class ClubViewController: UIViewController {
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var membersTableView: UITableView!
+    @IBOutlet weak var clubInfoView: UIView!
+    @IBOutlet weak var membersLabel: UILabel!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var leaveView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     var currentAnimation = 0
     var users : [UserModel] = []
@@ -33,17 +37,36 @@ class ClubViewController: UIViewController {
         editButton.isHidden = true
         buttonView.isHidden = true
         uploadMenu.isHidden = true
-        
+        clubInfoView.isHidden = true
+        membersTableView.isHidden = true
+        membersLabel.isHidden = true
+        leaveView.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        profileImageView.image = myProfileImage
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getClubDetails(clubid: clubId)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         statusBarColor(view: view)
-        profileImageView.image = myProfileImage
+        
         chatButton.isHidden = true
         membersTableView.delegate = self
         membersTableView.dataSource = self
-        getClubDetails(clubid: clubId)
         membersTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberIdentifier")
+    }
+    
+    func showStuff() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        clubInfoView.isHidden = false
+        membersTableView.isHidden = false
+        membersLabel.isHidden = false
+        leaveView.isHidden = false
     }
     
     @IBAction func qrTapped(_ sender: Any) {
@@ -52,10 +75,10 @@ class ClubViewController: UIViewController {
     
     @IBAction func shareTapped(_ sender: Any) {
         let text = clubId
-        var textToShare = [ text ] as [Any]
         
         if let qrImage = generateQRCode(from: text) {
-            textToShare = [ text, qrImage ]
+            
+            let textToShare = [ qrImage ] as [Any]
             let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             
@@ -151,13 +174,13 @@ class ClubViewController: UIViewController {
             
             if let data = data {
                 let json = JSON(data)
-                debugPrint(json)
+                //debugPrint(json)
                 
                 if json["status"] == "success" {
                     let clubname = json["data"]["club"]["clubname"].string
                     let club_pic = json["data"]["club"]["club_pic"].rawString()
                     let host_name = json["data"]["club"]["host_name"].string
-                    let file_url = json["data"]["club"]["file_url"].rawString()
+                    //let file_url = json["data"]["club"]["file_url"].rawString()
                     let privacy = json["data"]["club"]["private"].bool == true ? "Private" : "Public"
                     
                     let host_id = json["data"]["club"]["host_id"].string
@@ -208,6 +231,7 @@ class ClubViewController: UIViewController {
                         self.hostLabel.text = host_name
                         self.privacyLabel.text = privacy
                         self.membersTableView.reloadData()
+                        self.showStuff()
                     }
                 }
             }
@@ -282,31 +306,6 @@ extension ClubViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    
-    
 }
 
-func statusBarColor(view: UIView) {
-    if #available(iOS 13.0, *) {
-                let app = UIApplication.shared
-                let statusBarHeight: CGFloat = app.statusBarFrame.size.height
-                
-                let statusbarView = UIView()
-                statusbarView.backgroundColor = UIColor(named: "KeatsDarkViolet")
-                view.addSubview(statusbarView)
-              
-                statusbarView.translatesAutoresizingMaskIntoConstraints = false
-                statusbarView.heightAnchor
-                    .constraint(equalToConstant: statusBarHeight).isActive = true
-                statusbarView.widthAnchor
-                    .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
-                statusbarView.topAnchor
-                    .constraint(equalTo: view.topAnchor).isActive = true
-                statusbarView.centerXAnchor
-                    .constraint(equalTo: view.centerXAnchor).isActive = true
-              
-            } else {
-                let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
-                statusBar?.backgroundColor = UIColor(named: "KeatsDarkViolet")
-            }
-}
+

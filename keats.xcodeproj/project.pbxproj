@@ -60,12 +60,10 @@
 		7076468E263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
 		7076468F263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
 		70764690263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
-		70A47A1226870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
-		70A47A1326870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
-		70A47A1426870A91007CB8FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70A47A1126870A91007CB8FB /* GoogleService-Info.plist */; };
 		70A47A6226871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
 		70A47A6326871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
 		70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
+		70AD99C2268F036000D5FB05 /* statusBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD99C1268F036000D5FB05 /* statusBarColor.swift */; };
 		70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF7975268BCD24005B423C /* prepareRequest.swift */; };
 		70C16C7526412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7626412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
@@ -179,6 +177,7 @@
 		7076468A263B20A80000B52A /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
 		70A47A1126870A91007CB8FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = samplecoredata.xcdatamodel; sourceTree = "<group>"; };
+		70AD99C1268F036000D5FB05 /* statusBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statusBarColor.swift; sourceTree = "<group>"; };
 		70AF7975268BCD24005B423C /* prepareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prepareRequest.swift; sourceTree = "<group>"; };
 		70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BlackItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6E26412B1600F5FD7C /* CircularStd-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -361,6 +360,7 @@
 				704217632646F8E100141548 /* loadImage.swift */,
 				70F2EE62264BED7C00B5B455 /* generateQRCode.swift */,
 				70AF7975268BCD24005B423C /* prepareRequest.swift */,
+				70AD99C1268F036000D5FB05 /* statusBarColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					7031CB0125D12B9E0002E641 = {
 						CreatedOnToolsVersion = 12.4;
@@ -517,7 +517,6 @@
 				70C16C8426412B1700F5FD7C /* CircularStd-Book.ttf in Resources */,
 				7031CB0D25D12B9E0002E641 /* Main.storyboard in Resources */,
 				7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */,
-				70A47A1226870A91007CB8FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +531,6 @@
 				70C16C8226412B1700F5FD7C /* CircularStd-BookItalic.ttf in Resources */,
 				70C16C8826412B1700F5FD7C /* CircularStd-Bold.ttf in Resources */,
 				70CE226B264C3B7300079067 /* MemberTableViewCell.xib in Resources */,
-				70A47A1326870A91007CB8FB /* GoogleService-Info.plist in Resources */,
 				70CE2276264C44A900079067 /* CommentTableViewCell.xib in Resources */,
 				70C16C7926412B1700F5FD7C /* CircularStd-BoldItalic.ttf in Resources */,
 				7076468F263B20A80000B52A /* ClubTableViewCell.xib in Resources */,
@@ -552,7 +550,6 @@
 				70C16C8326412B1700F5FD7C /* CircularStd-BookItalic.ttf in Resources */,
 				70C16C8926412B1700F5FD7C /* CircularStd-Bold.ttf in Resources */,
 				70CE226C264C3B7300079067 /* MemberTableViewCell.xib in Resources */,
-				70A47A1426870A91007CB8FB /* GoogleService-Info.plist in Resources */,
 				70CE2277264C44A900079067 /* CommentTableViewCell.xib in Resources */,
 				70C16C7A26412B1700F5FD7C /* CircularStd-BoldItalic.ttf in Resources */,
 				70764690263B20A80000B52A /* ClubTableViewCell.xib in Resources */,
@@ -696,6 +693,7 @@
 				707646082619D2E20000B52A /* CountryCodes.swift in Sources */,
 				70CE2272264C44A900079067 /* CommentTableViewCell.swift in Sources */,
 				70764652261B289E0000B52A /* UserModel.swift in Sources */,
+				70AD99C2268F036000D5FB05 /* statusBarColor.swift in Sources */,
 				704217642646F8E100141548 /* loadImage.swift in Sources */,
 				7040E11F26467A450047125D /* alert.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
@@ -912,7 +910,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C35DR2MHM7;
 				INFOPLIST_FILE = keats/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -933,7 +931,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C35DR2MHM7;
 				INFOPLIST_FILE = keats/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

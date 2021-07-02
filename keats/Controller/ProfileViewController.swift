@@ -16,7 +16,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var editToggleButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var uploadImageButtonView: UIView!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var profilePicView: UIView!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var logOutView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let storage = Storage.storage().reference()
 
@@ -25,6 +29,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        infoView.isHidden = true
+        profilePicView.isHidden = true
+        uploadImageButtonView.isHidden = true
+        
         profileImage.image = myProfileImage
         makeNonEditable()
         fetchUserDetails()
@@ -32,9 +42,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //MARK: - UI Buttons tapped
+    
     @IBAction func editButtonTapped(_ sender: Any) {
         if isEditingProfile {
             makeNonEditable()
+            disableViews()
             updateUserInfo(imageUrl: "")
             
         } else {
@@ -44,6 +57,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func logOutTapped(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
+        deleteUserData()
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -58,6 +72,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         present(picker, animated: true)
     }
     
+    func disableViews() {
+        uploadImageButtonView.isUserInteractionEnabled = false
+        infoView.isUserInteractionEnabled = false
+        logOutView.isUserInteractionEnabled = false
+        uploadImageButtonView.alpha = 0.5
+        infoView.alpha = 0.5
+        logOutView.alpha = 0.5
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func enableViews() {
+            uploadImageButtonView.isUserInteractionEnabled = true
+            infoView.isUserInteractionEnabled = true
+            logOutView.isUserInteractionEnabled = true
+            uploadImageButtonView.alpha = 1
+            infoView.alpha = 1
+            logOutView.alpha = 1
+        activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+    }
+    
+    //MARK: - Image picker controller methods
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true, completion: nil)
@@ -66,6 +104,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         profileImage.image = image
         myProfileImage = image
+        
         guard let imageData = image.pngData() else {
             return
         }
@@ -87,9 +126,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     print("Uh-oh, an error occurred! 2")
                     return
                 }
-                print(downloadURL.absoluteString)
+                //print(downloadURL.absoluteString)
                 let imageLink = downloadURL.absoluteString
                 //self.updateProfilePic(downloadUrl: imageLink)
+                self.disableViews()
                 self.updateUserInfo(imageUrl: imageLink)
             }
         }
@@ -174,6 +214,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.emailTextField.text = em
                 self.nameTextField.text = un
                 self.phoneTextField.text = ph
+                self.showStuff()
             }
         }
         
@@ -227,7 +268,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                                     self.nameTextField.text = username
                                     self.phoneTextField.text = phone
                                     self.previousPhone = phone
-                                    
+                                    self.showStuff()
                                 }
                             }
                         }
@@ -238,20 +279,17 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
+    func showStuff() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        infoView.isHidden = false
+        profilePicView.isHidden = false
+        uploadImageButtonView.isHidden = false
+    }
+    
     //MARK: - Update User Info
     
     func updateUserInfo(imageUrl: String) {
-        
-        if let phone = phoneTextField.text {
-            if phone != previousPhone {
-                if phone.count == 13{
-                    updatePhoneNumber()
-                } else {
-                    alert(message: "Check the phone number and try again with your countrycode. Eg: +91XXXXXXXXXX", title: "Error")
-                }
-                
-            }
-        }
         
         if let userName = nameTextField.text, let bio = bioTextField.text, let email = emailTextField.text {
             
@@ -271,40 +309,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             let jsonData = try? JSONSerialization.data(withJSONObject: json)
             guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
             prepareRequest(method: "PATCH", url: url, jsonData: jsonData)
+            enableViews()
         }
     }
     
-    //MARK: - Update user profile pic
+    //MARK: - Delete User Data
     
-    func updateProfilePic(downloadUrl: String) {
-        
-        // prepare json data
-        let json: [String: Any] = ["profile_pic": downloadUrl]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updateprofilepic") else {return}
-        
-        prepareRequest(method: "POST", url: url, jsonData: jsonData)
-        
-        
-        
+    func deleteUserData() {
+        myProfileImage =  UIImage(named: "default-profile")
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+
+            dictionary.keys.forEach
+            { key in   defaults.removeObject(forKey: key)
+            }
+        defaults.synchronize()
+
     }
-    
-    //MARK: - Update Phone Number
-    
-    func updatePhoneNumber() {
-        // prepare json data
-        guard let idToken = UserDefaults.standard.string(forKey: "JWToken") else {return}
-        let json: [String: Any] = ["id_token": idToken]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user/updatephone") else {return}
-        
-        prepareRequest(method: "POST", url: url, jsonData: jsonData)
-        
-        
-    }
-    
-    
     
 }
