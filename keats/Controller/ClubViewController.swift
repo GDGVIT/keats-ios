@@ -38,7 +38,7 @@ class ClubViewController: UIViewController {
     var hostId: String = ""
     var clubImageUrl: String = ""
     var clubFileUrl: String = ""
-    var privacy: Bool = false
+    var isPrivate: Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
         editButton.isHidden = true
@@ -184,7 +184,21 @@ class ClubViewController: UIViewController {
         privateToggle.isHidden = true
         clubNameTextField.isHidden = true
         clubNameLabel.text = clubNameTextField.text
-        privacyLabel.text = "Private" // Change
+        
+        if privateToggle.isOn {
+            privacyLabel.text = "Private"
+            if !isPrivate {
+                updatePrivacy()
+                isPrivate = true
+            }
+        } else {
+            privacyLabel.text = "Public"
+            if isPrivate {
+                updatePrivacy()
+                isPrivate = false
+            }
+        }
+        
         buttonView.isHidden = true
         uploadMenu.isHidden = true
         uploadImageView.isHidden = true
@@ -192,6 +206,18 @@ class ClubViewController: UIViewController {
         updateClub(imageUrl: "")
     }
     
+    //MARK: - Update Privacy
+    
+    func updatePrivacy() {
+        
+        let json: [String: Any] = ["club_id": clubId]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // create post request
+        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/toggleprivate") else {return}
+        
+        prepareRequest(method: "POST", url: url, jsonData: jsonData)
+    }
     //MARK: - Get club details
     
     func getClubDetails(clubid: String) {
@@ -226,6 +252,7 @@ class ClubViewController: UIViewController {
                     let host_name = json["data"]["club"]["host_name"].string
                     let file_url = json["data"]["club"]["file_url"].rawString()
                     let privacy = json["data"]["club"]["private"].bool == true ? "Private" : "Public"
+                    self.isPrivate = json["data"]["club"]["private"].bool ?? false
                     
                     let host_id = json["data"]["club"]["host_id"].string
                     guard let uid = UserDefaults.standard.string(forKey: "uid") else {
