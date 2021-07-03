@@ -34,6 +34,7 @@ class ClubViewController: UIViewController {
     var clubId : String = ""
     var isHost = false
     var inEditMode = false
+    var hostId: String = ""
     
     override func viewWillAppear(_ animated: Bool) {
         editButton.isHidden = true
@@ -47,6 +48,7 @@ class ClubViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         profileImageView.image = myProfileImage
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,6 +77,13 @@ class ClubViewController: UIViewController {
     
     @IBAction func qrTapped(_ sender: Any) {
         inEditMode.toggle()
+        if inEditMode {
+            enableEditMode()
+            editButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+        } else {
+            saveAndDisableEditMode()
+            editButton.setImage(UIImage(systemName: "pencil"), for: .normal)
+        }
     }
     
     @IBAction func shareTapped(_ sender: Any) {
@@ -212,6 +221,7 @@ class ClubViewController: UIViewController {
                     let host_id = json["data"]["club"]["host_id"].string
                     guard let uid = UserDefaults.standard.string(forKey: "uid") else {
                         return}
+                    self.hostId = host_id ?? ""
                     if uid == host_id {
                         self.isHost = true
                         print("User is host")
@@ -303,7 +313,7 @@ class ClubViewController: UIViewController {
                         }
                     
                 } else {
-                    if let message = responseJSON["message"] as? String, let status = responseJSON["status"] as? String {
+                    if let message = responseJSON["message"] as? String {
                         DispatchQueue.main.async {
                             self.alert(message: message, title: "Error")
                         }
@@ -355,7 +365,7 @@ class ClubViewController: UIViewController {
                         }
                     
                 } else {
-                    if let message = responseJSON["message"] as? String, let status = responseJSON["status"] as? String {
+                    if let message = responseJSON["message"] as? String {
                         DispatchQueue.main.async {
                             self.alert(message: message, title: "Error")
                         }
@@ -381,19 +391,33 @@ extension ClubViewController: UITableViewDelegate, UITableViewDataSource {
         let user = users[indexPath.row]
         cell.usernameLabel.text = user.username
         cell.bioLabel.text = user.bio
+        cell.removeButton.addTarget(self, action:#selector(ClubViewController.checkTapped(_:)),
+                                    for: .touchUpInside)
         
-        let saveButton = UIButton(type: .custom) as UIButton
-        saveButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        saveButton.backgroundColor = .clear
-        saveButton.addTarget(self, action:#selector(ClubViewController.checkTapped(_:)),
-                             for: .touchUpInside)
-        //saveButton.setImage(UIImage(named: "xmark"), for: .normal)
-        saveButton.setTitle("fkof", for: .normal)
-        saveButton.titleLabel?.textColor = .red
-        saveButton.tag = indexPath.row
-        //saveButton
-        cell.accessoryView = saveButton as UIView
-        cell.accessoryView?.backgroundColor = .clear
+        let uid = UserDefaults.standard.string(forKey: "uid")
+
+        if isHost {
+            if inEditMode {
+                if uid == user.id {
+                    cell.removeButton.isHidden = true
+                    cell.hostMarkView.isHidden = false
+                } else {
+                    cell.removeButton.isHidden = true
+                    cell.hostMarkView.isHidden = false
+                }
+            } else {
+                cell.removeButton.isHidden = true
+                cell.hostMarkView.isHidden = false
+            }
+        } else {
+            if hostId == user.id {
+                cell.removeButton.isHidden = true
+                cell.hostMarkView.isHidden = false
+            } else {
+                cell.removeButton.isHidden = true
+                cell.hostMarkView.isHidden = true
+            }
+        }
         
         if let imgurl = URL.init(string: user.profile_pic) {
             cell.profileImageView.loadImage(url: imgurl)
@@ -406,7 +430,7 @@ extension ClubViewController: UITableViewDelegate, UITableViewDataSource {
         //print(sender.tag)
         
         let toRemoveIndex = sender.tag
-        print(toRemoveIndex)
+        //print(toRemoveIndex)
         let toRemoveUid = users[toRemoveIndex].id
         removeUser(userId: toRemoveUid)
     }

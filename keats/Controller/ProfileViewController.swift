@@ -242,7 +242,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     if status as! String != "error" {
                         let userdata = responseJSON["data"]
                         if let userresponseJSON = userdata as? [String: Any] {
-                            if let bio = userresponseJSON["bio"] as? String, let email = userresponseJSON["email"] as? String, let id = userresponseJSON["id"] as? String, let phone = userresponseJSON["phone_number"] as? String, let profile_pic = userresponseJSON["profile_pic"] as? String, let username = userresponseJSON["username"] as? String{
+                            if let bio = userresponseJSON["bio"] as? String, let email = userresponseJSON["email"] as? String,
+                               //let id = userresponseJSON["id"] as? String,
+                               let phone = userresponseJSON["phone_number"] as? String, let profile_pic = userresponseJSON["profile_pic"] as? String, let username = userresponseJSON["username"] as? String{
                                 
                                 //print(id)
                                 

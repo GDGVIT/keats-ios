@@ -11,7 +11,7 @@ import UIKit.UIView
 func statusBarColor(view: UIView) {
     if #available(iOS 13.0, *) {
                 //let app = UIApplication.shared
-        let statusBarHeight: CGFloat = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 60
+        let statusBarHeight: CGFloat = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 40
                 //let statusBarHeight: CGFloat = app.statusBarFrame.size.height
                 
                 let statusbarView = UIView()

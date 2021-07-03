@@ -19,6 +19,12 @@ class OTPViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loggedIn = UserDefaults.standard.bool(forKey: "LoggedIn")
+        if loggedIn {
+            performSegue(withIdentifier: "otpToHome", sender: self)
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         buttonView.isHidden = true
@@ -121,6 +127,7 @@ class OTPViewController: UIViewController {
                             self.activityIndicator.isHidden = true
                             self.activityIndicator.stopAnimating()
                             print("Successfully signed in!")
+                            UserDefaults.standard.set(true, forKey: "LoggedIn")
                         }
                     }
                     

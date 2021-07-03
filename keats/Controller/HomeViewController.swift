@@ -179,11 +179,15 @@ extension HomeViewController {
                         self.activityIndicator.stopAnimating()
                         self.activityIndicator.isHidden = true
                         
+                        
                         if clubs.count > 0 {
                             
                             self.clubsTableView.isHidden = false
                             self.buttonView.isHidden = false
                             self.clubsTableView.reloadData()
+                            self.readingImage.isHidden = true
+                            self.readingLabel.isHidden = true
+                            self.buttonStack.isHidden = true
                         } else {
                             self.readingImage.isHidden = false
                             self.readingLabel.isHidden = false

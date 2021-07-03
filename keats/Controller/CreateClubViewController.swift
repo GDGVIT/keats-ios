@@ -87,8 +87,8 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func createNewClub() {
-        if let clubname = clubNameTextField.text {
-            
-        }
+//        if let clubname = clubNameTextField.text {
+//            
+//        }
     }
 }

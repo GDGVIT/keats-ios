@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,13 +36,13 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skr-N9-r5i">
-                        <rect key="frame" x="85" y="10" width="215" height="20"/>
+                        <rect key="frame" x="85" y="10" width="215" height="22"/>
                         <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An apple a day keeps the doctor away" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qa-z3-Uqh">
-                        <rect key="frame" x="85" y="35" width="205" height="28"/>
+                        <rect key="frame" x="85" y="37" width="205" height="15.5"/>
                         <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -57,17 +57,41 @@
                             <color key="titleColor" systemColor="systemRedColor"/>
                         </state>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfg-3w-0Hg">
+                        <rect key="frame" x="277" y="10" width="35" height="21"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Host" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pR6-UR-HbJ">
+                                <rect key="frame" x="2" y="2" width="31" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="KQS-p6-JL4"/>
+                                    <constraint firstAttribute="width" constant="31" id="MNl-vz-PT9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pR6-UR-HbJ" secondAttribute="trailing" constant="2" id="VwY-hG-PJS"/>
+                            <constraint firstItem="pR6-UR-HbJ" firstAttribute="top" secondItem="Dfg-3w-0Hg" secondAttribute="top" constant="2" id="Yeb-fE-fwl"/>
+                            <constraint firstAttribute="bottom" secondItem="pR6-UR-HbJ" secondAttribute="bottom" constant="2" id="dY5-3l-VIS"/>
+                            <constraint firstItem="pR6-UR-HbJ" firstAttribute="leading" secondItem="Dfg-3w-0Hg" secondAttribute="leading" constant="2" id="zhZ-zJ-qCh"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" name="KeatsSecondaryBg"/>
                 <constraints>
                     <constraint firstItem="skr-N9-r5i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="85y-SK-21v"/>
                     <constraint firstAttribute="trailing" secondItem="qs2-g2-ygg" secondAttribute="trailing" constant="10" id="9ek-Dz-jAa"/>
                     <constraint firstItem="qs2-g2-ygg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AI1-YF-bPz"/>
+                    <constraint firstAttribute="trailing" secondItem="Dfg-3w-0Hg" secondAttribute="trailing" constant="8" id="DU4-y3-Beb"/>
                     <constraint firstItem="skr-N9-r5i" firstAttribute="leading" secondItem="kAQ-x2-PZ5" secondAttribute="trailing" constant="20" id="LyH-wA-d32"/>
                     <constraint firstItem="kAQ-x2-PZ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Moa-rs-68E"/>
                     <constraint firstAttribute="bottom" secondItem="kAQ-x2-PZ5" secondAttribute="bottom" constant="10" id="QXV-X1-TYq"/>
                     <constraint firstItem="2Qa-z3-Uqh" firstAttribute="top" secondItem="skr-N9-r5i" secondAttribute="bottom" constant="5" id="QZL-bV-aZh"/>
                     <constraint firstAttribute="trailing" secondItem="skr-N9-r5i" secondAttribute="trailing" constant="20" id="UgG-ih-K97"/>
+                    <constraint firstItem="Dfg-3w-0Hg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="VEq-iH-IcE"/>
                     <constraint firstAttribute="trailing" secondItem="2Qa-z3-Uqh" secondAttribute="trailing" constant="30" id="YbN-Vz-icL"/>
                     <constraint firstItem="kAQ-x2-PZ5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cgG-vR-pWq"/>
                     <constraint firstItem="2Qa-z3-Uqh" firstAttribute="leading" secondItem="kAQ-x2-PZ5" secondAttribute="trailing" constant="20" id="nYx-ss-icX"/>
@@ -77,6 +101,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bioLabel" destination="2Qa-z3-Uqh" id="sTN-Hx-yX7"/>
+                <outlet property="hostMarkView" destination="Dfg-3w-0Hg" id="SwS-Kh-YaC"/>
                 <outlet property="profileImageView" destination="kAQ-x2-PZ5" id="K2k-hf-JwF"/>
                 <outlet property="removeButton" destination="qs2-g2-ygg" id="kLH-Qm-Grb"/>
                 <outlet property="usernameLabel" destination="skr-N9-r5i" id="mes-tM-Ofu"/>

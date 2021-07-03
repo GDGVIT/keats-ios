@@ -26,6 +26,12 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loggedIn = UserDefaults.standard.bool(forKey: "LoggedIn")
+        if loggedIn {
+            performSegue(withIdentifier: "phoneToOtp", sender: self)
+        }
+        
         self.activityIndicator.isHidden = true
         buttonView.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
