@@ -171,6 +171,7 @@ class ClubViewController: UIViewController {
     func enableEditMode() {
         privateToggle.isHidden = false
         clubNameTextField.isHidden = false
+        clubNameLabel.isHidden = true
         clubNameTextField.text = clubNameLabel.text
         privacyLabel.text = "Private"
         buttonView.isHidden = false
@@ -183,6 +184,7 @@ class ClubViewController: UIViewController {
     func saveAndDisableEditMode() {
         privateToggle.isHidden = true
         clubNameTextField.isHidden = true
+        clubNameLabel.isHidden = false
         clubNameLabel.text = clubNameTextField.text
         
         if privateToggle.isOn {

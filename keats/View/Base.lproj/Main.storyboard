@@ -848,7 +848,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeF-RF-eGA">
-                                <rect key="frame" x="323" y="771" width="56" height="56"/>
+                                <rect key="frame" x="343" y="791" width="56" height="56"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5e-w6-0bL">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
@@ -882,7 +882,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-HQ-rtj" userLabel="Option View">
-                                <rect key="frame" x="177" y="675" width="202" height="90"/>
+                                <rect key="frame" x="197" y="695" width="202" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create club icon" translatesAutoresizingMaskIntoConstraints="NO" id="Tg6-Zd-Xf1">
                                         <rect key="frame" x="158" y="6" width="30" height="30"/>
@@ -1025,12 +1025,12 @@
                             <constraint firstItem="dB7-p4-iF0" firstAttribute="top" secondItem="bRv-As-zlk" secondAttribute="bottom" constant="32" id="jZF-rd-hpC"/>
                             <constraint firstItem="MFN-99-kG5" firstAttribute="top" secondItem="ynp-Tr-2co" secondAttribute="bottom" constant="25" id="m4D-IH-nBS"/>
                             <constraint firstItem="kaO-Yv-nuE" firstAttribute="trailing" secondItem="Vg8-fZ-ZXz" secondAttribute="trailing" id="mve-af-6tl"/>
-                            <constraint firstItem="kaO-Yv-nuE" firstAttribute="bottom" secondItem="eeF-RF-eGA" secondAttribute="bottom" constant="35" id="n5I-TU-oKG"/>
+                            <constraint firstItem="kaO-Yv-nuE" firstAttribute="bottom" secondItem="eeF-RF-eGA" secondAttribute="bottom" constant="15" id="n5I-TU-oKG"/>
                             <constraint firstItem="hEH-bq-2rk" firstAttribute="top" secondItem="MFN-99-kG5" secondAttribute="bottom" constant="10" id="nJZ-we-Iyh"/>
                             <constraint firstItem="hEH-bq-2rk" firstAttribute="leading" secondItem="kaO-Yv-nuE" secondAttribute="leading" id="tcR-M1-DkU"/>
                             <constraint firstItem="9Xh-Zf-o5w" firstAttribute="top" secondItem="ECo-i5-h2F" secondAttribute="top" constant="350" id="vSj-rf-BFS"/>
                             <constraint firstItem="Vg8-fZ-ZXz" firstAttribute="top" secondItem="ECo-i5-h2F" secondAttribute="top" id="w7y-k5-NvP"/>
-                            <constraint firstAttribute="trailing" secondItem="eeF-RF-eGA" secondAttribute="trailing" constant="35" id="wF4-fL-xED"/>
+                            <constraint firstAttribute="trailing" secondItem="eeF-RF-eGA" secondAttribute="trailing" constant="15" id="wF4-fL-xED"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FUg-Sp-wmr"/>
@@ -1073,6 +1073,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLc-y6-VCO">
                                         <rect key="frame" x="20" y="17" width="266" height="34"/>
                                         <color key="backgroundColor" name="TextFieldBg"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1706,6 +1707,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="KeatsSecondaryBg"/>
                                 <constraints>
+                                    <constraint firstItem="z10-gQ-rAl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LHo-0L-myg" secondAttribute="top" constant="52" id="4pP-fH-wix"/>
                                     <constraint firstItem="z10-gQ-rAl" firstAttribute="top" secondItem="1LR-Bg-HX5" secondAttribute="bottom" constant="6" id="8Md-zY-q0a"/>
                                     <constraint firstItem="mba-yE-kPz" firstAttribute="leading" secondItem="Tx5-sB-Hlp" secondAttribute="trailing" constant="10" id="9Eh-LK-ZLC"/>
                                     <constraint firstItem="xCJ-EB-n9I" firstAttribute="top" secondItem="z10-gQ-rAl" secondAttribute="bottom" constant="9" id="FQk-c9-ZTZ"/>
@@ -2167,6 +2169,7 @@
                     <connections>
                         <outlet property="pageChatButton" destination="Qai-t2-Odv" id="jqL-Y5-597"/>
                         <outlet property="readView" destination="MbB-mf-dMQ" id="sti-MB-9qy"/>
+                        <segue destination="Ju0-Hu-kYz" kind="show" identifier="readToProfile" id="XmW-DA-azY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TD0-FM-5Ns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

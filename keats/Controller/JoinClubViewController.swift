@@ -208,7 +208,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
                         self.activityIndicator.isHidden = true
                         if clubs.count > 0 {
                             self.clubsTableView.isHidden = false
-                            print(self.clubList)
+                            //print(self.clubList)
                             self.clubsTableView.reloadData()
                         } else {
                             self.publicLabel.isHidden = false
@@ -238,7 +238,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
         let privacyLabel = thisClub.privatet == 1 ? "Private" : "Public"
         cell.privacyLabel.text = privacyLabel
         cell.titleLabel.text = thisClub.clubname
-        print(thisClub.id)
+        //print(thisClub.id)
         if let imgurl = URL.init(string: thisClub.club_pic) {
             cell.clubImageView.loadImage(url: imgurl)
 //            self.loadImage(url: imgurl) { [weak self] (image) in
@@ -252,7 +252,7 @@ class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = clubList[indexPath.row].id
-        print(id)
+        //print(id)
         joinClub(code: id)
     }
     
