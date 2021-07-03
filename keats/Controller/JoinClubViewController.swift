@@ -7,18 +7,27 @@
 
 import UIKit
 import SwiftyJSON
+import AVFoundation
 
-class JoinClubViewController: UIViewController {
+class JoinClubViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var clubsTableView: UITableView!
     @IBOutlet weak var publicLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var clubList : [ClubModel] = []
+    var clubId = ""
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profileImage.image = myProfileImage
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusBarColor(view: view)
+        profileImage.image = myProfileImage
         clubsTableView.delegate = self
         clubsTableView.dataSource = self
         clubsTableView.isHidden = true
@@ -26,17 +35,26 @@ class JoinClubViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         getPublicClubs()
+        //joinClub(code: "13355952-5b2c-4608-8c52-defe15e67cf4")
         clubsTableView.register(UINib(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubCell")
 
     }
     
     @IBAction func qrTapped(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
         
     }
     
     @IBAction func joinTapped(_ sender: Any) {
-        if codeTextField.text != "" {
-            
+        guard let clubCode = codeTextField.text else { return}
+        if clubCode == "" {
+            alert(message: "Type or scan the club's code to join.", title: "Empty Field")
+        } else {
+            joinClub(code: clubCode)
         }
     }
     
@@ -44,25 +62,50 @@ class JoinClubViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    //MARK: - QR Image Picker
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let qrcodeImg = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage {
+                let detector:CIDetector=CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])!
+                let ciImage:CIImage=CIImage(image:qrcodeImg)!
+                var qrCodeLink=""
+      
+                let features=detector.features(in: ciImage)
+                for feature in features as! [CIQRCodeFeature] {
+                    qrCodeLink += feature.messageString!
+                }
+                
+                if qrCodeLink=="" {
+                    print("nothing")
+                }else{
+                    print("message: \(qrCodeLink)")
+                    codeTextField.text = qrCodeLink
+                }
+            }
+            else{
+               print("Something went wrong")
+            }
+           self.dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: - Join Club
     
     func joinClub(code: String) {
         
-        let json: [String: Any] = ["id_token": code]
+        let json: [String: Any] = ["club_id": code]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
-        // create post request
-        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
+        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/join") else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        //request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        
         guard let token = UserDefaults.standard.string(forKey: "JWToken") else {
             return}
         
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        // insert json data to the request
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -81,9 +124,11 @@ class JoinClubViewController: UIViewController {
                         if let club = club as? [String: Any] {
                             let id = club["id"]
                             if let id = id as? String {
+                                self.clubId = id
                                 DispatchQueue.main.async {
-                                    let destinationVC = ClubViewController()
-                                    destinationVC.clubId = id
+//                                    let destinationVC = ClubViewController()
+//                                    destinationVC.clubId = id
+                                    print("id: \(id)")
                                     self.performSegue(withIdentifier: "JoinToClub", sender: self)
                                 }
                             }
@@ -92,7 +137,9 @@ class JoinClubViewController: UIViewController {
                     
                 } else {
                     if let message = responseJSON["message"] as? String, let status = responseJSON["status"] as? String {
-                        self.alert(message: message, title: status)
+                        DispatchQueue.main.async {
+                            self.alert(message: message, title: status)
+                        }
                     }
                     
                 }
@@ -159,10 +206,9 @@ class JoinClubViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
                         self.activityIndicator.isHidden = true
-//
                         if clubs.count > 0 {
                             self.clubsTableView.isHidden = false
-                            print(self.clubList)
+                            //print(self.clubList)
                             self.clubsTableView.reloadData()
                         } else {
                             self.publicLabel.isHidden = false
@@ -180,9 +226,7 @@ class JoinClubViewController: UIViewController {
         }
         task.resume()
     }
-}
 
-extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         clubList.count
     }
@@ -191,10 +235,10 @@ extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClubCell") as! ClubTableViewCell
         let thisClub = clubList[indexPath.row]
         cell.hostLabel.text = thisClub.host_name
-        let privacyLabel = thisClub.privatet == 0 ? "Private" : "Public"
+        let privacyLabel = thisClub.privatet == 1 ? "Private" : "Public"
         cell.privacyLabel.text = privacyLabel
         cell.titleLabel.text = thisClub.clubname
-        print(thisClub.id)
+        //print(thisClub.id)
         if let imgurl = URL.init(string: thisClub.club_pic) {
             cell.clubImageView.loadImage(url: imgurl)
 //            self.loadImage(url: imgurl) { [weak self] (image) in
@@ -208,8 +252,17 @@ extension JoinClubViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = clubList[indexPath.row].id
+        //print(id)
         joinClub(code: id)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ClubViewController {
+            let vc = segue.destination as? ClubViewController
+            vc?.clubId = clubId
+            //print("clubId: \(clubId)")
+        }
+    }
     
 }
+

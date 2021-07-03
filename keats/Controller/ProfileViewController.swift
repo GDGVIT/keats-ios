@@ -16,24 +16,39 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var editToggleButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var uploadImageButtonView: UIView!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var profilePicView: UIView!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var logOutView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let storage = Storage.storage().reference()
 
     var isEditingProfile = false
+    var previousPhone = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        infoView.isHidden = true
+        profilePicView.isHidden = true
+        uploadImageButtonView.isHidden = true
+        
+        profileImage.image = myProfileImage
         makeNonEditable()
         fetchUserDetails()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //MARK: - UI Buttons tapped
+    
     @IBAction func editButtonTapped(_ sender: Any) {
         if isEditingProfile {
             makeNonEditable()
-            updateUserInfo()
+            disableViews()
+            updateUserInfo(imageUrl: "")
             
         } else {
             makeEditable()
@@ -42,6 +57,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func logOutTapped(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
+        deleteUserData()
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -56,6 +72,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         present(picker, animated: true)
     }
     
+    func disableViews() {
+        uploadImageButtonView.isUserInteractionEnabled = false
+        infoView.isUserInteractionEnabled = false
+        logOutView.isUserInteractionEnabled = false
+        uploadImageButtonView.alpha = 0.5
+        infoView.alpha = 0.5
+        logOutView.alpha = 0.5
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func enableViews() {
+            uploadImageButtonView.isUserInteractionEnabled = true
+            infoView.isUserInteractionEnabled = true
+            logOutView.isUserInteractionEnabled = true
+            uploadImageButtonView.alpha = 1
+            infoView.alpha = 1
+            logOutView.alpha = 1
+        activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+    }
+    
+    //MARK: - Image picker controller methods
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true, completion: nil)
@@ -63,13 +103,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         profileImage.image = image
+        myProfileImage = image
+        
         guard let imageData = image.pngData() else {
             return
         }
         
         let identifier = UUID()
         let path = "public/\(identifier).png"
-        print(path)
+        //print(path)
         
         let uploadTask = storage.child(path).putData(imageData, metadata: nil) { (metadata, error) in
             guard let metadata = metadata else {
@@ -84,7 +126,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     print("Uh-oh, an error occurred! 2")
                     return
                 }
-                print(downloadURL.absoluteString)
+                //print(downloadURL.absoluteString)
+                let imageLink = downloadURL.absoluteString
+                //self.updateProfilePic(downloadUrl: imageLink)
+                self.disableViews()
+                self.updateUserInfo(imageUrl: imageLink)
             }
         }
     }
@@ -93,6 +139,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
     }
     
+    //MARK: - Info Change UI
     
     func makeEditable() {
         isEditingProfile = true
@@ -110,9 +157,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         emailTextField.borderStyle = .roundedRect
         emailTextField.backgroundColor = UIColor(named: "TextFieldBg")
         
-        phoneTextField.isUserInteractionEnabled = true
-        phoneTextField.borderStyle = .roundedRect
-        phoneTextField.backgroundColor = UIColor(named: "TextFieldBg")
+        phoneTextField.isUserInteractionEnabled = false
+        phoneTextField.borderStyle = .none
+        phoneTextField.backgroundColor = .clear
     }
     
     func makeNonEditable() {
@@ -167,6 +214,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.emailTextField.text = em
                 self.nameTextField.text = un
                 self.phoneTextField.text = ph
+                self.showStuff()
             }
         }
         
@@ -194,7 +242,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     if status as! String != "error" {
                         let userdata = responseJSON["data"]
                         if let userresponseJSON = userdata as? [String: Any] {
-                            if let bio = userresponseJSON["bio"] as? String, let email = userresponseJSON["email"] as? String, let id = userresponseJSON["id"] as? String, let phone = userresponseJSON["phone_number"] as? String, let profile_pic = userresponseJSON["profile_pic"] as? String, let username = userresponseJSON["username"] as? String{
+                            if let bio = userresponseJSON["bio"] as? String, let email = userresponseJSON["email"] as? String,
+                               //let id = userresponseJSON["id"] as? String,
+                               let phone = userresponseJSON["phone_number"] as? String, let profile_pic = userresponseJSON["profile_pic"] as? String, let username = userresponseJSON["username"] as? String{
                                 
                                 //print(id)
                                 
@@ -219,7 +269,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                                     self.emailTextField.text = email
                                     self.nameTextField.text = username
                                     self.phoneTextField.text = phone
-                                    
+                                    self.previousPhone = phone
+                                    self.showStuff()
                                 }
                             }
                         }
@@ -230,47 +281,52 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
+    func showStuff() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        infoView.isHidden = false
+        profilePicView.isHidden = false
+        uploadImageButtonView.isHidden = false
+    }
+    
     //MARK: - Update User Info
     
-    func updateUserInfo() {
+    func updateUserInfo(imageUrl: String) {
         
         if let userName = nameTextField.text, let bio = bioTextField.text, let email = emailTextField.text {
             
-            let json: [String: Any] = ["username": userName,
-                                       "email": email,
-                                       "bio": bio]
-            let jsonData = try? JSONSerialization.data(withJSONObject: json)
-            guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
-            var request = URLRequest(url: url)
-            request.httpMethod = "PATCH"
-            guard let token = UserDefaults.standard.string(forKey: "JWToken") else {return}
+            var json: [String: Any]
             
-            request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-            
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            // insert json data to the request
-            request.httpBody = jsonData
-            
-            
-            let tsk = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let dta = data, error == nil else {
-                    print(error?.localizedDescription ?? "no data")
-                    return
-                }
-                
-                let responseJSON = try? JSONSerialization.jsonObject(with: dta, options: [])
-                if let rsponseJSON = responseJSON as? [String: Any] {
-                    let status = rsponseJSON["status"]
-                    if status as! String != "error" {
-                        print("Successfully updated info")
-                    } else {
-                        print(rsponseJSON)
-                    }
-                }
+            if imageUrl == "" {
+                json = ["username": userName,
+                "email": email,
+                "bio": bio]
+            } else {
+                json = ["username": userName,
+                "email": email,
+                "bio": bio,
+                "profile_pic": imageUrl]
             }
             
-            tsk.resume()
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            guard let url = URL(string: "https://keats-testing.herokuapp.com/api/user") else {return}
+            prepareRequest(method: "PATCH", url: url, jsonData: jsonData)
+            enableViews()
         }
     }
+    
+    //MARK: - Delete User Data
+    
+    func deleteUserData() {
+        myProfileImage =  UIImage(named: "default-profile")
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+
+            dictionary.keys.forEach
+            { key in   defaults.removeObject(forKey: key)
+            }
+        defaults.synchronize()
+
+    }
+    
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol OTPDelegate: class {
+protocol OTPDelegate: AnyObject {
     //always triggers when the OTP field is valid
     func didChangeValidity(isValid: Bool)
 }
@@ -59,7 +59,7 @@ class OTPStackView: UIStackView {
             //Adding a marker to next field for the field at index-1
             index != 0 ? (textFieldsCollection[index-1].nextTextField = field) : ()
         }
-        textFieldsCollection[0].becomeFirstResponder()
+        //textFieldsCollection[0].becomeFirstResponder()
     }
     
     //Customisation and setting OTPTextFields

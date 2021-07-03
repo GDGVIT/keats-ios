@@ -24,6 +24,9 @@
 		7057A06625EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06725EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
 		7057A06825EC106000CEA17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7057A06525EC106000CEA17A /* GoogleService-Info.plist */; };
+		70634211268C8082007586A4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70634210268C8082007586A4 /* ChatViewController.swift */; };
+		70634212268C8082007586A4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70634210268C8082007586A4 /* ChatViewController.swift */; };
+		70634213268C8082007586A4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70634210268C8082007586A4 /* ChatViewController.swift */; };
 		706A494D2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
 		706A494E2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
 		706A494F2645865F00278222 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A494C2645865F00278222 /* ReadViewController.swift */; };
@@ -57,6 +60,12 @@
 		7076468E263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
 		7076468F263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
 		70764690263B20A80000B52A /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7076468A263B20A80000B52A /* ClubTableViewCell.xib */; };
+		70A47A6226871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
+		70A47A6326871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
+		70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
+		70AD99C2268F036000D5FB05 /* statusBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD99C1268F036000D5FB05 /* statusBarColor.swift */; };
+		70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF7975268BCD24005B423C /* prepareRequest.swift */; };
+		70B698A12690514A008AD4B4 /* leaveClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B698A02690514A008AD4B4 /* leaveClub.swift */; };
 		70C16C7526412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7626412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7726412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
@@ -151,6 +160,7 @@
 		7040E15D2646B7020047125D /* RotatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingButton.swift; sourceTree = "<group>"; };
 		704217632646F8E100141548 /* loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadImage.swift; sourceTree = "<group>"; };
 		7057A06525EC106000CEA17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70634210268C8082007586A4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		706A494C2645865F00278222 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		706A49532645965400278222 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		707645D32615BB830000B52A /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +176,11 @@
 		70764681261C8B700000B52A /* NavBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
 		70764689263B20A80000B52A /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		7076468A263B20A80000B52A /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
+		70A47A1126870A91007CB8FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = samplecoredata.xcdatamodel; sourceTree = "<group>"; };
+		70AD99C1268F036000D5FB05 /* statusBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statusBarColor.swift; sourceTree = "<group>"; };
+		70AF7975268BCD24005B423C /* prepareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prepareRequest.swift; sourceTree = "<group>"; };
+		70B698A02690514A008AD4B4 /* leaveClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaveClub.swift; sourceTree = "<group>"; };
 		70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BlackItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6E26412B1600F5FD7C /* CircularStd-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BoldItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6F26412B1600F5FD7C /* CircularStd-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -272,7 +287,9 @@
 				7031CB0E25D12BA10002E641 /* Assets.xcassets */,
 				7099E83425F188BD00AC732A /* Fonts */,
 				7031CB1025D12BA10002E641 /* LaunchScreen.storyboard */,
+				70A47A1126870A91007CB8FB /* GoogleService-Info.plist */,
 				7057A06525EC106000CEA17A /* GoogleService-Info.plist */,
+				70A47A6026871061007CB8FB /* keats.xcdatamodeld */,
 				7031CB1325D12BA10002E641 /* Info.plist */,
 			);
 			path = keats;
@@ -326,6 +343,7 @@
 				70764672261C310E0000B52A /* ProfileViewController.swift */,
 				706A494C2645865F00278222 /* ReadViewController.swift */,
 				706A49532645965400278222 /* ScannerViewController.swift */,
+				70634210268C8082007586A4 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -343,6 +361,9 @@
 				7040E15D2646B7020047125D /* RotatingButton.swift */,
 				704217632646F8E100141548 /* loadImage.swift */,
 				70F2EE62264BED7C00B5B455 /* generateQRCode.swift */,
+				70AF7975268BCD24005B423C /* prepareRequest.swift */,
+				70AD99C1268F036000D5FB05 /* statusBarColor.swift */,
+				70B698A02690514A008AD4B4 /* leaveClub.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,7 +465,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					7031CB0125D12B9E0002E641 = {
 						CreatedOnToolsVersion = 12.4;
@@ -650,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A47A6226871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764682261C8B700000B52A /* NavBarViewController.swift in Sources */,
 				7076468B263B20A80000B52A /* ClubTableViewCell.swift in Sources */,
 				70C16C9B2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
@@ -674,9 +696,13 @@
 				707646082619D2E20000B52A /* CountryCodes.swift in Sources */,
 				70CE2272264C44A900079067 /* CommentTableViewCell.swift in Sources */,
 				70764652261B289E0000B52A /* UserModel.swift in Sources */,
+				70AD99C2268F036000D5FB05 /* statusBarColor.swift in Sources */,
 				704217642646F8E100141548 /* loadImage.swift in Sources */,
 				7040E11F26467A450047125D /* alert.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
+				70B698A12690514A008AD4B4 /* leaveClub.swift in Sources */,
+				70634211268C8082007586A4 /* ChatViewController.swift in Sources */,
+				70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,8 +718,10 @@
 				70C16C9C2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70F2EE64264BED7C00B5B455 /* generateQRCode.swift in Sources */,
 				70CE2273264C44A900079067 /* CommentTableViewCell.swift in Sources */,
+				70A47A6326871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764683261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C952641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
+				70634212268C8082007586A4 /* ChatViewController.swift in Sources */,
 				706A49552645965400278222 /* ScannerViewController.swift in Sources */,
 				70764674261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D52615BB830000B52A /* PhoneViewController.swift in Sources */,
@@ -714,8 +742,10 @@
 				70C16C9D2641574700F5FD7C /* CreateClubViewController.swift in Sources */,
 				70F2EE65264BED7C00B5B455 /* generateQRCode.swift in Sources */,
 				70CE2274264C44A900079067 /* CommentTableViewCell.swift in Sources */,
+				70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */,
 				70764684261C8B710000B52A /* NavBarViewController.swift in Sources */,
 				70C16C962641572F00F5FD7C /* JoinClubViewController.swift in Sources */,
+				70634213268C8082007586A4 /* ChatViewController.swift in Sources */,
 				706A49562645965400278222 /* ScannerViewController.swift in Sources */,
 				70764675261C310F0000B52A /* ProfileViewController.swift in Sources */,
 				707645D62615BB830000B52A /* PhoneViewController.swift in Sources */,
@@ -884,6 +914,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C35DR2MHM7;
 				INFOPLIST_FILE = keats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -904,6 +935,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C35DR2MHM7;
 				INFOPLIST_FILE = keats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1043,6 +1075,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70A47A6026871061007CB8FB /* keats.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */,
+			);
+			currentVersion = 70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */;
+			path = keats.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7031CAFA25D12B9E0002E641 /* Project object */;
 }

@@ -19,6 +19,14 @@ class OTPViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loggedIn = UserDefaults.standard.bool(forKey: "LoggedIn")
+        if loggedIn {
+            performSegue(withIdentifier: "otpToHome", sender: self)
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         buttonView.isHidden = true
         activityIndicator.isHidden = true
         otpContainerView.addSubview(otpStackView)
@@ -26,10 +34,10 @@ class OTPViewController: UIViewController {
         otpStackView.heightAnchor.constraint(equalTo: otpContainerView.heightAnchor).isActive = true
         otpStackView.centerXAnchor.constraint(equalTo: otpContainerView.centerXAnchor).isActive = true
         otpStackView.centerYAnchor.constraint(equalTo: otpContainerView.centerYAnchor).isActive = true
-        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     @IBAction func backTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func clickedForHighlight(_ sender: UIButton) {
@@ -51,30 +59,36 @@ class OTPViewController: UIViewController {
                     self.buttonView.isHidden = false
                     self.activityIndicator.isHidden = true
                     self.activityIndicator.stopAnimating()
-                    self.alert(message: authError.localizedDescription, title: "Error")
+                    self.alert(message: "Check the OTP and try again.", title: "Error")
                     print(authError.localizedDescription)
-                  }
-                    
+                  } else {
                     let currentUser = Auth.auth().currentUser
                     currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
                       if let error = error {
                         self.buttonView.isHidden = false
                         self.activityIndicator.isHidden = true
                         self.activityIndicator.stopAnimating()
-                        self.alert(message: error.localizedDescription, title: "Error")
+                        self.alert(message: "Sign in unsuccessful. Please try again", title: "Error")
                         print("error in getting id token: \(error.localizedDescription)")
                         return;
-                      }
-
+                        
+                      } else {
                         if let token = idToken {
                             UserDefaults.standard.set(token, forKey: "IDToken")
                             self.signInUser(verificationId: token)
                             
                         }
+                      }
                     }
+                    
+                  }
+                    
+                    
                 }
             }
        }
+    
+    //MARK: - Sign In User
     
     func signInUser(verificationId: String) {
         
@@ -113,9 +127,15 @@ class OTPViewController: UIViewController {
                             self.activityIndicator.isHidden = true
                             self.activityIndicator.stopAnimating()
                             print("Successfully signed in!")
+                            UserDefaults.standard.set(true, forKey: "LoggedIn")
                         }
                     }
                     
+                }
+                else{
+                    DispatchQueue.main.async {
+                        self.alert(message: "Can't sign in, please try again!", title: "Error")
+                    }
                 }
                 //print(responseJSON)
             }

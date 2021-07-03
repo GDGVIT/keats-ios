@@ -26,6 +26,12 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loggedIn = UserDefaults.standard.bool(forKey: "LoggedIn")
+        if loggedIn {
+            performSegue(withIdentifier: "phoneToOtp", sender: self)
+        }
+        
         self.activityIndicator.isHidden = true
         buttonView.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
@@ -44,31 +50,42 @@ class PhoneViewController: UIViewController, MRCountryPickerDelegate {
     
     @IBAction func getOTPTapped(_ sender: Any) {
         
-        if let countryCode = countryCodeTextField.text, let phone = phoneTextField.text {
-            let phoneNumber = countryCode+phone
-                buttonView.isHidden = true
-                activityIndicator.isHidden = false
-                activityIndicator.startAnimating()
-                
-                PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [self] (verificationID, error) in
-                  if let error = error {
-                    print("Phone number error: \(error.localizedDescription)")
+        guard let phone = phoneTextField.text else { return }
+        let phoneLength = phone.count
+        
+        if phoneLength == 10 {
+            
+            if let countryCode = countryCodeTextField.text {
+                let phoneNumber = countryCode+phone
+                    buttonView.isHidden = true
+                    activityIndicator.isHidden = false
+                    activityIndicator.startAnimating()
+                    
+                    PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [self] (verificationID, error) in
+                      if let error = error {
+                        //print("Phone number error: \(error.localizedDescription)")
+                        self.activityIndicator.isHidden = true
+                        self.activityIndicator.stopAnimating()
+                        buttonView.isHidden = false
+                        alert(message: "Check your internet connection and please try again", title: "Error")
+                        print(error)
+                        return
+                      }
+                      // Sign in using the verificationID and the code sent to the user
+                      // ...
+                    UserDefaults.standard.set(verificationID, forKey: "VerificationID")
+                    print("Verification id saved")
+                    self.performSegue(withIdentifier: "phoneToOtp", sender: self)
                     self.activityIndicator.isHidden = true
                     self.activityIndicator.stopAnimating()
                     buttonView.isHidden = false
-                    alert(message: error.localizedDescription, title: "Check Phone Number")
-                    return
-                  }
-                  // Sign in using the verificationID and the code sent to the user
-                  // ...
-                UserDefaults.standard.set(verificationID, forKey: "VerificationID")
-                print("Verification id saved")
-                self.performSegue(withIdentifier: "phoneToOtp", sender: self)
-                self.activityIndicator.isHidden = true
-                self.activityIndicator.stopAnimating()
-                buttonView.isHidden = false
+                }
             }
+        } else {
+            alert(message: "Enter a 10 digit phone number.", title: "Incorrect Phone Number")
         }
+        
+        
     }
 }
 

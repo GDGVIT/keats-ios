@@ -13,12 +13,19 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var clubImageView: UIView!
     @IBOutlet weak var clubImageImageView: UIImageView!
     @IBOutlet weak var clubNameTextField: UITextField!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var privateToggle: UISwitch!
     
     private let storage = Storage.storage().reference()
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profileImageView.image = myProfileImage
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusBarColor(view: view)
+        profileImageView.image = myProfileImage
 
        
     }
@@ -53,7 +60,7 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
                 return
             }
             // Metadata contains file metadata such as size, content-type.
-            let size = metadata.size
+            //let size = metadata.size
             // You can also access to download URL after upload.
             self.storage.child(path).downloadURL { (url, error) in
                 guard let downloadURL = url else {
@@ -80,8 +87,8 @@ class CreateClubViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func createNewClub() {
-        if let clubname = clubNameTextField.text {
-            
-        }
+//        if let clubname = clubNameTextField.text {
+//            
+//        }
     }
 }
