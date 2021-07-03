@@ -24,6 +24,7 @@ class ClubViewController: UIViewController {
     @IBOutlet weak var clubInfoView: UIView!
     @IBOutlet weak var membersLabel: UILabel!
     
+    @IBOutlet weak var clubNameTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var leaveView: UIView!
     @IBOutlet weak var uploadImageView: UIView!
@@ -35,6 +36,9 @@ class ClubViewController: UIViewController {
     var isHost = false
     var inEditMode = false
     var hostId: String = ""
+    var clubImageUrl: String = ""
+    var clubFileUrl: String = ""
+    var privacy: Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
         editButton.isHidden = true
@@ -48,6 +52,7 @@ class ClubViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         profileImageView.image = myProfileImage
+        clubNameTextField.isHidden = true
         
     }
     
@@ -165,6 +170,8 @@ class ClubViewController: UIViewController {
     
     func enableEditMode() {
         privateToggle.isHidden = false
+        clubNameTextField.isHidden = false
+        clubNameTextField.text = clubNameLabel.text
         privacyLabel.text = "Private"
         buttonView.isHidden = false
         uploadMenu.isHidden = true
@@ -175,12 +182,14 @@ class ClubViewController: UIViewController {
     
     func saveAndDisableEditMode() {
         privateToggle.isHidden = true
+        clubNameTextField.isHidden = true
+        clubNameLabel.text = clubNameTextField.text
         privacyLabel.text = "Private" // Change
         buttonView.isHidden = true
         uploadMenu.isHidden = true
         uploadImageView.isHidden = true
         membersTableView.reloadData()
-        // Save
+        updateClub(imageUrl: "")
     }
     
     //MARK: - Get club details
@@ -215,13 +224,15 @@ class ClubViewController: UIViewController {
                     let clubname = json["data"]["club"]["clubname"].string
                     let club_pic = json["data"]["club"]["club_pic"].rawString()
                     let host_name = json["data"]["club"]["host_name"].string
-                    //let file_url = json["data"]["club"]["file_url"].rawString()
+                    let file_url = json["data"]["club"]["file_url"].rawString()
                     let privacy = json["data"]["club"]["private"].bool == true ? "Private" : "Public"
                     
                     let host_id = json["data"]["club"]["host_id"].string
                     guard let uid = UserDefaults.standard.string(forKey: "uid") else {
                         return}
                     self.hostId = host_id ?? ""
+                    self.clubFileUrl = file_url ?? ""
+                    self.clubImageUrl = club_pic ?? ""
                     if uid == host_id {
                         self.isHost = true
                         print("User is host")
@@ -279,51 +290,7 @@ class ClubViewController: UIViewController {
     
     //MARK: - Leave Club
     
-    func leaveClub(id: String) {
-        let json: [String: Any] = ["club_id": id]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        // create post request
-        guard let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/leave") else {return}
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        guard let token = UserDefaults.standard.string(forKey: "JWToken") else {
-            return}
-        
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        // insert json data to the request
-        request.httpBody = jsonData
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                
-                let status = responseJSON["status"] as? String
-                if status  == "success" {
-                    
-                        DispatchQueue.main.async {
-                            self.navigationController?.popViewController(animated: true)
-                        }
-                    
-                } else {
-                    if let message = responseJSON["message"] as? String {
-                        DispatchQueue.main.async {
-                            self.alert(message: message, title: "Error")
-                        }
-                    }
-                }
-            }
-        }
-        
-        task.resume()
-    }
+    
     
     //MARK: - Remove User
     
@@ -376,7 +343,32 @@ class ClubViewController: UIViewController {
         
         task.resume()
     }
+    
+    
+    //MARK: - update club
+
+    func updateClub(imageUrl: String) {
+        
+        if let clubName = clubNameTextField.text {
+            view.isUserInteractionEnabled = false
+            view.alpha = 0.5
+            
+            //update image url
+            
+            let json: [String: Any] = ["id": clubId,
+                                       "clubname": clubName,
+                                       "club_pic": clubImageUrl,
+                                       "file": clubFileUrl]
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            guard let url = URL(string: "https://keats-testing.herokuapp.com/api/clubs/update") else {return}
+            
+            prepareRequest(method: "PATCH", url: url, jsonData: jsonData)
+            view.isUserInteractionEnabled = true
+            view.alpha = 1
+        }
+    }
 }
+
 
 
 //MARK: - Table View Methods

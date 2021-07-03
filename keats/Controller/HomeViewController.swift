@@ -11,7 +11,7 @@ import SwiftyJSON
 var myProfileImage =  UIImage(named: "default-profile")
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var readingImage: UIImageView!
     @IBOutlet weak var readingLabel: UILabel!
     @IBOutlet weak var buttonStack: UIStackView!
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
                 self.popUpOptionView.alpha = 0
                 self.popUpOptionView.isHidden = true
                 
-            
+                
             default:
                 break
             }
@@ -102,7 +102,7 @@ extension HomeViewController {
         //print("JWTOKEN: \(token)")
         
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-
+        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             // Check if Error took place
@@ -139,7 +139,7 @@ extension HomeViewController {
                         }
                     }
                     UserDefaults.standard.set(profile_pic.rawString(), forKey: "profile_pic")
-
+                    
                     let bio = json["data"]["user"]["bio"]
                     UserDefaults.standard.set(bio.rawString(), forKey: "bio")
                     
@@ -154,18 +154,18 @@ extension HomeViewController {
                     if clubs.count > 0 {
                         for i in 0...clubs.count-1 {
                             if let club_pic = json["data"]["clubs"][i]["club_pic"].rawString(),
-                            let clubname = json["data"]["clubs"][i]["clubname"].rawString(),
-                            let file_url = json["data"]["clubs"][i]["file_url"].rawString(),
-                            let host_id = json["data"]["clubs"][i]["host_id"].rawString(),
-                            let host_name = json["data"]["clubs"][i]["host_name"].rawString(),
-                            let host_profile_pic = json["data"]["clubs"][i]["host_profile_pic"].rawString(),
-                            let id = json["data"]["clubs"][i]["id"].rawString(),
-                            let page_no = json["data"]["clubs"][i]["page_no"].int,
-                            let page_sync = json["data"]["clubs"][i]["page_sync"].bool,
-                            let privatet = json["data"]["clubs"][i]["private"].int {
+                               let clubname = json["data"]["clubs"][i]["clubname"].rawString(),
+                               let file_url = json["data"]["clubs"][i]["file_url"].rawString(),
+                               let host_id = json["data"]["clubs"][i]["host_id"].rawString(),
+                               let host_name = json["data"]["clubs"][i]["host_name"].rawString(),
+                               let host_profile_pic = json["data"]["clubs"][i]["host_profile_pic"].rawString(),
+                               let id = json["data"]["clubs"][i]["id"].rawString(),
+                               let page_no = json["data"]["clubs"][i]["page_no"].int,
+                               let page_sync = json["data"]["clubs"][i]["page_sync"].bool,
+                               let privatet = json["data"]["clubs"][i]["private"].int {
                                 
                                 let club = ClubModel(id: id, clubname: clubname, club_pic: club_pic, file_url: file_url, page_no: page_no, privatet: privatet, page_sync: page_sync, host_id: host_id, host_name: host_name, host_profile_pic: host_profile_pic)
-
+                                
                                 self.clubList.append(club)
                             }
                             
@@ -211,6 +211,9 @@ extension HomeViewController {
         task.resume()
     }
     
+    
+    
+    //MARK: - prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "HomeToClub" {
             if let indexPath = self.clubsTableView.indexPathForSelectedRow {
@@ -240,10 +243,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         //print(thisClub.id)
         if let imgurl = URL.init(string: thisClub.club_pic) {
             cell.clubImageView.loadImage(url: imgurl)
-//            self.loadImage(url: imgurl) { [weak self] (image) in
-//                guard let self = self, let image = image else { return }
-//                cell.clubImageView.loadImage(url: imgurl)
-//            }
+            //            self.loadImage(url: imgurl) { [weak self] (image) in
+            //                guard let self = self, let image = image else { return }
+            //                cell.clubImageView.loadImage(url: imgurl)
+            //            }
         }
         
         return cell

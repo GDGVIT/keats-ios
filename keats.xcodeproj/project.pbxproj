@@ -65,6 +65,7 @@
 		70A47A6426871061007CB8FB /* keats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70A47A6026871061007CB8FB /* keats.xcdatamodeld */; };
 		70AD99C2268F036000D5FB05 /* statusBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD99C1268F036000D5FB05 /* statusBarColor.swift */; };
 		70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF7975268BCD24005B423C /* prepareRequest.swift */; };
+		70B698A12690514A008AD4B4 /* leaveClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B698A02690514A008AD4B4 /* leaveClub.swift */; };
 		70C16C7526412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7626412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
 		70C16C7726412B1700F5FD7C /* CircularStd-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */; };
@@ -179,6 +180,7 @@
 		70A47A6126871061007CB8FB /* samplecoredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = samplecoredata.xcdatamodel; sourceTree = "<group>"; };
 		70AD99C1268F036000D5FB05 /* statusBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statusBarColor.swift; sourceTree = "<group>"; };
 		70AF7975268BCD24005B423C /* prepareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prepareRequest.swift; sourceTree = "<group>"; };
+		70B698A02690514A008AD4B4 /* leaveClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaveClub.swift; sourceTree = "<group>"; };
 		70C16C6D26412B1600F5FD7C /* CircularStd-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BlackItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6E26412B1600F5FD7C /* CircularStd-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BoldItalic.ttf"; sourceTree = "<group>"; };
 		70C16C6F26412B1600F5FD7C /* CircularStd-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				70F2EE62264BED7C00B5B455 /* generateQRCode.swift */,
 				70AF7975268BCD24005B423C /* prepareRequest.swift */,
 				70AD99C1268F036000D5FB05 /* statusBarColor.swift */,
+				70B698A02690514A008AD4B4 /* leaveClub.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				704217642646F8E100141548 /* loadImage.swift in Sources */,
 				7040E11F26467A450047125D /* alert.swift in Sources */,
 				707645FB261989720000B52A /* OTPTextField.swift in Sources */,
+				70B698A12690514A008AD4B4 /* leaveClub.swift in Sources */,
 				70634211268C8082007586A4 /* ChatViewController.swift in Sources */,
 				70AF7976268BCD24005B423C /* prepareRequest.swift in Sources */,
 			);
